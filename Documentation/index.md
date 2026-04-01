@@ -11,35 +11,42 @@ EnerFusion Upstream Accounting is a cloud-native upstream accounting platform fo
 ## End-to-End Process Flow
 
 ```
-[M10: Partner Onboarding]     ← Onboard new JV partners (7-step workflow)
-       │ ua.onboarding.partner.completed
+[M10: Partner Onboarding]                ← Business partner registration, JOA validation, system access provisioning
+       │
        ▼
 [Wellhead Production]
        │
        ▼
-[M1: Production Allocation]   ← Volumes per well / measurement point
+[M1: Production & Volume Allocation]     ← Well completion volumes, measurement point data, downtime adjustments
        │
        ▼
-[M2: Ownership / DOI]         ← Who owns what percentage
+[M2: Ownership & DOI]                    ← Division of interest, working / royalty / override interest assignments
        │
        ▼
-[M3: Contractual Allocation]  ← Allocate volumes to sales contracts
+[M3: Contractual Allocation]             ← Contract volumes, product control, network imbalances, NGL component splits
        │
        ▼
-[M4: Valuation & Pricing]     ← Apply price, tax, deductions
-       │                ┌─────────────────────────────────┐
-       ▼                ▼                                 │
-[M5: Balancing]   [M11: JVA]  ← AFE elections, JIB billing, cash calls
+[M4: Contracts, Pricing & Valuation]     ← Pricing formulas, deductions, tax schedules, valued settlement statements
+       │                         │
+       ▼                         ▼
+[M5: Balancing Workplace]   [M11: Joint Venture Accounting]
+← Over/under-take positions,    ← AFE elections, JIB billing,
+  cash settlements,               cash calls, COPAS audit trails
+  make-up volumes
+       │                         │
+       └───────────┬─────────────┘
+                   ▼
+[M6: Revenue Distribution & Accounting] ← Owner revenue entitlements, GL postings (RADs), late-payment interest
        │
        ▼
-[M6: Revenue Distribution]    ← Distribute net value to owners
+[M7: Payment Processing & Check Input]  ← ACH / check / wire disbursements, AR aging, purchaser remittances, escheat
        │
        ▼
-[M7: Payment Processing]      ← Cut checks, manage AR, JIB netting
-       │
-       ▼
-[M8: Regulatory Reporting]    ← State & federal compliance filings
-[M9: Administration & ILM]    ← Cross-cutting: RBAC, audit, automation
+[M8: Regulatory, Tax & Royalty Reporting] ← ONRR-2014, state severance tax, ad valorem, production reports
+
+─────────────────────────────────────────────────────────────────────────────────
+[M9: Administration & ILM]              ← Cross-cutting: RBAC, period control, automation, audit logs, ILM archiving
+─────────────────────────────────────────────────────────────────────────────────
 ```
 
 ---
