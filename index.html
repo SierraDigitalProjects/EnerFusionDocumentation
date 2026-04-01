@@ -1627,6 +1627,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03-Module-Specifications/M10-Partner-Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M10 — Partner Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03-Module-Specifications/M11-Joint-Venture-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M11 — Joint Venture Accounting (JVA)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2058,6 +2114,7 @@
 
 
 <h1 id="enerfusion-upstream-accounting">EnerFusion Upstream Accounting<a class="headerlink" href="#enerfusion-upstream-accounting" title="Permanent link">&para;</a></h1>
+<p><img alt="EnerFusion Premium" src="assets/enerfusion-premium.svg" /></p>
 <h2 id="upstream-accounting-platform">Upstream Accounting Platform<a class="headerlink" href="#upstream-accounting-platform" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p><strong>Platform:</strong> React 18 + Node.js 20 | <strong>Infrastructure:</strong> Azure AKS + PostgreSQL | <strong>Pattern:</strong> Modular Microservices + RBAC</p>
@@ -2065,31 +2122,35 @@
 <p>EnerFusion Upstream Accounting is a cloud-native upstream accounting platform for North American energy operators. It manages the complete revenue lifecycle — from physical wellhead production through statutory compliance reporting and owner payment disbursement.</p>
 <hr />
 <h2 id="end-to-end-process-flow">End-to-End Process Flow<a class="headerlink" href="#end-to-end-process-flow" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[Wellhead Production]
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>       │
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[M10: Partner Onboarding]     ← Onboard new JV partners (7-step workflow)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>       │ ua.onboarding.partner.completed
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>       ▼
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>[M1: Production Allocation]   ← Volumes per well / measurement point
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>[Wellhead Production]
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>       │
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>       ▼
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[M2: Ownership / DOI]         ← Who owns what percentage
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[M1: Production Allocation]   ← Volumes per well / measurement point
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>       │
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>       ▼
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>[M3: Contractual Allocation]  ← Allocate volumes to sales contracts
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>[M2: Ownership / DOI]         ← Who owns what percentage
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>       │
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>       ▼
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[M4: Valuation &amp; Pricing]     ← Apply price, tax, deductions
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[M3: Contractual Allocation]  ← Allocate volumes to sales contracts
 <a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>       │
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>       ▼
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>[M5: Balancing]               ← Resolve over/under-takes
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>       │
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>       ▼
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>[M6: Revenue Distribution]    ← Distribute net value to owners
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>[M4: Valuation &amp; Pricing]     ← Apply price, tax, deductions
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>       │                ┌─────────────────────────────────┐
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>       ▼                ▼                                 │
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>[M5: Balancing]   [M11: JVA]  ← AFE elections, JIB billing, cash calls
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>       │
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>       ▼
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>[M7: Payment Processing]      ← Cut checks, manage AR
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>[M6: Revenue Distribution]    ← Distribute net value to owners
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>       │
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>       ▼
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>[M8: Regulatory Reporting]    ← State &amp; federal compliance filings
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>[M7: Payment Processing]      ← Cut checks, manage AR, JIB netting
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>       │
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>       ▼
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>[M8: Regulatory Reporting]    ← State &amp; federal compliance filings
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>[M9: Administration &amp; ILM]    ← Cross-cutting: RBAC, audit, automation
 </code></pre></div>
 <hr />
 <h2 id="module-index">Module Index<a class="headerlink" href="#module-index" title="Permanent link">&para;</a></h2>
@@ -2157,6 +2218,18 @@
 <td>IT/Ops</td>
 <td>Archived data, anonymised records, automation config</td>
 </tr>
+<tr>
+<td>M10</td>
+<td>Partner Onboarding</td>
+<td>Partner Operations</td>
+<td>7-step JV partner onboarding workflow, document collection, system access</td>
+</tr>
+<tr>
+<td>M11</td>
+<td>Joint Venture Accounting (JVA)</td>
+<td>Joint Venture Finance</td>
+<td>AFE elections, JIB billing, cash call management, COPAS audit</td>
+</tr>
 </tbody>
 </table>
 <hr />
@@ -2199,6 +2272,16 @@
 <td>System Administrator</td>
 <td>M9, All</td>
 <td>RBAC, ILM, automation, audit</td>
+</tr>
+<tr>
+<td>Partner Onboarding Analyst</td>
+<td>M10</td>
+<td>Partner registration, document verification, system access provisioning</td>
+</tr>
+<tr>
+<td>JV Accountant</td>
+<td>M11</td>
+<td>AFE elections, JIB billing, cash call tracking, COPAS audit management</td>
 </tr>
 </tbody>
 </table>

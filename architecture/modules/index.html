@@ -1222,6 +1222,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#m10-partner-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M10 — Partner Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m11-joint-venture-accounting-jva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M11 — Joint Venture Accounting (JVA)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1737,6 +1759,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M10-Partner-Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M10 — Partner Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M11-Joint-Venture-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M11 — Joint Venture Accounting (JVA)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2207,7 +2285,14 @@
 <a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│   ┌──────────────────────────────────────────────────────────────────────┐   │
 <a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│   │  M9: Administration &amp; ILM  (cross-cutting — all modules)             │   │
 <a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   └──────────────────────────────────────────────────────────────────────┘   │
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>└──────────────────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│                                                                              │
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│   ┌──────────────┐     ┌──────────────────────────────────────────────────┐  │
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│   │  M10         │────▶│  M11: Joint Venture Accounting (JVA)             │  │
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│   │  Partner     │     │  AFE elections | JIB billing | Cash calls        │  │
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│   │  Onboarding  │     │  COPAS audit management                          │  │
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│   └──────────────┘     └──────────────────────────────────────────────────┘  │
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│   onboarding.partner.completed → M2 (DOI), M7 (payment config), M11 (JVA)   │
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>└──────────────────────────────────────────────────────────────────────────────┘
 </code></pre></div>
 <hr />
 <h2 id="module-details">Module Details<a class="headerlink" href="#module-details" title="Permanent link">&para;</a></h2>
@@ -2365,6 +2450,47 @@
 <p><strong>Outbound Events:</strong> None (drives other services via API, not events).</p>
 <p><strong>Key API Scopes:</strong> <code>admin:read</code>, <code>admin:write</code>, <code>admin:ilm</code>, <code>admin:audit</code></p>
 <hr />
+<h3 id="m10-partner-onboarding">M10 — Partner Onboarding<a class="headerlink" href="#m10-partner-onboarding" title="Permanent link">&para;</a></h3>
+<p><strong>Service:</strong> <code>svc-onboarding</code><br />
+<strong>Schema:</strong> <code>onboarding</code><br />
+<strong>Primary Users:</strong> Partner Onboarding Analysts, Land Administrators, Finance Controllers</p>
+<p><strong>Responsibilities:</strong>
+- 7-step partner onboarding workflow management (Company Registration → JOA &amp; WI → Financial Setup → COPAS Compliance → Document Collection → System Access → Review &amp; Submit)
+- Document collection and verification tracking
+- JOA and working interest setup (feeds M2 DOI records on completion)
+- Financial and banking configuration (feeds M7 Owner Attribute Groups)
+- COPAS accounting standard configuration (feeds M11 JVA)
+- System access provisioning (partner portal, EDI gateway)
+- Onboarding pipeline view with status categorization and completion trends</p>
+<p><strong>Inbound Events:</strong> None — M10 is driven by human workflows.</p>
+<p><strong>Outbound Events:</strong>
+- <code>ua.onboarding.partner.completed</code> → consumed by M2 (DOI provisioning), M7 (payment config), M11 (JVA partner interest)
+- <code>ua.onboarding.document.overdue</code> → consumed by M9 (audit log, notifications)</p>
+<p><strong>Key API Scopes:</strong> <code>onboarding:read</code>, <code>onboarding:write</code>, <code>onboarding:approve</code>, <code>onboarding:admin</code></p>
+<hr />
+<h3 id="m11-joint-venture-accounting-jva">M11 — Joint Venture Accounting (JVA)<a class="headerlink" href="#m11-joint-venture-accounting-jva" title="Permanent link">&para;</a></h3>
+<p><strong>Service:</strong> <code>svc-jva</code><br />
+<strong>Schema:</strong> <code>jva</code><br />
+<strong>Primary Users:</strong> JV Accountants, Revenue Analysts, Finance Controllers</p>
+<p><strong>Responsibilities:</strong>
+- Authorization for Expenditure (AFE) creation and lifecycle management (Drilling, Workover, Facility, Plug &amp; Abandon)
+- Non-operating partner (NOP) election tracking (participate / non-consent) with deadline enforcement
+- Budget vs. actual tracking by COPAS cost code (100-Labor, 200-Materials, 300-Transport, 400-Services, 600-Overhead, 700-Taxes)
+- Monthly Joint Interest Billing (JIB) preparation and delivery (EDI 810 / email / portal)
+- COPAS overhead calculation (Fixed Rate per Well)
+- Cash call advance funding management with overdue interest accrual
+- Receipt application against open cash calls
+- COPAS audit finding documentation and resolution tracking</p>
+<p><strong>Inbound Events:</strong>
+- <code>ua.onboarding.partner.completed</code> (M10) — activates JVA partner interest record
+- <code>ua.valuation.settlement.completed</code> (M4) — triggers JIB cost reconciliation for the period</p>
+<p><strong>Outbound Events:</strong>
+- <code>ua.jva.afe.approved</code> → consumed by M9 (audit log)
+- <code>ua.jva.jib.issued</code> → consumed by M7 (AR receivable tracking)
+- <code>ua.jva.cashcall.overdue</code> → consumed by M9 (notifications, audit log)
+- <code>ua.jva.jib.paid</code> → consumed by M7 (payment reconciliation)</p>
+<p><strong>Key API Scopes:</strong> <code>jva:read</code>, <code>jva:write</code>, <code>jva:approve</code>, <code>jva:execute</code>, <code>jva:admin</code></p>
+<hr />
 <h2 id="inter-module-event-schema">Inter-Module Event Schema<a class="headerlink" href="#inter-module-event-schema" title="Permanent link">&para;</a></h2>
 <p>All Service Bus events share a common envelope:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">interface</span><span class="w"> </span><span class="nx">PraEvent</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -2463,6 +2589,22 @@
 <td>—</td>
 <td>Run archive jobs</td>
 <td>Manage roles, policies</td>
+</tr>
+<tr>
+<td>M10 Onboarding</td>
+<td>View partner records, session status</td>
+<td>Create/update onboarding sessions</td>
+<td>Sign off steps, complete sessions</td>
+<td>—</td>
+<td>Configure document types, workflow</td>
+</tr>
+<tr>
+<td>M11 JVA</td>
+<td>View AFEs, JIBs, cash calls, findings</td>
+<td>Create AFEs, prepare JIBs, issue cash calls</td>
+<td>Authorize AFEs, approve JIB runs</td>
+<td>Run JIB billing, apply receipts</td>
+<td>Configure COPAS rates, overhead, audit windows</td>
 </tr>
 </tbody>
 </table>
