@@ -1,0 +1,4644 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Upstream Accounting Platform for North American Energy Operators">
+      
+      
+        <meta name="author" content="EnerFusion Product Team">
+      
+      
+      
+        <link rel="prev" href="../../pilot-scope/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>E2E Scenario (Build-A-Biz) - EnerFusion Upstream Accounting — Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#end-to-end-test-cases-build-a-biz-scenario" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-header__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EnerFusion Upstream Accounting — Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              E2E Scenario (Build-A-Biz)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../benefits/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benefits
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../assumptions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Assumptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../master-data/overview/" class="md-tabs__link">
+          
+  
+  
+  Master Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../requirements/functional/" class="md-tabs__link">
+          
+  
+  
+  Requirements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../open-questions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/modules/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../operations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../project-structure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Project Structure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-tabs__link">
+          
+  
+  
+  Module Specifications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../process-flows/payment-processing/" class="md-tabs__link">
+          
+  
+  
+  Process Flows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/uom-and-products/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pilot-scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pilot Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Test Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-nav__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    EnerFusion Upstream Accounting — Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benefits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benefits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Master Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/centrally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centrally Managed (SAP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/locally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locally Managed (EnerFusion)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/not-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Not Managed in SAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/non-functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Non-Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/technical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M1 — Production & Volume Allocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M2-Ownership-DOI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2 — Ownership & DOI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M3-Contractual-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Base)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M3-Contractual-Allocation-enhanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Enhanced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M4-Contracts-Pricing-Valuation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M4 — Contracts, Pricing & Valuation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M5-Balancing-Workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M5 — Balancing Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M6-Revenue-Distribution-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M6 — Revenue Distribution & Accounting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M7-Payment-Processing-Check-Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7 — Payment Processing & Check Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M8-Regulatory-Tax-Royalty-Reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M8 — Regulatory, Tax & Royalty Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M9-Administration-ILM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M9 — Administration & ILM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/payment-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payment Processing (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/check-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check Input (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/onrr-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONRR-2014 Processing (M8)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/ar-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AR Workplace (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/uom-and-products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units of Measure & Products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/ad-valorem-true-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ad Valorem True-Up (M4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pilot-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Test Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Scenario (Build-A-Biz)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Scenario (Build-A-Biz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-scenario-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Scenario Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Scenario Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-narrative-the-biz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Narrative — "The Biz"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-test-case-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Test Case Conventions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-phase-1-test-cases-company-formation-first-month-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Phase 1 Test Cases — Company Formation &amp; First Month Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Phase 1 Test Cases — Company Formation &amp; First Month Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-master-data-company-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Master Data &amp; Company Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Master Data &amp; Company Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m2-001-create-business-partners-customers-vendors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M2-001 — Create Business Partners (Customers / Vendors)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m2-002-create-jv-partner-and-joa-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M2-002 — Create JV Partner and JOA Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m1-001-create-well-and-production-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M1-001 — Create Well and Production Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m2-003-create-venture-base-dois-and-division-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M2-003 — Create Venture, Base DOIs, and Division Orders
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m1-002-create-delivery-networks-oil-and-gas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M1-002 — Create Delivery Networks (Oil and Gas)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m4-001-create-contracts-pricing-formulas-and-vcrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M4-001 — Create Contracts, Pricing Formulas, and VCRs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-first-month-operations-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 First Month Operations — Production
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 First Month Operations — Production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m1-003-record-production-measurements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M1-003 — Record Production Measurements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m1-004-run-production-volume-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M1-004 — Run Production Volume Allocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-first-month-operations-contractual-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 First Month Operations — Contractual Allocation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 First Month Operations — Contractual Allocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m3-001-generate-and-enter-contract-sales-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M3-001 — Generate and Enter Contract Sales Template
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-first-month-operations-valuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 First Month Operations — Valuation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 First Month Operations — Valuation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m4-002-enter-prices-and-run-valuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M4-002 — Enter Prices and Run Valuation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-first-month-operations-revenue-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 First Month Operations — Revenue Distribution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 First Month Operations — Revenue Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m6-001-run-revenue-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M6-001 — Run Revenue Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-first-month-operations-payment-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 First Month Operations — Payment Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 First Month Operations — Payment Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m7-001-execute-payment-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M7-001 — Execute Payment Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-phase-2-test-cases-balancing-ownership-changes-check-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Phase 2 Test Cases — Balancing, Ownership Changes &amp; Check Input
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Phase 2 Test Cases — Balancing, Ownership Changes &amp; Check Input">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-balancing-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Balancing Agreement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Balancing Agreement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p2-m5-001-create-and-generate-pba-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P2-M5-001 — Create and Generate PBA Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-ownership-change-owner-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Ownership Change — Owner Transfer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Ownership Change — Owner Transfer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p2-m2-001-transfer-royalty-interest-to-two-new-owners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P2-M2-001 — Transfer Royalty Interest to Two New Owners
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-prior-period-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Prior Period Adjustments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Prior Period Adjustments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p2-m4-001-correct-doi-and-process-prior-period-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P2-M4-001 — Correct DOI and Process Prior Period Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p2-m4-002-price-change-triggering-ppn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P2-M4-002 — Price Change Triggering PPN
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-check-input-royalty-income-from-jv-partner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Check Input — Royalty Income from JV Partner
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Check Input — Royalty Income from JV Partner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p2-m7-001-setup-check-input-cross-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P2-M7-001 — Setup Check Input Cross-References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p2-m7-002-enter-and-process-inbound-check-ppd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P2-M7-002 — Enter and Process Inbound Check (PPD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-outside-operated-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Outside Operated Property
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Outside Operated Property">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p2-m1-001-setup-non-allocated-delivery-network-outside-operated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P2-M1-001 — Setup Non-Allocated Delivery Network (Outside Operated)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p2-m2-002-outside-operated-doi-with-balancing-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P2-M2-002 — Outside Operated DOI with Balancing Owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-regulatory-reporting-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Regulatory Reporting Test Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Regulatory Reporting Test Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m8-001-generate-onrr-2014-report-federal-lease" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M8-001 — Generate ONRR-2014 Report (Federal Lease)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m8-002-generate-state-severance-tax-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M8-002 — Generate State Severance Tax Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-administration-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Administration Test Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Administration Test Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m9-001-onboarding-validation-before-go-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M9-001 — Onboarding Validation Before Go-Live
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tc-e2e-p1-m9-002-accounting-period-close-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TC-E2E-P1-M9-002 — Accounting Period Close Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-test-data-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Test Data Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-test-execution-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Test Execution Order
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="end-to-end-test-cases-build-a-biz-scenario">End-to-End Test Cases — "Build-A-Biz" Scenario<a class="headerlink" href="#end-to-end-test-cases-build-a-biz-scenario" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="1-scenario-overview">1. Scenario Overview<a class="headerlink" href="#1-scenario-overview" title="Permanent link">&para;</a></h2>
+<p>The <strong>Build-A-Biz</strong> scenario is the primary end-to-end acceptance test for EnerFusion. It traces a fictitious oil and gas company from initial formation through two full months of operated production, ownership changes, prior-period adjustments, inbound royalty income (check input), and outside-operated property setup.</p>
+<p>The scenario is divided into two phases that mirror the EnerFusion delivery phases:</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Coverage</th>
+<th>Months Simulated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phase 1</strong></td>
+<td>Company formation, master data, first month operated cycle (M1 → M7)</td>
+<td>Month 1</td>
+</tr>
+<tr>
+<td><strong>Phase 2</strong></td>
+<td>Balancing, ownership transfers, prior-period adjustments, check input, outside-operated</td>
+<td>Month 2 + retrospective</td>
+</tr>
+</tbody>
+</table>
+<h3 id="business-narrative-the-biz">Business Narrative — "The Biz"<a class="headerlink" href="#business-narrative-the-biz" title="Permanent link">&para;</a></h3>
+<p>A new oil and gas company is formed with a 50/50 Joint Venture partner. Two wells are drilled:</p>
+<ul>
+<li><strong>Well 1</strong> — Oil and gas producer; 50/50 working interest split with JV partner; 1/8 royalty interest owed to a landowner (Farmer Ted); burden shared pro-rata between the two WI owners</li>
+<li><strong>Well 2</strong> — Oil and gas producer; same 50/50 WI split; additionally carries a 2% override royalty (ORRI) owed to a neighboring landowner</li>
+</ul>
+<p>Both wells produce into separate Oil and Gas Delivery Networks. Gas is sold under individual WI-owner contracts; oil is marketed under a single Division Order sales arrangement. In Month 2, Farmer Ted transfers his royalty interest to his two sons; one son has no valid address and must be suspended. A prior-period price correction triggers Prior Period Adjustments (PPAs). The company also begins receiving royalty income checks from the JV partner for a non-operated interest.</p>
+<hr />
+<h2 id="2-test-case-conventions">2. Test Case Conventions<a class="headerlink" href="#2-test-case-conventions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TC-ID</strong></td>
+<td><code>E2E-Pn-Mxx-nnn</code> — Phase, Module, sequence</td>
+</tr>
+<tr>
+<td><strong>Module</strong></td>
+<td>EnerFusion module code (M1–M9)</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>Happy Path</code> | <code>Negative</code> | <code>Edge Case</code></td>
+</tr>
+<tr>
+<td><strong>Priority</strong></td>
+<td><code>P1 — Blocker</code> | <code>P2 — High</code> | <code>P3 — Medium</code></td>
+</tr>
+<tr>
+<td><strong>Auth Scope</strong></td>
+<td>API scope required to execute</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-phase-1-test-cases-company-formation-first-month-operations">3. Phase 1 Test Cases — Company Formation &amp; First Month Operations<a class="headerlink" href="#3-phase-1-test-cases-company-formation-first-month-operations" title="Permanent link">&para;</a></h2>
+<h3 id="31-master-data-company-setup">3.1 Master Data &amp; Company Setup<a class="headerlink" href="#31-master-data-company-setup" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p1-m2-001-create-business-partners-customers-vendors">TC-E2E-P1-M2-001 — Create Business Partners (Customers / Vendors)<a class="headerlink" href="#tc-e2e-p1-m2-001-create-business-partners-customers-vendors" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M2 — Ownership &amp; DOI</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>ownership:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong>
+- No existing business partners with test company names
+- Azure AD user with <code>ownership:write</code> scope</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/business-partners</code> with <code>partnerType: customer</code>, <code>accountGroup: EP01</code>, <code>companyCode: &lt;test&gt;</code>, <code>intercompanyCode: &lt;affiliate code&gt;</code> for the Oil &amp; Gas Affiliate</td>
+<td>HTTP 201; <code>businessPartnerId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Repeat for: Oil Transportation Affiliate, Oil Marketing Affiliate (with sales org), Gas Marketing Affiliate (with sales org), Gas Pipeline Affiliate</td>
+<td>HTTP 201 each; all <code>isAffiliate: true</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST /api/v1/business-partners</code> for JV Partner — <code>intercompanyCode: null</code>, <code>accountGroup: EP01</code></td>
+<td>HTTP 201; <code>isAffiliate: false</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Create vendors: Oil &amp; Gas Affiliate, JV Partner, Royalty Owner 1 (Farmer Ted), Override Royalty Owner 1</td>
+<td>HTTP 201 each</td>
+</tr>
+<tr>
+<td>5</td>
+<td>For Royalty Owner 1: set <code>paymentMethod: CHECK</code>, <code>ownerType: RI</code></td>
+<td><code>paymentMethod</code> and <code>ownerType</code> persisted</td>
+</tr>
+<tr>
+<td>6</td>
+<td>For Override Royalty Owner 1: set <code>ownerType: ORRI</code></td>
+<td><code>ownerType: ORRI</code> persisted</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>GET /api/v1/business-partners?accountGroup=EP01</code></td>
+<td>All 10 partners returned in list</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Expected Final State:</strong> 10 business partners active; affiliates have intercompany codes; royalty owners have correct owner types and payment methods.</p>
+<hr />
+<h4 id="tc-e2e-p1-m2-002-create-jv-partner-and-joa-structure">TC-E2E-P1-M2-002 — Create JV Partner and JOA Structure<a class="headerlink" href="#tc-e2e-p1-m2-002-create-jv-partner-and-joa-structure" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M2 — Ownership &amp; DOI</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>ownership:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> JV Partner business partner created (TC-E2E-P1-M2-001)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/ventures</code> with <code>ventureType: JV</code>, <code>equityPercentage: 50.0</code> linking to JV Partner BP</td>
+<td>HTTP 201; <code>ventureId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>POST /api/v1/ventures/{id}/cost-centers</code> to assign a cost center</td>
+<td>Cost center linked to venture</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>GET /api/v1/ventures/{id}</code></td>
+<td>Venture shows correct JV structure and cost center</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="tc-e2e-p1-m1-001-create-well-and-production-hierarchy">TC-E2E-P1-M1-001 — Create Well and Production Hierarchy<a class="headerlink" href="#tc-e2e-p1-m1-001-create-well-and-production-hierarchy" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M1 — Production &amp; Volume Allocation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>production:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Company code and cost center configured</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/production/fields</code> — create Field</td>
+<td>HTTP 201; <code>fieldId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>POST /api/v1/production/reservoirs</code> — create Reservoir linked to Field</td>
+<td>HTTP 201</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST /api/v1/production/wells</code> — create Well 1 with unique API number</td>
+<td>HTTP 201; <code>wellId</code> returned</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Repeat for Well 2 with different API number</td>
+<td>HTTP 201</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>POST /api/v1/production/well-completions</code> — create WC1 linked to Well 1, Field, Reservoir, UOM Group</td>
+<td>HTTP 201; <code>wcId</code> returned</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Repeat for WC2 linked to Well 2</td>
+<td>HTTP 201</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>GET /api/v1/production/well-completions</code></td>
+<td>Both WCs returned with correct field/reservoir links</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Negative Test (TC-E2E-P1-M1-001N):</strong> Attempt to create a WC with a duplicate API number → HTTP 409 Conflict.</p>
+<hr />
+<h4 id="tc-e2e-p1-m2-003-create-venture-base-dois-and-division-orders">TC-E2E-P1-M2-003 — Create Venture, Base DOIs, and Division Orders<a class="headerlink" href="#tc-e2e-p1-m2-003-create-venture-base-dois-and-division-orders" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M2 — Ownership &amp; DOI</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>ownership:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Business partners and WCs created (TC-E2E-P1-M2-001, TC-E2E-P1-M1-001)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/ownership/ventures/{id}/doi</code> — create Base DOI for WC1</td>
+<td>HTTP 201; <code>doiId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Add owner interests for WC1 DOI: <code>WI: 0.50000000</code> (Our Company), <code>WI: 0.50000000</code> (JV Partner), <code>RI: 0.12500000</code> (Farmer Ted)</td>
+<td>All interests created</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Verify DOI balance: <code>GET /api/v1/ownership/doi/{id}/validation</code></td>
+<td><code>balanced: true</code>; NRI sum = 0.875 after RI burden</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Create Base DOI for WC2; add same WI split plus <code>ORRI: 0.02000000</code> (Neighbor)</td>
+<td>HTTP 201</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Verify WC2 DOI balance</td>
+<td><code>balanced: true</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>POST /api/v1/ownership/doi/{id}/approve</code> for both DOIs</td>
+<td><code>doiStatus: approved</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>POST /api/v1/ownership/doi/{id}/check-in</code></td>
+<td><code>doiStatus: checked_in</code>; effective date set</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Configure DOI Accounting rules: payment method, minimum threshold, withholding</td>
+<td>Configuration persisted</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>GET /api/v1/ownership/doi/{id}/owners</code></td>
+<td>Returns 3 owners for WC1, 4 owners for WC2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Negative Test (TC-E2E-P1-M2-003N):</strong> Attempt to add a WI interest that causes DOI to exceed 1.0 → HTTP 422 with validation message "Decimal interests would exceed 1.0".</p>
+<hr />
+<h4 id="tc-e2e-p1-m1-002-create-delivery-networks-oil-and-gas">TC-E2E-P1-M1-002 — Create Delivery Networks (Oil and Gas)<a class="headerlink" href="#tc-e2e-p1-m1-002-create-delivery-networks-oil-and-gas" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M1 — Production &amp; Volume Allocation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>production:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> WCs created (TC-E2E-P1-M1-001)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Create Measurement Points: Tank Lease, Tank Sales, Gas Sales Meter</td>
+<td>Three MPs created</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Define tank strapping characteristics for Tank Lease MP</td>
+<td>Strapping table linked</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Create Oil Delivery Network; assign allocation method <code>division_order_sales</code>; link WCs to Tank MPs</td>
+<td>Oil DN created</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Create Gas Delivery Network; assign allocation method <code>sales_point_originated</code>; link WCs to Gas Meter MP</td>
+<td>Gas DN created</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Define Volume Types per DN: Oil → <code>inventory</code>, <code>sales</code>; Gas → <code>fuel_use</code>, <code>sales</code></td>
+<td>VTs configured</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Associate transporter/purchaser customers to sales MPs</td>
+<td>Customer links persisted</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>GET /api/v1/production/delivery-networks</code></td>
+<td>Both DNs returned with correct WC links and MPs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="tc-e2e-p1-m4-001-create-contracts-pricing-formulas-and-vcrs">TC-E2E-P1-M4-001 — Create Contracts, Pricing Formulas, and VCRs<a class="headerlink" href="#tc-e2e-p1-m4-001-create-contracts-pricing-formulas-and-vcrs" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M4 — Contracts, Pricing &amp; Valuation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>valuation:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Business partners, DNs, and DOIs created</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/contracts</code> — Oil Sales contract linked to oil purchaser customer and Tank Sales MP</td>
+<td>HTTP 201</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Create Gas Sales contract for Our Company WI (marketed gas)</td>
+<td>HTTP 201</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Create Gas contract for JV Partner with <code>paymentType: TAKE_IN_KIND</code></td>
+<td><code>paymentType: TIK</code> persisted</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Create Valuation Formula for Oil: formula type <code>posted_price</code>, gravity scale reference</td>
+<td>Formula created</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Create Valuation Formula for Gas: includes compression marketing deduction</td>
+<td>Formula created</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Create VCR entries linking each contract+MP to the appropriate formula</td>
+<td>VCRs created</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>POST /api/v1/contracts/{id}/marketing-deduct-rates</code> — compression rate for gas</td>
+<td>Rate persisted</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>GET /api/v1/contracts</code></td>
+<td>All contracts returned</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="32-first-month-operations-production">3.2 First Month Operations — Production<a class="headerlink" href="#32-first-month-operations-production" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p1-m1-003-record-production-measurements">TC-E2E-P1-M1-003 — Record Production Measurements<a class="headerlink" href="#tc-e2e-p1-m1-003-record-production-measurements" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M1 — Production &amp; Volume Allocation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>production:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> DNs and volume types configured (TC-E2E-P1-M1-002)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/production/well-tests</code> for WC1 and WC2 — enter oil rate, GOR, water cut</td>
+<td>Well tests recorded</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>POST /api/v1/production/downtime</code> for any periods of downtime</td>
+<td>Downtime records persisted; uptime fraction calculated</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST /api/v1/production/tank-gauges</code> — opening and closing gauge readings for Tank Lease</td>
+<td>Gauge readings recorded; gross volume calculated</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>POST /api/v1/production/tank-gauges</code> — Tank Sales readings</td>
+<td>Gauge readings recorded</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>POST /api/v1/production/meter-volumes</code> — gas sales meter readings (with seal identifier)</td>
+<td>Gas volumes recorded; transformed to standard conditions</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>GET /api/v1/production/measurements?period=&lt;month1&gt;</code></td>
+<td>All measurements returned for the period</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="tc-e2e-p1-m1-004-run-production-volume-allocation">TC-E2E-P1-M1-004 — Run Production Volume Allocation<a class="headerlink" href="#tc-e2e-p1-m1-004-run-production-volume-allocation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M1 — Production &amp; Volume Allocation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>production:execute</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> All measurements recorded for Month 1 (TC-E2E-P1-M1-003)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/production/allocation-runs</code> — trigger allocation for Oil DN, period Month 1</td>
+<td><code>allocationRunId</code> returned; status <code>running</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Poll <code>GET /api/v1/production/allocation-runs/{id}</code></td>
+<td>Status transitions to <code>completed</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Repeat for Gas DN</td>
+<td><code>completed</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>GET /api/v1/production/wc-volumes?wcId={wc1}&amp;period=&lt;month1&gt;</code></td>
+<td>WC1 shows allocated oil and gas volumes by VT</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Verify: oil volumes balance to tank measurements; gas volumes balance to meter</td>
+<td><code>allocationBalanced: true</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>GET /api/v1/production/allocation-runs/{id}/discrepancy</code></td>
+<td>Discrepancy report: 0% variance (within tolerance)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Negative Test (TC-E2E-P1-M1-004N):</strong> Trigger allocation when measurements are incomplete → HTTP 422 "Allocation blocked: missing meter readings for Gas DN".</p>
+<hr />
+<h3 id="33-first-month-operations-contractual-allocation">3.3 First Month Operations — Contractual Allocation<a class="headerlink" href="#33-first-month-operations-contractual-allocation" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p1-m3-001-generate-and-enter-contract-sales-template">TC-E2E-P1-M3-001 — Generate and Enter Contract Sales Template<a class="headerlink" href="#tc-e2e-p1-m3-001-generate-and-enter-contract-sales-template" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M3 — Contractual Allocation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>allocation:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Production allocation completed (TC-E2E-P1-M1-004)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/allocation/templates/generate</code> — generate contract sales template for both DNs, Month 1</td>
+<td>Template rows created for each contract × sales point</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>PUT /api/v1/allocation/templates/{id}/actuals</code> — enter gas pipeline actuals for each contract</td>
+<td>Actuals recorded</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST /api/v1/allocation/runs</code> — run Contractual Allocation for Gas DN</td>
+<td><code>allocationRunId</code> returned</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Poll until <code>completed</code></td>
+<td>Status <code>completed</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Verify: JV Partner's gas volume shows <code>paymentType: TIK</code>; no cash value generated</td>
+<td><code>netValue: 0</code> for TIK contract</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Repeat CA run for Oil DN</td>
+<td><code>completed</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>GET /api/v1/allocation/results?ventureId={id}&amp;period=&lt;month1&gt;</code></td>
+<td>Owner-level allocated volumes returned for all contracts</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="34-first-month-operations-valuation">3.4 First Month Operations — Valuation<a class="headerlink" href="#34-first-month-operations-valuation" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p1-m4-002-enter-prices-and-run-valuation">TC-E2E-P1-M4-002 — Enter Prices and Run Valuation<a class="headerlink" href="#tc-e2e-p1-m4-002-enter-prices-and-run-valuation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M4 — Contracts, Pricing &amp; Valuation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>valuation:execute</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> CA completed (TC-E2E-P1-M3-001)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/valuation/posted-prices</code> — enter oil posted price for Month 1 ($/BBL)</td>
+<td>Price recorded</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>POST /api/v1/valuation/formula-prices</code> — enter gas spot price (fixed)</td>
+<td>Price recorded</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST /api/v1/valuation/runs</code> — trigger valuation for Oil DN, Month 1, <code>draftMode: true</code></td>
+<td><code>valuationRunId</code> returned; status <code>running</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Poll until <code>completed</code></td>
+<td>Status <code>completed</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>GET /api/v1/valuation/runs/{id}/settlement-statements</code></td>
+<td>Draft settlement statements returned with gross value, deductions, net value</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Verify: oil gravity differential applied; compression deduction calculated for gas</td>
+<td>Deductions match formula configurations</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Verify: severance tax calculated per state rate</td>
+<td>Tax amounts populated</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>POST /api/v1/valuation/runs/{id}/post</code> — post the Oil DN valuation</td>
+<td><code>statementStatus: posted</code>; GL entries generated</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Repeat steps 3–8 for Gas DN</td>
+<td>Gas statements posted</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>GET /api/v1/valuation/runs/{id}/accounting-detail</code></td>
+<td>GL debit/credit entries visible</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Negative Test (TC-E2E-P1-M4-002N):</strong> Post valuation when oil price is not entered → HTTP 422 "Valuation blocked: no price found for product OIL, period Month 1".</p>
+<hr />
+<h3 id="35-first-month-operations-revenue-distribution">3.5 First Month Operations — Revenue Distribution<a class="headerlink" href="#35-first-month-operations-revenue-distribution" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p1-m6-001-run-revenue-distribution">TC-E2E-P1-M6-001 — Run Revenue Distribution<a class="headerlink" href="#tc-e2e-p1-m6-001-run-revenue-distribution" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M6 — Revenue Distribution &amp; Accounting</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>revenue:execute</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Valuation statements posted (TC-E2E-P1-M4-002)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/revenue/distribution/run</code> — trigger distribution run for Month 1</td>
+<td><code>distributionRunId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Poll until <code>completed</code></td>
+<td><code>runStatus: completed</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>GET /api/v1/revenue/distribution/runs/{id}/owners</code></td>
+<td>Owner distribution records returned for all owners</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Verify WC1: Our Company WI, JV Partner WI, Farmer Ted RI distributions present</td>
+<td>3 distributions for WC1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Verify WC2: 4 distributions including Neighbor ORRI</td>
+<td>4 distributions for WC2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Verify JV Partner TIK: <code>netValue: 0</code></td>
+<td>TIK owner not paid</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Verify Farmer Ted: <code>grossValue = settlement.grossValue × 0.125</code>; severance tax correctly shared</td>
+<td>Values match formula</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>GET /api/v1/revenue/documents</code> — list RADs</td>
+<td>RADs generated for the run</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>POST /api/v1/revenue/documents/{id}/gl-posting</code> — submit RAD to GL</td>
+<td><code>postingStatus: posted</code>; <code>externalDocumentNumber</code> returned from SAP FI</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Edge Case (TC-E2E-P1-M6-001E):</strong> Farmer Ted has no payment method configured → distribution record shows <code>suspenseFlag: true</code>, <code>suspenseReason: "No valid payment method"</code>.</p>
+<hr />
+<h3 id="36-first-month-operations-payment-processing">3.6 First Month Operations — Payment Processing<a class="headerlink" href="#36-first-month-operations-payment-processing" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p1-m7-001-execute-payment-run">TC-E2E-P1-M7-001 — Execute Payment Run<a class="headerlink" href="#tc-e2e-p1-m7-001-execute-payment-run" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M7 — Payment Processing &amp; Check Input</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P2 — High</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>payments:execute</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Revenue distribution completed (TC-E2E-P1-M6-001); Owner Attribute Groups configured with minimum threshold</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/payments/runs</code> — trigger payment run, scope: all ventures, Month 1</td>
+<td><code>paymentRunId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>GET /api/v1/payments/runs/{id}</code> — validate step</td>
+<td><code>runStep: validate</code>; validation errors list empty</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Advance to extract step</td>
+<td>All owners with payable distributions extracted</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>GET /api/v1/payments/runs/{id}/variance</code> — variance analysis</td>
+<td>Prior period comparison shown; Month 1 has no prior so baseline established</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Advance to journalize</td>
+<td>GL payment entries created</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Advance to finalize</td>
+<td>Owner payment records locked</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Advance to output</td>
+<td>Check file or EFT file generated</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>GET /api/v1/payments/runs/{id}/owner-payments</code></td>
+<td>Payment records with <code>paymentStatus: issued</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Verify: Farmer Ted's distribution in suspense → <code>paymentStatus: suspended</code></td>
+<td>Suspended distribution not in payment file</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Negative Test (TC-E2E-P1-M7-001N):</strong> Attempt to output payment run when journalize step has not completed → HTTP 409 "Payment run is not in finalizable state".</p>
+<hr />
+<h2 id="4-phase-2-test-cases-balancing-ownership-changes-check-input">4. Phase 2 Test Cases — Balancing, Ownership Changes &amp; Check Input<a class="headerlink" href="#4-phase-2-test-cases-balancing-ownership-changes-check-input" title="Permanent link">&para;</a></h2>
+<h3 id="41-balancing-agreement">4.1 Balancing Agreement<a class="headerlink" href="#41-balancing-agreement" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p2-m5-001-create-and-generate-pba-statement">TC-E2E-P2-M5-001 — Create and Generate PBA Statement<a class="headerlink" href="#tc-e2e-p2-m5-001-create-and-generate-pba-statement" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M5 — Balancing Workplace</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P2 — High</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>balancing:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Month 1 CA completed; WCs and contracts configured</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/balancing/pbas</code> — create Product Balancing Agreement, linked to both WCs</td>
+<td><code>pbaId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>POST /api/v1/balancing/pbas/{id}/entities</code> — assign WC1 and WC2</td>
+<td>Entities linked</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST /api/v1/balancing/pbas/{id}/statements/generate</code> — generate statement for Month 1</td>
+<td>Statement generated with over/under positions</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>GET /api/v1/balancing/pbas/{id}/statements/{stmtId}</code></td>
+<td>Statement detail shows cumulative over/short per owner</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Verify: JV Partner TIK → balance position reflected (they took in-kind, no cash shortfall)</td>
+<td>TIK balance correctly modeled</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="42-ownership-change-owner-transfer">4.2 Ownership Change — Owner Transfer<a class="headerlink" href="#42-ownership-change-owner-transfer" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p2-m2-001-transfer-royalty-interest-to-two-new-owners">TC-E2E-P2-M2-001 — Transfer Royalty Interest to Two New Owners<a class="headerlink" href="#tc-e2e-p2-m2-001-transfer-royalty-interest-to-two-new-owners" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M2 — Ownership &amp; DOI</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>ownership:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Month 1 closed; Farmer Ted (RI) active on WC1 DOI</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Create two new vendor BPs: Son 1 and Son 2</td>
+<td>Two new BPs created</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Son 2: no valid mailing address — <code>paymentStatus: suspend</code>, <code>suspenseReason: "No valid address"</code></td>
+<td>Suspense flag set</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST /api/v1/ownership/transfer-requests</code> — <code>transferType: with_funds</code>; source: Farmer Ted; <code>relativeTransfer: 100%</code>; effective: first day of Month 2</td>
+<td><code>transferRequestId</code> returned</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>GET /api/v1/ownership/doi/{doiId}/owners</code> → get current Farmer Ted interest rows; add them to transfer request</td>
+<td>Interest rows linked</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Add new owners to transfer: Son 1 <code>RI: 0.0625</code>, Son 2 <code>RI: 0.0625</code> (split 50/50 of 1/8)</td>
+<td>New owner interests staged</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>POST /api/v1/ownership/transfer-requests/{id}/release</code></td>
+<td><code>requestStatus: released</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>POST /api/v1/ownership/transfer-requests/{id}/approve</code></td>
+<td><code>requestStatus: approved</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>POST /api/v1/ownership/transfer-requests/{id}/execute</code></td>
+<td>Execution job started</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Poll until <code>executionStatus: completed</code></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>GET /api/v1/ownership/doi/{doiId}/owners?effectiveDate=&lt;month2-start&gt;</code></td>
+<td>Farmer Ted no longer active; Son 1 and Son 2 appear at 0.0625 each</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>GET /api/v1/ownership/chain-of-title/{doiId}</code></td>
+<td>Chain of title entry shows transfer event with from/to owners and effective date</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Negative Test (TC-E2E-P2-M2-001N):</strong> Attempt transfer where new owner interests sum to more than Farmer Ted's original interest → HTTP 422 "New owner interests exceed transferred interest".</p>
+<p><strong>Edge Case (TC-E2E-P2-M2-001E):</strong> Son 2 is in suspense — distributions for Son 2's share should accumulate in suspense balance, not generate a payment.</p>
+<hr />
+<h3 id="43-prior-period-adjustments">4.3 Prior Period Adjustments<a class="headerlink" href="#43-prior-period-adjustments" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p2-m4-001-correct-doi-and-process-prior-period-notifications">TC-E2E-P2-M4-001 — Correct DOI and Process Prior Period Notifications<a class="headerlink" href="#tc-e2e-p2-m4-001-correct-doi-and-process-prior-period-notifications" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M4 — Contracts, Pricing &amp; Valuation / M2</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>ownership:write</code>, <code>valuation:execute</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Month 1 is closed; owner transfer executed</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Create a correction owner transfer request (type: correction, not with_funds) adjusting WC2 ORRI decimal for Month 1</td>
+<td><code>transferRequestId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Release, approve, and execute the correction</td>
+<td><code>executionStatus: completed</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>GET /api/v1/ownership/ppns?ventureId={id}&amp;period=&lt;month1&gt;</code></td>
+<td>PPNs generated — one for CA, one for VL (valuation)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Review PPN impact: <code>GET /api/v1/ownership/ppns/{ppnId}/impact</code></td>
+<td>Impact detail shows affected owner distributions</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Process CA PPN: <code>POST /api/v1/allocation/runs</code> with <code>ppaMode: true</code>, <code>ppnId: {caId}</code></td>
+<td>CA re-executed for Month 1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Process VL PPN: <code>POST /api/v1/valuation/runs</code> with <code>ppaMode: true</code>, <code>ppnId: {vlId}</code></td>
+<td>Valuation re-run for Month 1</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>GET /api/v1/valuation/runs/{id}/je-summary</code></td>
+<td>JE summary shows delta: only affected owner and accounts changed</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Post the PPA valuation run</td>
+<td><code>statementStatus: posted</code>; prior-period adjustment entries in GL</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="tc-e2e-p2-m4-002-price-change-triggering-ppn">TC-E2E-P2-M4-002 — Price Change Triggering PPN<a class="headerlink" href="#tc-e2e-p2-m4-002-price-change-triggering-ppn" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M4 — Contracts, Pricing &amp; Valuation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>valuation:write</code>, <code>valuation:execute</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Month 1 posted; gas price requires correction</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>PUT /api/v1/valuation/formula-prices/{id}</code> — update gas spot price for Month 1</td>
+<td>System detects this affects a closed period</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Response includes <code>ppnGenerated: true</code>, <code>ppnId: {id}</code></td>
+<td>PPN created automatically</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>GET /api/v1/ownership/ppns/{ppnId}/impact</code></td>
+<td>Impact detail shows gas DN affected; oil DN not impacted</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Provide processing rationale: <code>PUT /api/v1/ownership/ppns/{ppnId}</code> with <code>disposition: process</code>, <code>rationale: "Corrected gas price per purchaser statement"</code></td>
+<td>PPN rationale saved</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Process PPN through DN Workplace: <code>POST /api/v1/valuation/runs</code> with <code>ppaMode: true</code></td>
+<td>Re-valuation runs for gas only</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>GET /api/v1/valuation/runs/{id}/je-detail?compare=true</code></td>
+<td>Comparison report shows line-level differences vs. original</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Post the corrected run</td>
+<td><code>statementStatus: posted</code>; delta entries in GL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Edge Case (TC-E2E-P2-M4-002E):</strong> Verify JV Partner TIK gas shows no cash impact (price change affects their volume position only) — <code>netValue: 0</code> on TIK lines even after price correction.</p>
+<hr />
+<h3 id="44-check-input-royalty-income-from-jv-partner">4.4 Check Input — Royalty Income from JV Partner<a class="headerlink" href="#44-check-input-royalty-income-from-jv-partner" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p2-m7-001-setup-check-input-cross-references">TC-E2E-P2-M7-001 — Setup Check Input Cross-References<a class="headerlink" href="#tc-e2e-p2-m7-001-setup-check-input-cross-references" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M7 — Payment Processing &amp; Check Input</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P2 — High</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>payments:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> JV Partner BP active; DOI for non-operated interest exists</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>GET /api/v1/payments/check-layouts</code></td>
+<td>Retrieve available check layout templates</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>POST /api/v1/payments/remitter-layout-xref</code> — map JV Partner remitter to the default check layout</td>
+<td>Cross-reference created</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST /api/v1/payments/pdx</code> — create PDX record for JV Partner: link to our DOI; set <code>specialDistribution: true</code>, <code>distributionBasis: net_amount</code>, <code>distributeTo: our_WI_only</code></td>
+<td>PDX record created; <code>specialDistribution: true</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>GET /api/v1/payments/pdx?remitterId={jvPartnerId}</code></td>
+<td>PDX record returned with correct DOI link</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="tc-e2e-p2-m7-002-enter-and-process-inbound-check-ppd">TC-E2E-P2-M7-002 — Enter and Process Inbound Check (PPD)<a class="headerlink" href="#tc-e2e-p2-m7-002-enter-and-process-inbound-check-ppd" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M7 — Payment Processing &amp; Check Input</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P2 — High</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>payments:write</code>, <code>payments:execute</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Check layout and PDX cross-reference configured (TC-E2E-P2-M7-001)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/payments/incoming-checks</code> — enter check: <code>remitterId: {jvPartner}</code>, <code>checkNumber</code>, <code>checkDate</code>, <code>checkAmount</code>, <code>period: &lt;month1&gt;</code></td>
+<td>Check record created; <code>checkStatus: entered</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>GET /api/v1/payments/incoming-checks/{id}</code></td>
+<td>Check record returned with line items per product</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST /api/v1/payments/incoming-checks/{id}/validate</code></td>
+<td>Validation passes; PDX cross-reference resolved; DOI matched</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>POST /api/v1/payments/incoming-checks/{id}/value</code> — run valuation against the check</td>
+<td>Check valued; distribution lines calculated using special distribution (net basis)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Verify: Burdened owner (JV Partner's share of our overhead) shown with <code>payCode: BALANCING</code>, <code>netValue: 0</code></td>
+<td>Balancing owner receives distribution but is not paid</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Verify: Our WI shows correct net distribution</td>
+<td>Our interest = check net amount</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>POST /api/v1/payments/incoming-checks/{id}/post</code></td>
+<td><code>checkStatus: posted</code>; accounting entries committed to GL</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>GET /api/v1/payments/incoming-checks/{id}/accounting-detail</code></td>
+<td>Debit cash / credit revenue entries visible</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Negative Test (TC-E2E-P2-M7-002N):</strong> Enter check with <code>remitterId</code> that has no PDX cross-reference → HTTP 422 "No PDX cross-reference found for remitter".</p>
+<hr />
+<h3 id="45-outside-operated-property">4.5 Outside Operated Property<a class="headerlink" href="#45-outside-operated-property" title="Permanent link">&para;</a></h3>
+<h4 id="tc-e2e-p2-m1-001-setup-non-allocated-delivery-network-outside-operated">TC-E2E-P2-M1-001 — Setup Non-Allocated Delivery Network (Outside Operated)<a class="headerlink" href="#tc-e2e-p2-m1-001-setup-non-allocated-delivery-network-outside-operated" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M1 — Production &amp; Volume Allocation</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P3 — Medium</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>production:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> OO property BP (the operator) configured as a business partner</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Create a minimal DN with a single Measurement Point (our sales point only)</td>
+<td>DN created</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Set DN to <code>allocationMethod: non_allocated</code></td>
+<td>DN will accept manually entered volumes; no allocation run needed</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>POST /api/v1/production/mp-volumes</code> — manually enter MP-level gas volume as reported by operator</td>
+<td>Volumes recorded directly at MP level</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>GET /api/v1/production/mp-volumes?period=&lt;month1&gt;</code></td>
+<td>Volumes returned; no WC-level allocation records</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="tc-e2e-p2-m2-002-outside-operated-doi-with-balancing-owner">TC-E2E-P2-M2-002 — Outside Operated DOI with Balancing Owner<a class="headerlink" href="#tc-e2e-p2-m2-002-outside-operated-doi-with-balancing-owner" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M2 — Ownership &amp; DOI</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P3 — Medium</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>ownership:write</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> OO DN created (TC-E2E-P2-M1-001)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Create generic Balancing Owner BP: <code>ownerType: WI</code>, <code>payCode: BALANCING</code></td>
+<td>BP created</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Create DOI for OO venture: Our WI interest only (our burdens) + Balancing Owner to represent the 100% view</td>
+<td>DOI created</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Verify: <code>decimalInterest</code> of Balancing Owner fills the gap to 1.0</td>
+<td>DOI balanced at 1.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>POST /api/v1/valuation/runs</code> for OO DN using <code>valuationMethod: system_valued</code></td>
+<td>Valuation run triggered</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>GET /api/v1/valuation/runs/{id}/settlement-statements</code></td>
+<td>Our WI distributions correct; Balancing Owner shows distribution but no payment</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-regulatory-reporting-test-cases">5. Regulatory Reporting Test Cases<a class="headerlink" href="#5-regulatory-reporting-test-cases" title="Permanent link">&para;</a></h2>
+<h4 id="tc-e2e-p1-m8-001-generate-onrr-2014-report-federal-lease">TC-E2E-P1-M8-001 — Generate ONRR-2014 Report (Federal Lease)<a class="headerlink" href="#tc-e2e-p1-m8-001-generate-onrr-2014-report-federal-lease" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M8 — Regulatory, Tax &amp; Royalty Reporting</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P2 — High</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>regulatory:execute</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> Month 1 valuation posted; venture linked to ONRR lease hierarchy; payor code configured</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/regulatory/reports/run</code> — <code>templateCode: ONRR-2014</code>, <code>period: &lt;month1&gt;</code></td>
+<td><code>reportRunId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Poll until <code>runStatus: review</code></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>GET /api/v1/regulatory/reports/runs/{id}/lines</code></td>
+<td>TC 01 lines generated for each PPN group</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Verify: transportation allowance present → TC 11 line generated</td>
+<td>TC 11 present</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Verify: processing allowance present → TC 13 line generated; not mapped to transport bucket</td>
+<td>TC 13 present; <code>transactionType: processing_allowance</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>GET /api/v1/regulatory/reports/runs/{id}/lines?tcCode=TC15</code></td>
+<td>No TC 15 lines (production was non-zero)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>PUT /api/v1/regulatory/reports/runs/{id}/approve</code></td>
+<td><code>runStatus: approved</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>POST /api/v1/regulatory/reports/runs/{id}/submit</code></td>
+<td><code>runStatus: submitted</code>; <code>submissionReference</code> returned</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Negative Test (TC-E2E-P1-M8-001N):</strong> Run ONRR report when payor code is not configured → HTTP 422 "ONRR payor code not found for company code".</p>
+<hr />
+<h4 id="tc-e2e-p1-m8-002-generate-state-severance-tax-report">TC-E2E-P1-M8-002 — Generate State Severance Tax Report<a class="headerlink" href="#tc-e2e-p1-m8-002-generate-state-severance-tax-report" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M8 — Regulatory, Tax &amp; Royalty Reporting</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P2 — High</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>regulatory:execute</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> State tax rates configured for the chosen simulation state; Month 1 valuation posted</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/regulatory/reports/run</code> — <code>templateCode: &lt;state&gt;-SEV</code>, <code>period: &lt;month1&gt;</code></td>
+<td><code>reportRunId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Poll until <code>runStatus: review</code></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>GET /api/v1/regulatory/reports/runs/{id}/lines</code></td>
+<td>Lines returned: taxable volume, taxable value, tax due</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Verify: exemptions applied where applicable (royalty exemptions, stripper well)</td>
+<td>Exempt volumes excluded from taxable base</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Verify: tax amounts reconcile to M4 severance tax entries</td>
+<td>Tax amounts match valuation</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Approve and submit</td>
+<td><code>runStatus: submitted</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-administration-test-cases">6. Administration Test Cases<a class="headerlink" href="#6-administration-test-cases" title="Permanent link">&para;</a></h2>
+<h4 id="tc-e2e-p1-m9-001-onboarding-validation-before-go-live">TC-E2E-P1-M9-001 — Onboarding Validation Before Go-Live<a class="headerlink" href="#tc-e2e-p1-m9-001-onboarding-validation-before-go-live" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M9 — Administration &amp; ILM</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>admin:onboarding</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> All master data setup complete for the test venture</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>POST /api/v1/admin/onboarding/checklists</code> — create checklist for new venture</td>
+<td><code>checklistId</code> returned</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>POST /api/v1/admin/onboarding/checklists/{id}/run</code></td>
+<td>All checks executed</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Verify <code>DOI-BALANCE</code> passed: both DOIs sum to 1.0</td>
+<td><code>checkStatus: passed</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Verify <code>TAX-RATE-CONFIG</code> passed: severance tax rates present for the simulation state</td>
+<td><code>checkStatus: passed</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Verify <code>PAY-METHOD-ALL-OWNERS</code> — Son 2 in suspense (no address) → check shows warning, not failure</td>
+<td><code>checkStatus: passed</code> with warning annotation</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>GET /api/v1/admin/onboarding/checklists/{id}</code></td>
+<td><code>checklistStatus: passed</code> (or failed with specific items)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Negative Test (TC-E2E-P1-M9-001N):</strong> Run checklist when DOI does not sum to 1.0 → <code>DOI-BALANCE</code> check returns <code>failed</code>; <code>checklistStatus: failed</code>; venture activation blocked.</p>
+<hr />
+<h4 id="tc-e2e-p1-m9-002-accounting-period-close-sequence">TC-E2E-P1-M9-002 — Accounting Period Close Sequence<a class="headerlink" href="#tc-e2e-p1-m9-002-accounting-period-close-sequence" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module</td>
+<td>M9 — Administration &amp; ILM</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Happy Path</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>P1 — Blocker</td>
+</tr>
+<tr>
+<td>Auth Scope</td>
+<td><code>admin:calendar</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preconditions:</strong> All Month 1 close steps completed (production, valuation, distribution, payments, regulatory)</p>
+<p><strong>Test Steps:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>PUT /api/v1/admin/calendar/{companyCode}/{period}/soft-close</code></td>
+<td><code>periodStatus: soft_closed</code>; no new postings allowed</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Attempt to post a new valuation run for Month 1</td>
+<td>HTTP 409 "Period is soft-closed; postings not permitted"</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>PUT /api/v1/admin/calendar/{companyCode}/{period}/hard-close</code></td>
+<td><code>periodStatus: hard_closed</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Attempt to reopen the period via standard close endpoint</td>
+<td>HTTP 403 "Hard-closed period requires admin override"</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>GET /api/v1/admin/calendar/{companyCode}</code></td>
+<td>Month 1 shows <code>hard_closed</code>; Month 2 shows <code>open</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-test-data-summary">7. Test Data Summary<a class="headerlink" href="#7-test-data-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Phase 1</th>
+<th>Phase 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Business Partners</td>
+<td>10 (6 customers, 4 vendors)</td>
+<td>+2 (Son 1, Son 2)</td>
+</tr>
+<tr>
+<td>Wells</td>
+<td>2</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Well Completions</td>
+<td>2</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Delivery Networks</td>
+<td>2 (Oil, Gas)</td>
+<td>+1 (OO — non-allocated)</td>
+</tr>
+<tr>
+<td>Contracts</td>
+<td>3 (Oil, Gas WI, Gas TIK)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>DOIs</td>
+<td>2 (WC1, WC2)</td>
+<td>+1 (OO)</td>
+</tr>
+<tr>
+<td>Owner Interests</td>
+<td>7 (3 + 4 across 2 DOIs)</td>
+<td>+2 (Son 1, Son 2 replace Farmer Ted)</td>
+</tr>
+<tr>
+<td>Production Months</td>
+<td>1</td>
+<td>+1 (Month 2)</td>
+</tr>
+<tr>
+<td>PPNs Generated</td>
+<td>0</td>
+<td>2 (DOI correction + price change)</td>
+</tr>
+<tr>
+<td>Check Input Records</td>
+<td>0</td>
+<td>1 (JV Partner royalty check)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-test-execution-order">8. Test Execution Order<a class="headerlink" href="#8-test-execution-order" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Phase 1
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ├── M2: Create BPs → JV Venture
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ├── M1: Create Wells → WCs → DNs
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ├── M2: Create DOIs → Division Orders → Approve → Check-In
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  ├── M4: Create Contracts → Formulas → VCRs
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  ├── M1: Record Measurements → Run Production Allocation
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ├── M3: Generate Template → Enter Actuals → Run CA
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  ├── M4: Enter Prices → Run Valuation (draft) → Review → Post
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  ├── M6: Run Distribution → Post RADs
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  ├── M7: Run Payment Processing
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  ├── M8: Generate ONRR-2014 → State Severance Tax Report
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  └── M9: Onboarding Validation → Period Close
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Phase 2
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  ├── M5: Create PBA → Generate Statement
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  ├── M2: Owner Transfer (Farmer Ted → Son 1 + Son 2)
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  ├── M2: Correction Transfer → PPNs Generated
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  ├── M4: Process CA PPN → Process VL PPN → Post PPA
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  ├── M4: Price Change → PPN → Re-Valuation → Post
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  ├── M7: Setup Check Input (PDX, Remitter XRef)
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  ├── M7: Enter Check → Validate → Value → Post
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  ├── M1: OO Non-Allocated DN → Enter MP Volumes
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  ├── M2: OO DOI with Balancing Owner
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  └── M9: Period Close (Month 2)
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

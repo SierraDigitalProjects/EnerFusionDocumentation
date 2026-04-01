@@ -1,0 +1,2711 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Upstream Accounting Platform for North American Energy Operators">
+      
+      
+        <meta name="author" content="EnerFusion Product Team">
+      
+      
+      
+        <link rel="prev" href="../requirements/non-functional/">
+      
+      
+        <link rel="next" href="../architecture/modules/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Open Questions - EnerFusion Upstream Accounting — Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#open-questions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="EnerFusion Upstream Accounting — Documentation" class="md-header__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EnerFusion Upstream Accounting — Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Open Questions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../benefits/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benefits
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../assumptions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Assumptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../master-data/overview/" class="md-tabs__link">
+          
+  
+  
+  Master Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../requirements/functional/" class="md-tabs__link">
+          
+  
+  
+  Requirements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../architecture/modules/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../operations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../project-structure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Project Structure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-tabs__link">
+          
+  
+  
+  Module Specifications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../process-flows/payment-processing/" class="md-tabs__link">
+          
+  
+  
+  Process Flows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/uom-and-products/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pilot-scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pilot Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../test-cases/e2e-scenario/" class="md-tabs__link">
+          
+  
+  
+  Test Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="EnerFusion Upstream Accounting — Documentation" class="md-nav__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    EnerFusion Upstream Accounting — Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benefits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benefits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Master Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-data/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-data/centrally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centrally Managed (SAP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-data/locally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locally Managed (EnerFusion)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-data/not-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Not Managed in SAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/non-functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Non-Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#business-functional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business &amp; Functional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical &amp; Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data &amp; Migration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operations &amp; Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onrr-specific-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ONRR-Specific Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payment-processing-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Payment Processing Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contractual-allocation-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contractual Allocation Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tax-regulatory-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tax &amp; Regulatory Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolved-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolved Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/technical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M1 — Production & Volume Allocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M2-Ownership-DOI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2 — Ownership & DOI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M3-Contractual-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Base)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M3-Contractual-Allocation-enhanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Enhanced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M4-Contracts-Pricing-Valuation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M4 — Contracts, Pricing & Valuation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M5-Balancing-Workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M5 — Balancing Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M6-Revenue-Distribution-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M6 — Revenue Distribution & Accounting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M7-Payment-Processing-Check-Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7 — Payment Processing & Check Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M8-Regulatory-Tax-Royalty-Reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M8 — Regulatory, Tax & Royalty Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M9-Administration-ILM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M9 — Administration & ILM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-flows/payment-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payment Processing (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-flows/check-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check Input (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-flows/onrr-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONRR-2014 Processing (M8)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-flows/ar-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AR Workplace (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/uom-and-products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units of Measure & Products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/ad-valorem-true-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ad Valorem True-Up (M4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pilot-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Test Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test-cases/e2e-scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Scenario (Build-A-Biz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="open-questions">Open Questions<a class="headerlink" href="#open-questions" title="Permanent link">&para;</a></h1>
+<p>This document tracks outstanding decisions, unresolved design questions, and known risks that must be resolved before or during implementation. Each item has an owner and a target resolution date.</p>
+<p>Status: <strong>Open</strong> | <strong>In Progress</strong> | <strong>Resolved</strong> | <strong>Deferred</strong></p>
+<hr />
+<h2 id="business-functional">Business &amp; Functional<a class="headerlink" href="#business-functional" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Status</th>
+<th>Owner</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OQ-B-001</td>
+<td>Will cash balancing at PBA expiration be required in Phase 1, or is in-kind balancing sufficient for launch?</td>
+<td>Open</td>
+<td>Product Owner</td>
+<td>Phase 1 planning</td>
+<td>In-kind assumed in current M5 design; cash settlement requires additional pricing logic</td>
+</tr>
+<tr>
+<td>OQ-B-002</td>
+<td>Is FIRPTA withholding for foreign (non-US) owners in scope? What percentage of the owner population is foreign-domiciled?</td>
+<td>Open</td>
+<td>Tax/Legal</td>
+<td>Discovery</td>
+<td>Current scope assumes US-domiciled owners only</td>
+</tr>
+<tr>
+<td>OQ-B-003</td>
+<td>Which gas marketing scenarios require support — operator-marketed gas only, or third-party gas purchaser scenarios as well?</td>
+<td>Open</td>
+<td>Commercial</td>
+<td>Requirement review</td>
+<td>Affects M3 entitlement and M7 check input design</td>
+</tr>
+<tr>
+<td>OQ-B-004</td>
+<td>Does the client require automated e-filing submission to state agency portals (Texas RRC WRAP, ONRR PAAS), or manual export + upload?</td>
+<td>Open</td>
+<td>Compliance</td>
+<td>Phase 2 scope</td>
+<td>Automated e-filing could significantly reduce compliance team effort but adds integration complexity</td>
+</tr>
+<tr>
+<td>OQ-B-005</td>
+<td>Are non-calendar fiscal accounting periods required?</td>
+<td>Open</td>
+<td>Finance</td>
+<td>Requirement validation</td>
+<td>Current architecture assumes calendar-month reporting periods</td>
+</tr>
+<tr>
+<td>OQ-B-006</td>
+<td>What is the maximum historical data volume to be migrated from SAP PRA? (years of history, number of wells, DOI records)</td>
+<td>Open</td>
+<td>IT/Migration</td>
+<td>Data assessment</td>
+<td>Drives migration strategy, initial database sizing, and archive policy design</td>
+</tr>
+<tr>
+<td>OQ-B-007</td>
+<td>Will the platform serve multiple independent operating companies (multi-tenant) on a shared AKS cluster, or one operator per cluster?</td>
+<td>Open</td>
+<td>Architecture / IT</td>
+<td>Pre-Phase 1</td>
+<td>Determines tenant isolation strategy; shared cluster requires stricter namespace + RLS configuration</td>
+</tr>
+<tr>
+<td>OQ-B-008</td>
+<td>Is state income tax withholding from owner payments required for all states, or only states where the operator has nexus?</td>
+<td>Open</td>
+<td>Tax/Legal</td>
+<td>Tax review</td>
+<td>Owner Attribute Group supports withholding % but the list of applicable states needs to be confirmed</td>
+</tr>
+<tr>
+<td>OQ-B-009</td>
+<td>Are NGL fractionated components (ethane, propane, iC4, nC4, natural gasoline) priced individually, or as composite NGL?</td>
+<td>Open</td>
+<td>Commercial</td>
+<td>Pricing model review</td>
+<td>Affects M4 formula pricing and M8 NGL production reporting</td>
+</tr>
+<tr>
+<td>OQ-B-010</td>
+<td>What is the expected volume of monthly purchaser check records processed via CDEX/EDI 820?</td>
+<td>Open</td>
+<td>Finance / IT</td>
+<td>Volume assessment</td>
+<td>Drives M7 batch processing design and EDI middleware selection</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="technical-architecture">Technical &amp; Architecture<a class="headerlink" href="#technical-architecture" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Status</th>
+<th>Owner</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OQ-T-001</td>
+<td>Will the React SPA be deployed as a containerized bundle (current design) or served from Azure CDN / Static Web Apps?</td>
+<td>Open</td>
+<td>Architecture</td>
+<td>Phase 1 design</td>
+<td>CDN reduces AKS load for static assets but adds CDN cache invalidation complexity for versioned deployments</td>
+</tr>
+<tr>
+<td>OQ-T-002</td>
+<td>What is the agreed Service Bus tier? Standard supports topics/subscriptions; Basic does not.</td>
+<td>Open</td>
+<td>IT / Cloud</td>
+<td>Infrastructure provisioning</td>
+<td>Basic tier would block the event-driven inter-module architecture</td>
+</tr>
+<tr>
+<td>OQ-T-003</td>
+<td>Is a service mesh (Linkerd / Istio) required for mTLS, or is NGINX ingress + Azure APIM sufficient for the initial launch?</td>
+<td>Open</td>
+<td>Architecture</td>
+<td>Phase 1 design</td>
+<td>Service mesh adds operational complexity; initial launch may defer to APIM-only</td>
+</tr>
+<tr>
+<td>OQ-T-004</td>
+<td>What price index data provider will supply NYMEX_GAS and WTI_OIL values for formula pricing? (Platts, Argus, CME Group)</td>
+<td>Open</td>
+<td>Commercial / IT</td>
+<td>Data contracts</td>
+<td>Affects formula engine index feed design in M4</td>
+</tr>
+<tr>
+<td>OQ-T-005</td>
+<td>Will PgBouncer run as a sidecar container per service pod, or as a shared connection pooling deployment?</td>
+<td>Open</td>
+<td>Architecture</td>
+<td>Database design</td>
+<td>Sidecar gives per-service control; shared pooler reduces resource overhead</td>
+</tr>
+<tr>
+<td>OQ-T-006</td>
+<td>What is the target PostgreSQL Flexible Server SKU for production? (Compute tier, vCores, storage)</td>
+<td>Open</td>
+<td>IT / Cloud</td>
+<td>Sizing exercise</td>
+<td>Requires data volume assessment (OQ-B-006) and load testing results</td>
+</tr>
+<tr>
+<td>OQ-T-007</td>
+<td>Should gRPC be used for synchronous inter-service calls (M3 → M4 volume handoff), or should all inter-module communication be async via Service Bus?</td>
+<td>Open</td>
+<td>Architecture</td>
+<td>Phase 1 design</td>
+<td>gRPC adds latency benefits for large volume payloads but increases service coupling</td>
+</tr>
+<tr>
+<td>OQ-T-008</td>
+<td>Is Azure Application Gateway Ingress Controller (AGIC) preferred over NGINX Ingress Controller for AKS?</td>
+<td>Open</td>
+<td>IT / Cloud</td>
+<td>Infrastructure decision</td>
+<td>AGIC integrates with Azure WAF; NGINX offers more flexible routing rules</td>
+</tr>
+<tr>
+<td>OQ-T-009</td>
+<td>What is the disaster recovery target region? (e.g., East US 2 primary → West US 3 DR)</td>
+<td>Open</td>
+<td>IT / Cloud</td>
+<td>Business continuity planning</td>
+<td>Affects geo-replication configuration for PostgreSQL and Service Bus</td>
+</tr>
+<tr>
+<td>OQ-T-010</td>
+<td>Are there existing SAP BAPI or IDoc interfaces available for Business Partner replication, or will a custom RFC/API be needed?</td>
+<td>Open</td>
+<td>SAP / Integration</td>
+<td>SAP landscape review</td>
+<td>Affects integration layer design for centrally managed master data</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="data-migration">Data &amp; Migration<a class="headerlink" href="#data-migration" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Status</th>
+<th>Owner</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OQ-D-001</td>
+<td>What is the data quality of existing SAP PRA DOI records? Are decimal interests balanced to 1.0? Are all owners valid BPs?</td>
+<td>Open</td>
+<td>Data Governance</td>
+<td>Data quality assessment</td>
+<td>DOI migration requires pre-validation; unbalanced interests must be resolved before import</td>
+</tr>
+<tr>
+<td>OQ-D-002</td>
+<td>Will historical settlement statements from SAP PRA be migrated read-only to EnerFusion, or left in SAP for 7-year retention?</td>
+<td>Open</td>
+<td>Finance / IT</td>
+<td>Migration strategy</td>
+<td>Migrating historical statements simplifies AR/escheat analysis but increases migration scope</td>
+</tr>
+<tr>
+<td>OQ-D-003</td>
+<td>Are there any proprietary file formats from third-party field data capture systems that need to be supported for M1 volume ingestion?</td>
+<td>Open</td>
+<td>IT / Operations</td>
+<td>Interface inventory</td>
+<td>Affects M1 data ingestion API design</td>
+</tr>
+<tr>
+<td>OQ-D-004</td>
+<td>Are SAP PRA well API numbers consistent with current national API number registry? (Decommissioned wells, duplicate entries)</td>
+<td>Open</td>
+<td>Data Governance</td>
+<td>Data assessment</td>
+<td></td>
+</tr>
+<tr>
+<td>OQ-D-005</td>
+<td>What is the required data retention period for archived transactions? (US federal minimum is 7 years; some states require longer)</td>
+<td>Open</td>
+<td>Tax/Legal</td>
+<td>Legal review</td>
+<td>Drives M9 ILM archive policy configuration</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="operations-support">Operations &amp; Support<a class="headerlink" href="#operations-support" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Status</th>
+<th>Owner</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OQ-O-001</td>
+<td>Is there an existing Azure DevOps or GitHub Actions pipeline infrastructure that EnerFusion should integrate with?</td>
+<td>Open</td>
+<td>IT / DevOps</td>
+<td>Infra discovery</td>
+<td>Affects CI/CD pipeline design</td>
+</tr>
+<tr>
+<td>OQ-O-002</td>
+<td>Will a dedicated SRE / DevOps team operate the AKS cluster, or will EnerFusion be managed by the application team?</td>
+<td>Open</td>
+<td>IT</td>
+<td>Org design</td>
+<td>Affects runbook depth and operational handover documentation</td>
+</tr>
+<tr>
+<td>OQ-O-003</td>
+<td>What is the approved process for applying regulatory report format updates when states change filing requirements?</td>
+<td>Open</td>
+<td>Compliance / IT</td>
+<td>Process design</td>
+<td>Statutory report templates in M8 must be updatable without a full application release</td>
+</tr>
+<tr>
+<td>OQ-O-004</td>
+<td>Is Azure Monitor + Grafana the agreed observability stack, or are existing tools (Datadog, Splunk) already in use?</td>
+<td>Open</td>
+<td>IT / Operations</td>
+<td>Tool standardisation</td>
+<td>Affects observability configuration in Helm charts</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="onrr-specific-questions">ONRR-Specific Questions<a class="headerlink" href="#onrr-specific-questions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Status</th>
+<th>Owner</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OQ-ONRR-001</td>
+<td>What is the complete list of federal and Indian leases requiring ONRR-2014 filing?</td>
+<td>Open</td>
+<td>Compliance</td>
+<td>Pre-Phase 4</td>
+<td>Drives payor/company code cross-reference setup and Section 6 lease identification</td>
+</tr>
+<tr>
+<td>OQ-ONRR-002</td>
+<td>Are any leases subject to Section 6 additional royalty provisions? What are their current rates?</td>
+<td>Open</td>
+<td>Compliance</td>
+<td>ONRR master data setup</td>
+<td>Required to configure Section 6 default rates and lease-level overrides</td>
+</tr>
+<tr>
+<td>OQ-ONRR-003</td>
+<td>Does the operator have Indian mineral leases requiring Indian recoupment and estimate calculations?</td>
+<td>Open</td>
+<td>Compliance</td>
+<td>ONRR master data setup</td>
+<td>Indian recoupment is a separate calculation path requiring additional configuration</td>
+</tr>
+<tr>
+<td>OQ-ONRR-004</td>
+<td>What is the ONRR payor code(s) for each company code reporting?</td>
+<td>Open</td>
+<td>Compliance</td>
+<td>ONRR master data setup</td>
+<td>Payor codes are issued by ONRR and must be registered before filing can occur</td>
+</tr>
+<tr>
+<td>OQ-ONRR-005</td>
+<td>Are quality differential deductions (ERQADIFD) used in current valuation formulas?</td>
+<td>Open</td>
+<td>Commercial</td>
+<td>Formula review</td>
+<td>Affects TC 13 generation; must NOT be mapped to Processing Deduct bucket for federal leases</td>
+</tr>
+<tr>
+<td>OQ-ONRR-006</td>
+<td>Will ONRR-2014 processing run at venture/DOI level or well/WC level?</td>
+<td>Open</td>
+<td>Compliance / IT</td>
+<td>ONRR master data design</td>
+<td>Venture/DOI is recommended; WC-level is more granular but operationally burdensome</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="payment-processing-questions">Payment Processing Questions<a class="headerlink" href="#payment-processing-questions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Status</th>
+<th>Owner</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OQ-PP-001</td>
+<td>What hold codes are in use for suspended payments? How many user-defined hold reason codes are needed?</td>
+<td>Open</td>
+<td>Finance</td>
+<td>M7 configuration</td>
+<td>Hold code master list must be configured before payment processing can go live</td>
+</tr>
+<tr>
+<td>OQ-PP-002</td>
+<td>Are there JIB (Joint Interest Billing) netting arrangements where revenue is offset against JIB receivables before issuing checks?</td>
+<td>Open</td>
+<td>Finance / JIB</td>
+<td>M7 design</td>
+<td>JIB netting adds integration complexity between M7 and AR</td>
+</tr>
+<tr>
+<td>OQ-PP-003</td>
+<td>How many owners require non-resident alien (NRA) withholding? Which treaty rates apply?</td>
+<td>Open</td>
+<td>Tax / Legal</td>
+<td>Owner master data</td>
+<td>NRA rates are treaty-specific and require legal/tax review per country</td>
+</tr>
+<tr>
+<td>OQ-PP-004</td>
+<td>Is stripper well 1099 classification needed? What volume thresholds qualify in each operating state?</td>
+<td>Open</td>
+<td>Tax</td>
+<td>1099 config</td>
+<td>Stripper well credits may require manual override of standard 1099 logic</td>
+</tr>
+<tr>
+<td>OQ-PP-005</td>
+<td>What is the minimum payment threshold policy — uniform across owners, or variable by state/owner type?</td>
+<td>Open</td>
+<td>Finance</td>
+<td>Owner Attribute Group config</td>
+<td>Directly drives suspended balance accumulation behavior</td>
+</tr>
+<tr>
+<td>OQ-PP-006</td>
+<td>Does the operator use Common AR Point distribution? How many properties share common receivable points?</td>
+<td>Open</td>
+<td>Finance</td>
+<td>Check Input config</td>
+<td>Requires participation factor setup per common AR point</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contractual-allocation-questions">Contractual Allocation Questions<a class="headerlink" href="#contractual-allocation-questions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Status</th>
+<th>Owner</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OQ-CA-001</td>
+<td>Are there gas plants with keepwhole provisions? What are the contract terms?</td>
+<td>Open</td>
+<td>Commercial</td>
+<td>M3 config</td>
+<td>Keepwhole requires BTU entitlement comparison; affects NGL allocation design</td>
+</tr>
+<tr>
+<td>OQ-CA-002</td>
+<td>Is settlement diversity (group-level valuation for selected owners) required in any marketing groups?</td>
+<td>Open</td>
+<td>Commercial</td>
+<td>M3 config</td>
+<td>Settlement diversity adds a group aggregation step before owner distribution</td>
+</tr>
+<tr>
+<td>OQ-CA-003</td>
+<td>What rounding precision is required at owner level vs. marketing group level? Are there existing rounding discrepancies to correct?</td>
+<td>Open</td>
+<td>Finance</td>
+<td>Rounding config</td>
+<td>Must configure <code>roundingLevel</code> per marketing group</td>
+</tr>
+<tr>
+<td>OQ-CA-004</td>
+<td>Are there unit ventures (regulatory pooling units) where tract participation factors drive allocation?</td>
+<td>Open</td>
+<td>Land / Commercial</td>
+<td>Unit venture config</td>
+<td>Unit allocation uses tract participation factors, not raw DOI decimals</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tax-regulatory-questions">Tax &amp; Regulatory Questions<a class="headerlink" href="#tax-regulatory-questions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Status</th>
+<th>Owner</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OQ-TAX-001</td>
+<td>Are ad valorem true-up distributions required for Utah, Colorado, or Wyoming? What is the true-up cycle and invoice timing?</td>
+<td>Open</td>
+<td>Tax</td>
+<td>M4 ad valorem config</td>
+<td>True-up can be positive (under-accrued) or negative (recoupment); affects payment processing</td>
+</tr>
+<tr>
+<td>OQ-TAX-002</td>
+<td>Are there Kansas operations? Kansas uses a separate tax framework requiring specific rate structure configuration</td>
+<td>Open</td>
+<td>Tax</td>
+<td>State tax config</td>
+<td>Kansas tax framework has a distinct rate structure</td>
+</tr>
+<tr>
+<td>OQ-TAX-003</td>
+<td>Are there North Dakota operations? ND has a unique tax framework and report workplace requiring separate configuration</td>
+<td>Open</td>
+<td>Tax / Compliance</td>
+<td>M8 ND config</td>
+<td>ND tax framework configuration is separate from standard severance setup</td>
+</tr>
+<tr>
+<td>OQ-TAX-004</td>
+<td>Does Montana apply? Montana has specific exemption configuration steps required before state reports can be generated</td>
+<td>Open</td>
+<td>Compliance</td>
+<td>M8 state config</td>
+<td>Montana exemption steps must be completed in sequence</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="resolved-questions">Resolved Questions<a class="headerlink" href="#resolved-questions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Resolution</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>(None yet — to be populated as questions are resolved)</em></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

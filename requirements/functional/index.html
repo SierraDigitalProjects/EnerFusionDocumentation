@@ -1,0 +1,3243 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Upstream Accounting Platform for North American Energy Operators">
+      
+      
+        <meta name="author" content="EnerFusion Product Team">
+      
+      
+      
+        <link rel="prev" href="../../master-data/not-managed/">
+      
+      
+        <link rel="next" href="../non-functional/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Functional Requirements - EnerFusion Upstream Accounting — Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functional-requirements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-header__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EnerFusion Upstream Accounting — Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functional Requirements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../benefits/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benefits
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../assumptions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Assumptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../master-data/overview/" class="md-tabs__link">
+          
+  
+  
+  Master Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Requirements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../open-questions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/modules/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../operations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../project-structure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Project Structure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-tabs__link">
+          
+  
+  
+  Module Specifications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../process-flows/payment-processing/" class="md-tabs__link">
+          
+  
+  
+  Process Flows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/uom-and-products/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pilot-scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pilot Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test-cases/e2e-scenario/" class="md-tabs__link">
+          
+  
+  
+  Test Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-nav__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    EnerFusion Upstream Accounting — Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benefits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benefits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Master Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/centrally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centrally Managed (SAP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/locally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locally Managed (EnerFusion)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/not-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Not Managed in SAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#m1-production-volume-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M1 — Production &amp; Volume Allocation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m2-ownership-division-of-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M2 — Ownership &amp; Division of Interest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m3-contractual-allocation-product-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M3 — Contractual Allocation &amp; Product Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m4-contracts-pricing-valuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M4 — Contracts, Pricing &amp; Valuation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m5-balancing-workplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M5 — Balancing Workplace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m6-revenue-distribution-accounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M6 — Revenue Distribution &amp; Accounting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m7-payment-processing-check-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M7 — Payment Processing &amp; Check Input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m8-regulatory-tax-royalty-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M8 — Regulatory, Tax &amp; Royalty Reporting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m7-payment-processing-enhancements-from-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M7 — Payment Processing Enhancements (from Spec)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m7-check-input-enhancements-from-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M7 — Check Input Enhancements (from Spec)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m7-ar-workplace-enhancements-from-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M7 — AR Workplace Enhancements (from Spec)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m4-ad-valorem-true-up-from-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M4 — Ad Valorem True-Up (from Spec)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m3-contractual-allocation-enhancements-from-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M3 — Contractual Allocation Enhancements (from Spec)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m9-administration-ilm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M9 — Administration &amp; ILM
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../non-functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Non-Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/technical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M1 — Production & Volume Allocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M2-Ownership-DOI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2 — Ownership & DOI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M3-Contractual-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Base)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M3-Contractual-Allocation-enhanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Enhanced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M4-Contracts-Pricing-Valuation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M4 — Contracts, Pricing & Valuation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M5-Balancing-Workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M5 — Balancing Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M6-Revenue-Distribution-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M6 — Revenue Distribution & Accounting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M7-Payment-Processing-Check-Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7 — Payment Processing & Check Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M8-Regulatory-Tax-Royalty-Reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M8 — Regulatory, Tax & Royalty Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M9-Administration-ILM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M9 — Administration & ILM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/payment-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payment Processing (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/check-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check Input (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/onrr-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONRR-2014 Processing (M8)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/ar-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AR Workplace (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/uom-and-products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units of Measure & Products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/ad-valorem-true-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ad Valorem True-Up (M4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pilot-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Test Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test-cases/e2e-scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Scenario (Build-A-Biz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="functional-requirements">Functional Requirements<a class="headerlink" href="#functional-requirements" title="Permanent link">&para;</a></h1>
+<p>Requirements use the format: <code>FR-[Module]-[###]</code> — e.g., <code>FR-M1-001</code>.</p>
+<p>Priority: <strong>P1</strong> = Must have (launch blocker) | <strong>P2</strong> = Should have | <strong>P3</strong> = Nice to have</p>
+<hr />
+<h2 id="m1-production-volume-allocation">M1 — Production &amp; Volume Allocation<a class="headerlink" href="#m1-production-volume-allocation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M1-001</td>
+<td>The system shall allow creation and management of Fields, Reservoirs, Platforms, Wells, and Well Completions as date-effective master data records</td>
+<td>P1</td>
+<td>CRUD with effective dating</td>
+</tr>
+<tr>
+<td>FR-M1-002</td>
+<td>The system shall support registration of wells using the API number as the unique national identifier</td>
+<td>P1</td>
+<td>API# uniqueness enforced</td>
+</tr>
+<tr>
+<td>FR-M1-003</td>
+<td>The system shall manage Measurement Points (meters, tank batteries, flare, fuel) with meter specifications stored as structured data</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M1-004</td>
+<td>The system shall store tank strapping tables (gauge-to-volume calibration) per tank and version them by calibration date</td>
+<td>P1</td>
+<td>Interpolation at volume submission</td>
+</tr>
+<tr>
+<td>FR-M1-005</td>
+<td>The system shall manage Delivery Networks with configurable allocation tolerance (%) and allocation method (theoretical / historical / flat rate)</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M1-006</td>
+<td>The system shall capture daily well completion volumes including allocated oil (BBL), gas (MCF), and water volumes</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M1-007</td>
+<td>The system shall record well downtime by date with hours down and reason code; partial downtime shall reduce the theoretical calculation proportionally</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M1-008</td>
+<td>The system shall store well test records (potential, adjusted, regulatory) including oil/gas/water rates, GOR, BTU, and test duration</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M1-009</td>
+<td>The system shall execute the 8-step volume allocation algorithm: calculate theoreticals → sum inputs → determine outputs → compute % difference → check tolerance → apply scale factor → allocate to WCs → persist results</td>
+<td>P1</td>
+<td>See algorithm in M1 spec</td>
+</tr>
+<tr>
+<td>FR-M1-010</td>
+<td>The system shall flag allocation runs that exceed the delivery network tolerance threshold and route them for supervisor review before posting</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M1-011</td>
+<td>The system shall support automated (scheduled), manually triggered, and event-driven allocation runs</td>
+<td>P2</td>
+<td>Automation ruleset (M9)</td>
+</tr>
+<tr>
+<td>FR-M1-012</td>
+<td>The system shall publish a <code>ua.production.volumes.allocated</code> event upon successful allocation run completion</td>
+<td>P1</td>
+<td>Consumed by M3, M8</td>
+</tr>
+<tr>
+<td>FR-M1-013</td>
+<td>The system shall generate: Measurement Document, Allocation Variance Report, Well Completion Volume Summary, Downtime Analysis Report</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M1-014</td>
+<td>The system shall support bulk well completion creation via Excel template upload</td>
+<td>P2</td>
+<td>Async background processing</td>
+</tr>
+<tr>
+<td>FR-M1-015</td>
+<td>The system shall enforce RBAC at the well, MP, and DN level with <code>production:read</code>, <code>production:write</code>, <code>production:execute</code>, <code>production:admin</code> scopes</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m2-ownership-division-of-interest">M2 — Ownership &amp; Division of Interest<a class="headerlink" href="#m2-ownership-division-of-interest" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M2-001</td>
+<td>The system shall manage Business Partners (individual, company, trust, government) with encrypted tax IDs and payment address override</td>
+<td>P1</td>
+<td>Replicated from SAP; locally addable fields</td>
+</tr>
+<tr>
+<td>FR-M2-002</td>
+<td>The system shall manage Upstream Lease Identifiers with state lease number, legal description, royalty rate, and operator</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M2-003</td>
+<td>The system shall manage Ventures (base DOI and unit types) with date-effective owner interest records supporting WI, RI, ORRI, NPRI, PRRI interest types</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M2-004</td>
+<td>The system shall validate that Working Interest decimal interests sum to exactly 1.0 (±0.00000001) before a DOI change is approved</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M2-005</td>
+<td>The system shall enforce a single-checkout lock per venture — only one active checkout allowed at a time</td>
+<td>P1</td>
+<td>Conflict returns HTTP 409</td>
+</tr>
+<tr>
+<td>FR-M2-006</td>
+<td>The system shall support an approval workflow: check out → modify → submit → approve → check in</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M2-007</td>
+<td>The system shall create an immutable chain-of-title record for every approved ownership transfer</td>
+<td>P1</td>
+<td>No deletes on chain-of-title</td>
+</tr>
+<tr>
+<td>FR-M2-008</td>
+<td>The system shall support ownership transfer requests: from-owner, to-owner, effective date, interest type, decimal interest, and optional suspended fund / imbalance balance transfer</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M2-009</td>
+<td>The system shall publish a <code>ua.ownership.doi.changed</code> event when a DOI change is approved</td>
+<td>P1</td>
+<td>Consumed by M3, M4</td>
+</tr>
+<tr>
+<td>FR-M2-010</td>
+<td>The system shall manage Unit Venture tract records with participation factors</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M2-011</td>
+<td>The system shall support Owner Attribute Groups defining payment method, threshold, and withholding percentages</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M2-012</td>
+<td>The system shall support sliding scale royalty configurations where royalty rate varies by monthly production volume tier</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M2-013</td>
+<td>The system shall generate: Schedule A (Transfer Order), Historical Ownership Report, Zero Interest Owners Report, DOI Validation Report, Chain of Title Report</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M2-014</td>
+<td>The system shall support bulk DOI creation and update via Excel template upload with async processing and progress tracking</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M2-015</td>
+<td>The system shall enforce RBAC with <code>ownership:read</code>, <code>ownership:write</code>, <code>ownership:approve</code>, <code>ownership:import</code> scopes</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m3-contractual-allocation-product-control">M3 — Contractual Allocation &amp; Product Control<a class="headerlink" href="#m3-contractual-allocation-product-control" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M3-001</td>
+<td>The system shall allocate allocated production volumes to sales contracts based on owner entitlement percentages</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M3-002</td>
+<td>The system shall calculate owner entitlements using division of interest records from M2</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M3-003</td>
+<td>The system shall track daily and cumulative network imbalances per marketing group</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M3-004</td>
+<td>The system shall support gas plant processing configuration: inlet MP, component splits (shrinkage, NGL recovery fractions), fuel usage, and percent-return-to-lease (PRTL) records</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M3-005</td>
+<td>The system shall support manual adjustment entries for contractual allocation volumes</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M3-006</td>
+<td>The system shall support daily and monthly nomination management per owner/contract</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M3-007</td>
+<td>The system shall generate: CA Volume Validation Report, Marketing Group Imbalance Report, Nomination Summary</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m4-contracts-pricing-valuation">M4 — Contracts, Pricing &amp; Valuation<a class="headerlink" href="#m4-contracts-pricing-valuation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M4-001</td>
+<td>The system shall manage Sales Contracts with type, buyer/seller parties, effective/expiration dates, pricing method, and royalty reimbursement flag</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-002</td>
+<td>The system shall support Fixed Price Conditions per contract, product type, and date range</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-003</td>
+<td>The system shall support Formula Pricing with a multi-step evaluation engine using configurable reserved words (NYMEX, WTI, BTU, transport deductions)</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-004</td>
+<td>The system shall support API Gravity Scales for crude oil quality-based price adjustment per degree above/below base gravity</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-005</td>
+<td>The system shall maintain State Tax Rates (severance, ad valorem, conservation) per state, product type, and effective date</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-006</td>
+<td>The system shall support Tax Classification at the well completion level (standard, stripper, enhanced recovery, marginal) with exemption codes</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-007</td>
+<td>The system shall support Tier Tax calculation where different rates apply to production volume thresholds</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-008</td>
+<td>The system shall manage Valuation Cross-Reference (VCR) records that map venture/WC to contract, tax classification, and statement profile</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-009</td>
+<td>The system shall execute valuation runs that: fetch M3 allocations → apply pricing → calculate all deductions → compute net value → persist settlement statements</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-010</td>
+<td>The system shall generate Settlement Statements showing gross value, severance tax, ad valorem tax, transportation, marketing, processing deductions, and net value</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-011</td>
+<td>The system shall generate Oil and Gas Run Statements per delivery run with temperature correction, gravity correction, API gravity, and BS&amp;W</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-012</td>
+<td>The system shall support Prior Period Adjustment (PPN) events: link to original settlement, record reason, volume and value delta, route for approval</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-013</td>
+<td>The system shall apply marketing-free status from DOI records (owners exempt from marketing cost deductions)</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M4-014</td>
+<td>The system shall publish <code>ua.valuation.settlement.completed</code> event upon successful valuation run</td>
+<td>P1</td>
+<td>Consumed by M6, M7</td>
+</tr>
+<tr>
+<td>FR-M4-015</td>
+<td>The system shall enforce RBAC with <code>valuation:read</code>, <code>valuation:write</code>, <code>valuation:approve</code>, <code>valuation:execute</code>, <code>valuation:admin</code> scopes</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m5-balancing-workplace">M5 — Balancing Workplace<a class="headerlink" href="#m5-balancing-workplace" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M5-001</td>
+<td>The system shall track cumulative owner imbalance positions (over/under-take) per product per venture</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M5-002</td>
+<td>The system shall manage Product Balancing Agreements (PBAs) with tolerance band, make-up cap, and settlement terms</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M5-003</td>
+<td>The system shall support manual balance adjustments by authorized users with mandatory reason code</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M5-004</td>
+<td>The system shall generate: Balancing Exception Report, Owner Balances by Sales/Report Month, Balancing Statement</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M5-005</td>
+<td>The system shall support in-kind volume make-up tracking against PBA terms</td>
+<td>P2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m6-revenue-distribution-accounting">M6 — Revenue Distribution &amp; Accounting<a class="headerlink" href="#m6-revenue-distribution-accounting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M6-001</td>
+<td>The system shall distribute net settlement values to each owner interest in proportion to their DOI decimal interest</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M6-002</td>
+<td>The system shall calculate late-payment interest on overdue owner distributions using configurable interest rates</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M6-003</td>
+<td>The system shall generate Revenue Accounting Documents (RADs) formatted for posting to the external GL system</td>
+<td>P1</td>
+<td>RADs posted via API to SAP FI</td>
+</tr>
+<tr>
+<td>FR-M6-004</td>
+<td>The system shall generate: Interest Calculation Detail Report, Owner Interest Summary Report, Summary Interest Paid Report</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M6-005</td>
+<td>The system shall publish <code>ua.revenue.distribution.completed</code> event upon successful distribution run</td>
+<td>P1</td>
+<td>Consumed by M7, M8</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m7-payment-processing-check-input">M7 — Payment Processing &amp; Check Input<a class="headerlink" href="#m7-payment-processing-check-input" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M7-001</td>
+<td>The system shall process incoming purchaser check records via CDEX/EDI 820 format, matching checks to settlement statements and ventures</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-002</td>
+<td>The system shall support manual check input for non-EDI purchaser payments</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-003</td>
+<td>The system shall support mass check input for bulk processing of multiple purchaser checks</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-004</td>
+<td>The system shall generate outgoing owner payment records (check or ACH) based on M6 distribution amounts and Owner Attribute Group payment configuration</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-005</td>
+<td>The system shall suspend payments below the owner's minimum payment threshold and accumulate until threshold is met</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-006</td>
+<td>The system shall maintain Accounts Receivable aging for open purchaser balances</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-007</td>
+<td>The system shall support manual AR write-offs with reason code and approver</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-008</td>
+<td>The system shall track unclaimed owner funds and generate escheat reports when state dormancy thresholds are exceeded</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-009</td>
+<td>The system shall generate check register, owner payment stubs, AR aging report, and escheat filing reports</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m8-regulatory-tax-royalty-reporting">M8 — Regulatory, Tax &amp; Royalty Reporting<a class="headerlink" href="#m8-regulatory-tax-royalty-reporting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M8-001</td>
+<td>The system shall generate Form H-10, P1B, PR, GLO Royalty, and UT Royalty reports for Texas</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-002</td>
+<td>The system shall generate ONRR-2014, MMS-PASR, and MMS-OGOR reports for federal ONRR compliance</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-003</td>
+<td>The system shall generate Form 1004 for Oklahoma gross production tax</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-004</td>
+<td>The system shall generate OGP/R5D and WR1 reports for Louisiana</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-005</td>
+<td>The system shall generate Report C115 for New Mexico</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-006</td>
+<td>The system shall generate Form 2 and Gross Production Tax Report for Wyoming</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-007</td>
+<td>The system shall generate Form 7 for Arkansas and Colorado</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-008</td>
+<td>The system shall generate Report OG110 for California</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-009</td>
+<td>The system shall generate production reports for North Dakota</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-010</td>
+<td>The system shall support amended report generation referencing original filing</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-011</td>
+<td>The system shall support out-of-statute write-off processing for periods beyond the statutory filing window</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-012</td>
+<td>The system shall maintain ONRR payor / company code cross-reference master data to map operator company codes to ONRR-issued payor identifiers</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-013</td>
+<td>The system shall support a multi-level ONRR reporting hierarchy: Venture → Lease (with participation %) → Sales Type (with allocation %); volume and value shall be divided proportionally through each level</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-014</td>
+<td>The system shall process ONRR-2014 in a sequential, operator-controlled workplace with the following steps: Populate → Validate → Generate → Extract → Summarize → Journalize → Finalize</td>
+<td>P1</td>
+<td>Parallel processing by company code + sales date</td>
+</tr>
+<tr>
+<td>FR-M8-015</td>
+<td>The system shall generate ONRR Transaction Codes: TC 01 (royalty), TC 11 (transport allowance), TC 13 (quality differential / marketing reimbursement), TC 15 (processing allowance), TC 37 (Section 6 severance + additional royalty), TC 38 (Section 6 additional royalty only)</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-016</td>
+<td>The system shall support Section 6 royalty configuration with a four-level rate hierarchy: default config → lease royalty rate → master data override → ad hoc workplace override</td>
+<td>P1</td>
+<td>See ONRR Processing guide</td>
+</tr>
+<tr>
+<td>FR-M8-017</td>
+<td>The system shall support two types of ONRR Prior Period Notifications (PPNs): venture/sales-type level and venture/lease level; the venture-level PPN must supersede sales-type PPN when both exist</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M8-018</td>
+<td>The system shall generate TC 13 lines when valuation formula result words ERQADIFR (quality differential reimbursement) or ERQADIFD (quality differential deduction) are used</td>
+<td>P2</td>
+<td>Quality differential must NOT be collapsed into processing deduct bucket</td>
+</tr>
+<tr>
+<td>FR-M8-019</td>
+<td>The system shall generate the ONRR-2014 output as a fixed-width ASCII file per ONRR PAAS electronic filing specification</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m7-payment-processing-enhancements-from-spec">M7 — Payment Processing Enhancements (from Spec)<a class="headerlink" href="#m7-payment-processing-enhancements-from-spec" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M7-010</td>
+<td>The system shall validate all owners have a valid payment method, EFT banking information, and mailing address before allowing a payment run to proceed</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-011</td>
+<td>The system shall allow payment runs to be scoped by company, owner, Delivery Network, Unit Venture, or property</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-012</td>
+<td>The system shall support cash company groupings — associating multiple companies to a single cash company for consolidated outbound bank files</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-013</td>
+<td>The system shall provide a pre-finalization variance analysis step where users can suspend individual payment lines, override variances, and assign hold codes before any outbound bank file is generated</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-014</td>
+<td>The system shall support hold codes including No Print and user-defined reason codes; multiple hold codes may be assigned to a single owner</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-015</td>
+<td>The system shall generate positive pay (outbound bank tape) and support inbound check status (bank tape reconciliation)</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-016</td>
+<td>The system shall support user-defined summarization rules for check stub line-of-detail aggregation</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-017</td>
+<td>The system shall support JIB (Joint Interest Billing) netting — deducting outstanding JIB receivable balances from owner revenue distributions before issuing payment</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-018</td>
+<td>The system shall generate IRS Form 1099-MISC and 1099-NEC for qualifying owner payments with manual override capability for stripper well and special production payment structures</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M7-019</td>
+<td>The system shall support user-defined recoupment rules at venture, state, vendor, and company levels</td>
+<td>P2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="m7-check-input-enhancements-from-spec">M7 — Check Input Enhancements (from Spec)<a class="headerlink" href="#m7-check-input-enhancements-from-spec" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-CI-001</td>
+<td>The system shall maintain a Remitter/Property cross-reference with full historical versioning by effective date and change log</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-CI-002</td>
+<td>The system shall support mass upload of remitter/property cross-reference records via Excel template with async processing and validation report</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-CI-003</td>
+<td>The system shall support multi-select copy/reverse with sales date range search for correcting previously processed checks</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-CI-004</td>
+<td>The system shall expand CDEX company code to accommodate identifiers longer than two characters</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-CI-005</td>
+<td>The system shall calculate severance tax independently within Check Input when the property master data flag is enabled, following DOI accounting rules</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-CI-006</td>
+<td>The system shall support special disbursement (PDX) logic: distribute a net check amount to selected owners only, with no discrepancy between amount received and amount disbursed</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-CI-007</td>
+<td>The system shall generate a Blocked Cost Center Report prior to journalization, showing which cost centers would prevent posting</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-CI-008</td>
+<td>The system shall generate a Proposed Journalization Preview Report showing owner-level (who, volume, value, deducts) and account-level (GL account, cost center, amount) detail before final posting</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-CI-009</td>
+<td>The system shall support Common AR Point distribution using tracking participation factors when a check covers multiple properties under a shared receivable point</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-CI-010</td>
+<td>The system shall generate a DOI Decimal Comparison Report validating that the PDX cross-reference decimal interest agrees with the aggregated DOI owner interests</td>
+<td>P2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="m7-ar-workplace-enhancements-from-spec">M7 — AR Workplace Enhancements (from Spec)<a class="headerlink" href="#m7-ar-workplace-enhancements-from-spec" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-AR-001</td>
+<td>The system shall allow AR users to flag balances as reconciled, deferred, write-off, or categorized; and to transfer balances to another AR key</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-AR-002</td>
+<td>The system shall support user-defined AR category codes (not a generic flag) assigned to all or part of an AR balance, and use category code as a search criterion</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-AR-003</td>
+<td>The system shall support bulk approval of multiple write-off rows simultaneously, with a single approval-level comment applied to all selected rows</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-AR-004</td>
+<td>The system shall support comment upload for batch AR reconciliation workflows; comments must be preserved when Excel downloads are re-sorted</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-AR-005</td>
+<td>The system shall support auto write-off scheduling more frequently than monthly, configurable as part of the Accounting Period Close process, with a maximum dollar cap on auto write-offs</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-AR-006</td>
+<td>The system shall provide both summary (by company/remitter) and detail AR reports with multi-value selection criteria</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-AR-007</td>
+<td>The system shall support an Accounting Month view of AR summary balances in addition to Sales Month view</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-AR-008</td>
+<td>The system shall display remitter name/description and venture/DOI name in all AR Workplace views (not ID-only)</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="m4-ad-valorem-true-up-from-spec">M4 — Ad Valorem True-Up (from Spec)<a class="headerlink" href="#m4-ad-valorem-true-up-from-spec" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-ADV-001</td>
+<td>The system shall support year-end ad valorem true-up processing to capture and distribute the difference between monthly accruals and the actual state/county invoice amount</td>
+<td>P1</td>
+<td>Applicable: UT, CO, WY and others</td>
+</tr>
+<tr>
+<td>FR-ADV-002</td>
+<td>The system shall accept true-up amounts as either net or gross, at the venture/DOI or unit level, by sales date (month/year), product, and marketing group via bulk upload</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-ADV-003</td>
+<td>The true-up distribution shall follow the same VL/RD accrual logic including rounding, account determination, affiliate treatment, and chain of title</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-ADV-004</td>
+<td>The true-up shall not distribute to tax-exempt, take-in-kind, or do-not-pay owners</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-ADV-005</td>
+<td>The system shall generate a trial combined run of accounts and totals before posting; trial runs must be saveable for review</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-ADV-006</td>
+<td>The true-up shall not generate new PPNs or force existing PPNs to process</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="m3-contractual-allocation-enhancements-from-spec">M3 — Contractual Allocation Enhancements (from Spec)<a class="headerlink" href="#m3-contractual-allocation-enhancements-from-spec" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M3-008</td>
+<td>The system shall calculate primary product entitlements at the Venture/DOI level before distributing to owner level</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M3-009</td>
+<td>The system shall eliminate the subtraction method rounding routine; owners with equal decimal interests must receive equal allocated volumes</td>
+<td>P1</td>
+<td>See Rounding &amp; Alloc spec</td>
+</tr>
+<tr>
+<td>FR-M3-010</td>
+<td>The system shall support owner-level rounding configuration within marketing groups, separate from marketing group-level rounding</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M3-011</td>
+<td>The system shall support settlement diversity groups where selected owners are valued at the group level with volume/value allocated back to individuals using group participation factors</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M3-012</td>
+<td>The system shall track keepwhole calculations — when marketing group volume/energy is less than keepwhole volume/energy, the system shall calculate and flag the shortfall for compensation</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M3-013</td>
+<td>The system shall generate Production Volume Reconciliation (PVR) and Production Transfer Reports (PTR)</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m9-administration-ilm">M9 — Administration &amp; ILM<a class="headerlink" href="#m9-administration-ilm" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M9-001</td>
+<td>The system shall provide a centralized RBAC management UI for creating roles, assigning permissions, and managing user-role assignments</td>
+<td>P1</td>
+<td>Role provisioning via Azure AD</td>
+</tr>
+<tr>
+<td>FR-M9-002</td>
+<td>The system shall support configurable automation rulesets (bots) for allocation run scheduling, anomaly detection, and approval decision automation</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M9-003</td>
+<td>The system shall archive completed transaction records to Azure Blob Storage after a configurable retention period</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M9-004</td>
+<td>The system shall support blocking of personal data records associated with a business partner (right-to-be-forgotten workflow)</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M9-005</td>
+<td>The system shall anonymize personal data fields (name, address, tax ID, bank details) after the applicable data retention period expires</td>
+<td>P2</td>
+<td>GDPR/CCPA-aligned</td>
+</tr>
+<tr>
+<td>FR-M9-006</td>
+<td>The system shall maintain a tamper-evident audit log of all data mutations across all modules</td>
+<td>P1</td>
+<td>Who, what, when, before/after</td>
+</tr>
+<tr>
+<td>FR-M9-007</td>
+<td>The system shall provide an onboarding validation tool that verifies master data completeness before a period's processing can begin</td>
+<td>P2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

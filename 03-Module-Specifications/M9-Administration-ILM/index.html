@@ -1,0 +1,3777 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Upstream Accounting Platform for North American Energy Operators">
+      
+      
+        <meta name="author" content="EnerFusion Product Team">
+      
+      
+      
+        <link rel="prev" href="../M8-Regulatory-Tax-Royalty-Reporting/">
+      
+      
+        <link rel="next" href="../../process-flows/payment-processing/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>M9 — Administration & ILM - EnerFusion Upstream Accounting — Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#m9-administration-information-lifecycle-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-header__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EnerFusion Upstream Accounting — Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              M9 — Administration & ILM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../benefits/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benefits
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../assumptions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Assumptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../master-data/overview/" class="md-tabs__link">
+          
+  
+  
+  Master Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../requirements/functional/" class="md-tabs__link">
+          
+  
+  
+  Requirements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../open-questions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/modules/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../operations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../project-structure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Project Structure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../M1-Production-Volume-Allocation/" class="md-tabs__link">
+          
+  
+  
+  Module Specifications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../process-flows/payment-processing/" class="md-tabs__link">
+          
+  
+  
+  Process Flows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/uom-and-products/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pilot-scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pilot Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test-cases/e2e-scenario/" class="md-tabs__link">
+          
+  
+  
+  Test Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-nav__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    EnerFusion Upstream Accounting — Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benefits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benefits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Master Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/centrally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centrally Managed (SAP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/locally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locally Managed (EnerFusion)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/not-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Not Managed in SAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/non-functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Non-Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/technical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M1-Production-Volume-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M1 — Production & Volume Allocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M2-Ownership-DOI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2 — Ownership & DOI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M3-Contractual-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Base)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M3-Contractual-Allocation-enhanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Enhanced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M4-Contracts-Pricing-Valuation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M4 — Contracts, Pricing & Valuation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M5-Balancing-Workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M5 — Balancing Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M6-Revenue-Distribution-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M6 — Revenue Distribution & Accounting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M7-Payment-Processing-Check-Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7 — Payment Processing & Check Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M8-Regulatory-Tax-Royalty-Reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M8 — Regulatory, Tax & Royalty Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M9 — Administration & ILM
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M9 — Administration & ILM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-module-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Module Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Core Concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-master-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Master Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Master Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-role-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Role Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-user-role-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 User Role Assignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-accounting-period-calendar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Accounting Period Calendar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-automation-ruleset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Automation Ruleset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-ilm-archive-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 ILM Archive Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-personal-data-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Personal Data Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-transactional-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Transactional Entities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Transactional Entities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-audit-log-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Audit Log Entry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-onboarding-validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Onboarding Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-onboarding-check-item" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Onboarding Check Item
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-integration-sync-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Integration Sync Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-archive-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Archive Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-business-processing-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Business Processing Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Business Processing Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-period-close-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Period Close Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-automation-ruleset-evaluation-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Automation Ruleset Evaluation Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-ilm-archiving-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 ILM Archiving Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-personal-data-blocking-and-anonymization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Personal Data Blocking and Anonymization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-onboarding-validation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Onboarding Validation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-rbac-administration-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. RBAC Administration UI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. API Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Reports
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/payment-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payment Processing (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/check-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check Input (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/onrr-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONRR-2014 Processing (M8)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/ar-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AR Workplace (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/uom-and-products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units of Measure & Products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/ad-valorem-true-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ad Valorem True-Up (M4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pilot-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Test Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test-cases/e2e-scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Scenario (Build-A-Biz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="m9-administration-information-lifecycle-management">M9 — Administration &amp; Information Lifecycle Management<a class="headerlink" href="#m9-administration-information-lifecycle-management" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="1-module-purpose">1. Module Purpose<a class="headerlink" href="#1-module-purpose" title="Permanent link">&para;</a></h2>
+<p>Provides the platform-wide administrative layer and data governance engine. M9 is responsible for: user and role administration, automation rulesets (workflow bots), accounting period calendar management, information lifecycle management (ILM) archiving, personal data protection (blocking and anonymization for GDPR/CCPA compliance), audit log management, integration health monitoring, and onboarding validation of master data before a new venture or company code can go live.</p>
+<p>This module is the <strong>operational control plane</strong> — it does not generate revenue or production data, but it governs access, enforces retention policies, maintains the integrity of the period calendar, and ensures the platform can be audited end to end.</p>
+<hr />
+<h2 id="2-core-concepts">2. Core Concepts<a class="headerlink" href="#2-core-concepts" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Automation Ruleset (Bot)</strong></td>
+<td>A configurable rule that triggers automated actions (e.g., auto-approve, auto-suspend, auto-notify) when defined conditions are met, without requiring manual user intervention</td>
+</tr>
+<tr>
+<td><strong>ILM Archive Policy</strong></td>
+<td>A data retention and archiving rule that specifies how long transactional data is retained in the active database before being moved to cold storage or purged</td>
+</tr>
+<tr>
+<td><strong>Accounting Period Calendar</strong></td>
+<td>The master calendar defining open, closed, and future periods for each company code; controls which modules can post transactions</td>
+</tr>
+<tr>
+<td><strong>Personal Data Record</strong></td>
+<td>A catalog entry identifying where personally identifiable information (PII) is stored in the system, enabling blocking and anonymization workflows</td>
+</tr>
+<tr>
+<td><strong>Data Blocking</strong></td>
+<td>Restricting access to personal data for a specific individual upon request (GDPR right to restriction), without deleting the data</td>
+</tr>
+<tr>
+<td><strong>Anonymization</strong></td>
+<td>Irreversibly removing or pseudonymizing PII from archived records when the retention period has expired</td>
+</tr>
+<tr>
+<td><strong>Onboarding Validation</strong></td>
+<td>A checklist-driven workflow that verifies all required master data is configured before a new venture, company code, or regulatory scope is activated</td>
+</tr>
+<tr>
+<td><strong>Integration Sync Log</strong></td>
+<td>A record of each data synchronization event between EnerFusion and external systems (SAP FI, ONRR portals, bank ACH); used for troubleshooting and audit</td>
+</tr>
+<tr>
+<td><strong>Audit Log</strong></td>
+<td>An immutable, append-only record of every data change and access event; used for compliance and forensic review</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-master-data">3. Master Data<a class="headerlink" href="#3-master-data" title="Permanent link">&para;</a></h2>
+<h3 id="31-role-definition">3.1 Role Definition<a class="headerlink" href="#31-role-definition" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>roleId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>roleName</td>
+<td>String(50)</td>
+<td>Yes</td>
+<td>Unique display name</td>
+</tr>
+<tr>
+<td>roleDescription</td>
+<td>String(200)</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>moduleScopes</td>
+<td>String[]</td>
+<td>Yes</td>
+<td>Array of permission scopes (e.g., <code>revenue:read</code>, <code>payments:execute</code>)</td>
+</tr>
+<tr>
+<td>dataAccessLevel</td>
+<td>Enum(company, venture, all)</td>
+<td>Yes</td>
+<td>Restricts data visibility</td>
+</tr>
+<tr>
+<td>companyCodeRestrictions</td>
+<td>String[]</td>
+<td>No</td>
+<td>If populated, role only sees these company codes</td>
+</tr>
+<tr>
+<td>isSystemRole</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>System roles cannot be deleted</td>
+</tr>
+<tr>
+<td>createdBy</td>
+<td>UUID</td>
+<td>FK → User</td>
+<td></td>
+</tr>
+<tr>
+<td>effectiveDate</td>
+<td>Date</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-user-role-assignment">3.2 User Role Assignment<a class="headerlink" href="#32-user-role-assignment" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assignmentId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>FK → Azure AD user (via XSUAA claim)</td>
+</tr>
+<tr>
+<td>roleId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>FK → RoleDefinition</td>
+</tr>
+<tr>
+<td>companyCode</td>
+<td>String(10)</td>
+<td>No</td>
+<td>Scope-limiting override</td>
+</tr>
+<tr>
+<td>assignedBy</td>
+<td>UUID</td>
+<td>FK → User (admin)</td>
+<td></td>
+</tr>
+<tr>
+<td>effectiveDate</td>
+<td>Date</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>expirationDate</td>
+<td>Date</td>
+<td>No</td>
+<td>For temporary access grants</td>
+</tr>
+<tr>
+<td>justification</td>
+<td>String(500)</td>
+<td>No</td>
+<td>Reason for temporary access</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-accounting-period-calendar">3.3 Accounting Period Calendar<a class="headerlink" href="#33-accounting-period-calendar" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>calendarId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>companyCode</td>
+<td>String(10)</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>period</td>
+<td>YearMonth</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>periodStatus</td>
+<td>Enum(future, open, soft_closed, hard_closed)</td>
+<td>Yes</td>
+<td>Controls posting eligibility</td>
+</tr>
+<tr>
+<td>productionCloseDate</td>
+<td>Date</td>
+<td>No</td>
+<td>When M1 production data is locked</td>
+</tr>
+<tr>
+<td>valuationCloseDate</td>
+<td>Date</td>
+<td>No</td>
+<td>When M4 settlement is locked</td>
+</tr>
+<tr>
+<td>distributionCloseDate</td>
+<td>Date</td>
+<td>No</td>
+<td>When M6 distribution run is finalized</td>
+</tr>
+<tr>
+<td>paymentCloseDate</td>
+<td>Date</td>
+<td>No</td>
+<td>When M7 payment run is finalized</td>
+</tr>
+<tr>
+<td>regulatoryCloseDate</td>
+<td>Date</td>
+<td>No</td>
+<td>When M8 reports are submitted</td>
+</tr>
+<tr>
+<td>openedBy</td>
+<td>UUID</td>
+<td>FK → User</td>
+<td></td>
+</tr>
+<tr>
+<td>closedBy</td>
+<td>UUID</td>
+<td>FK → User</td>
+<td></td>
+</tr>
+<tr>
+<td>closedAt</td>
+<td>Timestamp</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Period Status Transitions:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>future → open → soft_closed → hard_closed
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                     ↑              ↑
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                 (reopen)      (cannot reopen;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                  allowed)      requires admin override)
+</code></pre></div>
+<h3 id="34-automation-ruleset">3.4 Automation Ruleset<a class="headerlink" href="#34-automation-ruleset" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rulesetId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>rulesetName</td>
+<td>String(100)</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>moduleTarget</td>
+<td>Enum(M1,M2,M3,M4,M5,M6,M7,M8)</td>
+<td>Yes</td>
+<td>Module this rule applies to</td>
+</tr>
+<tr>
+<td>triggerEvent</td>
+<td>String(50)</td>
+<td>Yes</td>
+<td>Event or condition that fires the rule</td>
+</tr>
+<tr>
+<td>conditionExpression</td>
+<td>JSONB</td>
+<td>Yes</td>
+<td>Evaluated condition (field, operator, value)</td>
+</tr>
+<tr>
+<td>actionType</td>
+<td>Enum(auto_approve, auto_suspend, notify, escalate, reject)</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>actionParameters</td>
+<td>JSONB</td>
+<td>Yes</td>
+<td>Parameters for the action (e.g., target user, threshold)</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Evaluation order; lower = higher priority</td>
+</tr>
+<tr>
+<td>isActive</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>effectiveDate</td>
+<td>Date</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Automation Rulesets:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ruleset</th>
+<th>Trigger</th>
+<th>Condition</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto-suspend small owner</td>
+<td>Payment run extraction</td>
+<td><code>netValue &lt; 10.00</code></td>
+<td><code>auto_suspend</code> with reason "Below threshold"</td>
+</tr>
+<tr>
+<td>Auto-approve distribution runs</td>
+<td>Distribution run completed</td>
+<td><code>validationErrorCount = 0 AND totalDistributed &lt; 1000000</code></td>
+<td><code>auto_approve</code></td>
+</tr>
+<tr>
+<td>Notify on late interest</td>
+<td>Interest calculation</td>
+<td><code>overdueDays &gt; 30</code></td>
+<td><code>notify</code> Revenue Accountant</td>
+</tr>
+<tr>
+<td>Escalate stale AR</td>
+<td>AR aging</td>
+<td><code>arAge &gt; 365</code></td>
+<td><code>escalate</code> to Finance Director</td>
+</tr>
+<tr>
+<td>Auto-approve DOI transfer</td>
+<td>DOI transfer submitted</td>
+<td><code>decimalInterestChange &lt; 0.001</code></td>
+<td><code>auto_approve</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-ilm-archive-policy">3.5 ILM Archive Policy<a class="headerlink" href="#35-ilm-archive-policy" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>policyId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>policyName</td>
+<td>String(100)</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>targetEntity</td>
+<td>String(100)</td>
+<td>Yes</td>
+<td>Database table or entity name</td>
+</tr>
+<tr>
+<td>retentionActiveYears</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Years in active PostgreSQL DB</td>
+</tr>
+<tr>
+<td>retentionColdYears</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Years in Azure Blob cold storage</td>
+</tr>
+<tr>
+<td>retentionTotalYears</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Total retention before deletion</td>
+</tr>
+<tr>
+<td>archiveMethod</td>
+<td>Enum(pg_partitioning, blob_export, logical_delete)</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>purgable</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>Whether records can be permanently deleted</td>
+</tr>
+<tr>
+<td>legalHoldOverride</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>If true, legal hold blocks purge</td>
+</tr>
+<tr>
+<td>regulatoryBasis</td>
+<td>String(200)</td>
+<td>No</td>
+<td>Legal/regulatory authority for retention period</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommended Retention Schedule:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Active (years)</th>
+<th>Cold (years)</th>
+<th>Total</th>
+<th>Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Settlement Statements</td>
+<td>3</td>
+<td>4</td>
+<td>7</td>
+<td>IRS / state tax</td>
+</tr>
+<tr>
+<td>Owner Distribution Records</td>
+<td>3</td>
+<td>4</td>
+<td>7</td>
+<td>IRS / state</td>
+</tr>
+<tr>
+<td>ONRR-2014 Records</td>
+<td>5</td>
+<td>2</td>
+<td>7</td>
+<td>ONRR regulation</td>
+</tr>
+<tr>
+<td>Payment Records</td>
+<td>3</td>
+<td>4</td>
+<td>7</td>
+<td>IRS / UCC</td>
+</tr>
+<tr>
+<td>Audit Logs</td>
+<td>5</td>
+<td>5</td>
+<td>10</td>
+<td>SOX / internal policy</td>
+</tr>
+<tr>
+<td>DOI History</td>
+<td>10</td>
+<td>10</td>
+<td>20</td>
+<td>Chain of title</td>
+</tr>
+<tr>
+<td>Production Volume Records</td>
+<td>3</td>
+<td>4</td>
+<td>7</td>
+<td>State conservation</td>
+</tr>
+<tr>
+<td>Escheat Records</td>
+<td>5</td>
+<td>20</td>
+<td>25</td>
+<td>State unclaimed property law</td>
+</tr>
+</tbody>
+</table>
+<h3 id="36-personal-data-record">3.6 Personal Data Record<a class="headerlink" href="#36-personal-data-record" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>personalDataId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>entityType</td>
+<td>String(50)</td>
+<td>Yes</td>
+<td>Table or entity containing PII</td>
+</tr>
+<tr>
+<td>entityId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>FK → the specific record</td>
+</tr>
+<tr>
+<td>businessPartnerId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>FK → the data subject</td>
+</tr>
+<tr>
+<td>dataCategories</td>
+<td>String[]</td>
+<td>Yes</td>
+<td>Types of PII (e.g., name, tax_id, bank_account, address)</td>
+</tr>
+<tr>
+<td>processingPurpose</td>
+<td>String(200)</td>
+<td>Yes</td>
+<td>Legal basis for holding the data</td>
+</tr>
+<tr>
+<td>blockingStatus</td>
+<td>Enum(active, blocked, anonymized)</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>blockedAt</td>
+<td>Timestamp</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>blockedBy</td>
+<td>UUID</td>
+<td>No</td>
+<td>FK → User</td>
+</tr>
+<tr>
+<td>anonymizedAt</td>
+<td>Timestamp</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>retentionExpiryDate</td>
+<td>Date</td>
+<td>Yes</td>
+<td>When data may be purged</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-transactional-entities">4. Transactional Entities<a class="headerlink" href="#4-transactional-entities" title="Permanent link">&para;</a></h2>
+<h3 id="41-audit-log-entry">4.1 Audit Log Entry<a class="headerlink" href="#41-audit-log-entry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auditId</td>
+<td>UUID</td>
+<td>PK (append-only; no updates or deletes)</td>
+</tr>
+<tr>
+<td>eventTimestamp</td>
+<td>Timestamp</td>
+<td>When the event occurred</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>UUID</td>
+<td>Acting user (from JWT claim)</td>
+</tr>
+<tr>
+<td>sessionId</td>
+<td>String(50)</td>
+<td>Azure AD session identifier</td>
+</tr>
+<tr>
+<td>traceId</td>
+<td>String(50)</td>
+<td>OpenTelemetry trace ID</td>
+</tr>
+<tr>
+<td>moduleCode</td>
+<td>String(5)</td>
+<td>M1–M9</td>
+</tr>
+<tr>
+<td>entityType</td>
+<td>String(50)</td>
+<td>Table or entity affected</td>
+</tr>
+<tr>
+<td>entityId</td>
+<td>UUID</td>
+<td>Record affected</td>
+</tr>
+<tr>
+<td>action</td>
+<td>Enum(create, update, delete, read, approve, reject, submit, archive, block, anonymize)</td>
+<td></td>
+</tr>
+<tr>
+<td>fieldChanges</td>
+<td>JSONB</td>
+<td>Before/after values for each changed field (null for read/approve events)</td>
+</tr>
+<tr>
+<td>ipAddress</td>
+<td>String(45)</td>
+<td>Requester IP (IPv4 or IPv6)</td>
+</tr>
+<tr>
+<td>userAgent</td>
+<td>String(200)</td>
+<td>Browser / client identifier</td>
+</tr>
+<tr>
+<td>companyCode</td>
+<td>String(10)</td>
+<td></td>
+</tr>
+<tr>
+<td>outcome</td>
+<td>Enum(success, failure, denied)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-onboarding-validation-checklist">4.2 Onboarding Validation Checklist<a class="headerlink" href="#42-onboarding-validation-checklist" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>checklistId</td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>checklistType</td>
+<td>Enum(new_venture, new_company_code, new_regulatory_scope)</td>
+<td></td>
+</tr>
+<tr>
+<td>companyCode</td>
+<td>String(10)</td>
+<td></td>
+</tr>
+<tr>
+<td>ventureId</td>
+<td>UUID</td>
+<td>FK → Venture (if applicable)</td>
+</tr>
+<tr>
+<td>checklistStatus</td>
+<td>Enum(in_progress, passed, failed, waived)</td>
+<td></td>
+</tr>
+<tr>
+<td>createdAt</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>completedAt</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>approvedBy</td>
+<td>UUID</td>
+<td>FK → User</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-onboarding-check-item">4.3 Onboarding Check Item<a class="headerlink" href="#43-onboarding-check-item" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>checkItemId</td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>checklistId</td>
+<td>UUID</td>
+<td>FK → OnboardingValidationChecklist</td>
+</tr>
+<tr>
+<td>checkCode</td>
+<td>String(20)</td>
+<td>Unique check identifier (e.g., DOI-BALANCE, TAX-RATE-CONFIG)</td>
+</tr>
+<tr>
+<td>checkDescription</td>
+<td>String(200)</td>
+<td>Human-readable description</td>
+</tr>
+<tr>
+<td>checkCategory</td>
+<td>Enum(master_data, doi_integrity, tax_config, payment_config, regulatory_config)</td>
+<td></td>
+</tr>
+<tr>
+<td>checkStatus</td>
+<td>Enum(pending, passed, failed, waived)</td>
+<td></td>
+</tr>
+<tr>
+<td>checkResult</td>
+<td>JSONB</td>
+<td>Detailed result (errors found, records checked)</td>
+</tr>
+<tr>
+<td>waiveReason</td>
+<td>String(300)</td>
+<td>Required if waived</td>
+</tr>
+<tr>
+<td>waivedBy</td>
+<td>UUID</td>
+<td>FK → User</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Standard Onboarding Check Codes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Check Code</th>
+<th>Category</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DOI-BALANCE</td>
+<td>doi_integrity</td>
+<td>All DOI interests for venture sum to 1.0</td>
+</tr>
+<tr>
+<td>DOI-OWNER-EXISTS</td>
+<td>doi_integrity</td>
+<td>All owner BP IDs resolve to active Business Partners</td>
+</tr>
+<tr>
+<td>TAX-RATE-CONFIG</td>
+<td>tax_config</td>
+<td>Severance tax rates configured for venture's state(s)</td>
+</tr>
+<tr>
+<td>PAY-METHOD-ALL-OWNERS</td>
+<td>payment_config</td>
+<td>All owners have valid payment method or explicit suspense reason</td>
+</tr>
+<tr>
+<td>MIN-THRESHOLD-CONFIG</td>
+<td>payment_config</td>
+<td>Minimum payment threshold configured per owner type</td>
+</tr>
+<tr>
+<td>ONRR-LEASE-CONFIG</td>
+<td>regulatory_config</td>
+<td>ONRR lease hierarchy configured for federal/Indian leases</td>
+</tr>
+<tr>
+<td>ONRR-PPN-ASSIGNED</td>
+<td>regulatory_config</td>
+<td>PPNs assigned for all federal lease + product combinations</td>
+</tr>
+<tr>
+<td>GL-MAPPING-COMPLETE</td>
+<td>master_data</td>
+<td>GL account mapping exists for all product × transaction types</td>
+</tr>
+<tr>
+<td>INT-RATE-CONFIG</td>
+<td>master_data</td>
+<td>Late-payment interest rates configured for applicable states</td>
+</tr>
+<tr>
+<td>ESCHEAT-CONFIG</td>
+<td>payment_config</td>
+<td>Escheat configuration set for applicable states</td>
+</tr>
+</tbody>
+</table>
+<h3 id="44-integration-sync-log">4.4 Integration Sync Log<a class="headerlink" href="#44-integration-sync-log" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>syncLogId</td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>integrationName</td>
+<td>String(50)</td>
+<td>e.g., SAP_BP_REPLICATION, ONRR_SUBMISSION, ACH_TRANSMIT</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>Enum(inbound, outbound)</td>
+<td></td>
+</tr>
+<tr>
+<td>syncTimestamp</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>recordCount</td>
+<td>Integer</td>
+<td>Records processed</td>
+</tr>
+<tr>
+<td>successCount</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>failureCount</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>syncStatus</td>
+<td>Enum(success, partial, failed)</td>
+<td></td>
+</tr>
+<tr>
+<td>errorDetail</td>
+<td>JSONB</td>
+<td>Error messages for failed records</td>
+</tr>
+<tr>
+<td>externalReference</td>
+<td>String(100)</td>
+<td>Confirmation or transaction ID from external system</td>
+</tr>
+<tr>
+<td>retriesAttempted</td>
+<td>Integer</td>
+<td>Number of retry attempts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="45-archive-run">4.5 Archive Run<a class="headerlink" href="#45-archive-run" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>archiveRunId</td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>policyId</td>
+<td>UUID</td>
+<td>FK → ILMArchivePolicy</td>
+</tr>
+<tr>
+<td>period</td>
+<td>YearMonth</td>
+<td>Period being archived</td>
+</tr>
+<tr>
+<td>runStatus</td>
+<td>Enum(pending, running, completed, failed)</td>
+<td></td>
+</tr>
+<tr>
+<td>recordsArchived</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>archiveLocation</td>
+<td>String(500)</td>
+<td>Azure Blob Storage URI</td>
+</tr>
+<tr>
+<td>startedAt</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>completedAt</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>triggeredBy</td>
+<td>Enum(scheduled, manual)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-business-processing-rules">5. Business Processing Rules<a class="headerlink" href="#5-business-processing-rules" title="Permanent link">&para;</a></h2>
+<h3 id="51-period-close-sequence">5.1 Period Close Sequence<a class="headerlink" href="#51-period-close-sequence" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>FUNCTION closeAccountingPeriod(companyCode, period):
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  calendar = fetch AccountingPeriodCalendar for companyCode + period
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  IF calendar.periodStatus != &#39;open&#39;:
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    THROW &quot;Period is not open for closing&quot;
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  // Validate all prerequisite steps are complete
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  CHECK: M1 production allocations finalized (productionCloseDate SET)
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  CHECK: M4 settlement statements all &#39;posted&#39; (valuationCloseDate SET)
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  CHECK: M6 distribution run completed (distributionCloseDate SET)
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  CHECK: M7 payment run finalized (paymentCloseDate SET)
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  CHECK: M8 regulatory reports submitted (regulatoryCloseDate SET)
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  IF any check fails:
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    RETURN list of blocking items; do NOT close
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>  // Soft close first — blocks new postings, allows corrections
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  UPDATE calendar SET periodStatus = &#39;soft_closed&#39;
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>  // After accountant review window (configurable days):
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  UPDATE calendar SET periodStatus = &#39;hard_closed&#39;, closedBy = userId, closedAt = now()
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>  PUBLISH event: ua.admin.period.closed
+</code></pre></div>
+<h3 id="52-automation-ruleset-evaluation-engine">5.2 Automation Ruleset Evaluation Engine<a class="headerlink" href="#52-automation-ruleset-evaluation-engine" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>FUNCTION evaluateRulesets(moduleTarget, triggerEvent, record):
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  rulesets = fetch active Automation Rulesets WHERE
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    moduleTarget = moduleTarget AND triggerEvent = triggerEvent
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  ORDER BY priority ASC
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  FOR each ruleset:
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    conditionMet = evaluateCondition(ruleset.conditionExpression, record)
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    IF conditionMet:
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>      EXECUTE action(ruleset.actionType, ruleset.actionParameters, record)
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>      // Log the automated action to audit log
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>      PERSIST AuditLogEntry (action = ruleset.actionType, entityId = record.id)
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>      IF ruleset.actionType IN (&#39;auto_approve&#39;, &#39;reject&#39;):
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        BREAK  // Stop evaluating further rules
+</code></pre></div>
+<h3 id="53-ilm-archiving-workflow">5.3 ILM Archiving Workflow<a class="headerlink" href="#53-ilm-archiving-workflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>FUNCTION runArchivePolicy(policyId, period):
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  policy = fetch ILMArchivePolicy
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  cutoffDate = period.lastDay - policy.retentionActiveYears years
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  // Identify records eligible for archiving
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  eligibleRecords = SELECT * FROM policy.targetEntity
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    WHERE periodDate &lt;= cutoffDate
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    AND legalHold = FALSE
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  // Check for personal data records — anonymize before archiving
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  FOR each record in eligibleRecords:
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    personalDataRecords = fetch PersonalDataRecord WHERE entityId = record.id
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    IF personalDataRecords exist AND record.date &gt; retentionExpiryDate:
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>      anonymize(record, personalDataRecords)
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>  // Export to Azure Blob cold storage (Parquet format)
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>  archiveFile = exportToBlob(eligibleRecords, policy.archiveMethod)
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>  // Delete from active database after successful export
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>  IF archiveFile.checksum VERIFIED:
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    DELETE from policy.targetEntity WHERE id IN eligibleRecords.ids
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    PERSIST ArchiveRun (archiveLocation = archiveFile.uri, recordsArchived = count)
+</code></pre></div>
+<h3 id="54-personal-data-blocking-and-anonymization">5.4 Personal Data Blocking and Anonymization<a class="headerlink" href="#54-personal-data-blocking-and-anonymization" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>FUNCTION blockPersonalData(businessPartnerId, requestReason):
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  // Find all PII records for this data subject
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  records = fetch PersonalDataRecord WHERE businessPartnerId = businessPartnerId
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    AND blockingStatus = &#39;active&#39;
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  FOR each record:
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    UPDATE PersonalDataRecord SET blockingStatus = &#39;blocked&#39;, blockedAt = now()
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    // Restrict API access — RLS policy will enforce blockingStatus
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    PERSIST AuditLogEntry (action = &#39;block&#39;, entityId = record.personalDataId)
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>  NOTIFY data protection officer
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>FUNCTION anonymizePersonalData(businessPartnerId):
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>  records = fetch PersonalDataRecord WHERE businessPartnerId = businessPartnerId
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    AND retentionExpiryDate &lt;= today()
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>  FOR each record:
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    entity = fetch entity(record.entityType, record.entityId)
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    // Replace PII fields with pseudonymous tokens
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    IF &#39;name&#39; IN record.dataCategories:
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>      entity.ownerName = HASH(entity.ownerName + salt)
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    IF &#39;tax_id&#39; IN record.dataCategories:
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>      entity.taxId = &#39;[ANONYMIZED]&#39;
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    IF &#39;bank_account&#39; IN record.dataCategories:
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>      entity.bankAccount = &#39;[ANONYMIZED]&#39;
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    IF &#39;address&#39; IN record.dataCategories:
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>      entity.mailingAddress = NULL
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>    PERSIST entity
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>    UPDATE PersonalDataRecord SET blockingStatus = &#39;anonymized&#39;, anonymizedAt = now()
+</code></pre></div>
+<h3 id="55-onboarding-validation-workflow">5.5 Onboarding Validation Workflow<a class="headerlink" href="#55-onboarding-validation-workflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>FUNCTION runOnboardingValidation(checklistId):
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  checklist = fetch OnboardingValidationChecklist
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  checkItems = fetch OnboardingCheckItem WHERE checklistId = checklistId
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  FOR each checkItem WHERE checkStatus = &#39;pending&#39;:
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    result = executeCheck(checkItem.checkCode, checklist.ventureId, checklist.companyCode)
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    UPDATE checkItem SET
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>      checkStatus = result.passed ? &#39;passed&#39; : &#39;failed&#39;,
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>      checkResult = result.detail
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>  failedItems = filter checkItems WHERE checkStatus = &#39;failed&#39;
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>  IF failedItems IS EMPTY:
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    UPDATE checklist SET checklistStatus = &#39;passed&#39;
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    // Venture/company code may now be activated
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>  ELSE:
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    UPDATE checklist SET checklistStatus = &#39;failed&#39;
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    NOTIFY onboarding owner with failedItems list
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    // Activation blocked until all items pass or are waived
+</code></pre></div>
+<hr />
+<h2 id="6-rbac-administration-ui">6. RBAC Administration UI<a class="headerlink" href="#6-rbac-administration-ui" title="Permanent link">&para;</a></h2>
+<p>The M9 administration interface provides:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Required Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role Management</td>
+<td>Create, edit, deactivate roles; assign permission scopes</td>
+<td><code>admin:roles</code></td>
+</tr>
+<tr>
+<td>User Assignment</td>
+<td>Assign/revoke roles; set effective dates; view current assignments</td>
+<td><code>admin:users</code></td>
+</tr>
+<tr>
+<td>Period Calendar</td>
+<td>Open/soft-close/hard-close accounting periods; view close sequence</td>
+<td><code>admin:calendar</code></td>
+</tr>
+<tr>
+<td>Automation Rulesets</td>
+<td>Create/edit/activate/deactivate rulesets; test condition evaluation</td>
+<td><code>admin:automation</code></td>
+</tr>
+<tr>
+<td>Archive Policy</td>
+<td>View and manage ILM archive policies; trigger manual archive runs</td>
+<td><code>admin:ilm</code></td>
+</tr>
+<tr>
+<td>Personal Data</td>
+<td>View blocking status; initiate blocking/anonymization; DSAR tracking</td>
+<td><code>admin:personal_data</code></td>
+</tr>
+<tr>
+<td>Audit Log Viewer</td>
+<td>Search and export audit log entries (read-only)</td>
+<td><code>admin:audit_read</code></td>
+</tr>
+<tr>
+<td>Integration Monitor</td>
+<td>View sync logs, failure rates, retry status per integration</td>
+<td><code>admin:integrations</code></td>
+</tr>
+<tr>
+<td>Onboarding Validator</td>
+<td>Create checklists, run validations, waive items with justification</td>
+<td><code>admin:onboarding</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-api-endpoints">7. API Endpoints<a class="headerlink" href="#7-api-endpoints" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Description</th>
+<th>Auth Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/roles</code></td>
+<td>List role definitions</td>
+<td><code>admin:roles</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/admin/roles</code></td>
+<td>Create role</td>
+<td><code>admin:roles</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/v1/admin/roles/{id}</code></td>
+<td>Update role</td>
+<td><code>admin:roles</code></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/api/v1/admin/roles/{id}</code></td>
+<td>Deactivate role</td>
+<td><code>admin:roles</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/users/{userId}/assignments</code></td>
+<td>User's current role assignments</td>
+<td><code>admin:users</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/admin/users/{userId}/assignments</code></td>
+<td>Assign role to user</td>
+<td><code>admin:users</code></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/api/v1/admin/users/{userId}/assignments/{id}</code></td>
+<td>Revoke role</td>
+<td><code>admin:users</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/calendar/{companyCode}</code></td>
+<td>Period calendar for company</td>
+<td><code>admin:calendar</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/v1/admin/calendar/{companyCode}/{period}/open</code></td>
+<td>Open a period</td>
+<td><code>admin:calendar</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/v1/admin/calendar/{companyCode}/{period}/soft-close</code></td>
+<td>Soft-close a period</td>
+<td><code>admin:calendar</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/v1/admin/calendar/{companyCode}/{period}/hard-close</code></td>
+<td>Hard-close a period</td>
+<td><code>admin:calendar</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/automation/rulesets</code></td>
+<td>List automation rulesets</td>
+<td><code>admin:automation</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/admin/automation/rulesets</code></td>
+<td>Create ruleset</td>
+<td><code>admin:automation</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/v1/admin/automation/rulesets/{id}</code></td>
+<td>Update ruleset</td>
+<td><code>admin:automation</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/admin/automation/rulesets/{id}/test</code></td>
+<td>Test ruleset against sample record</td>
+<td><code>admin:automation</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/ilm/policies</code></td>
+<td>List archive policies</td>
+<td><code>admin:ilm</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/admin/ilm/runs</code></td>
+<td>Trigger manual archive run</td>
+<td><code>admin:ilm</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/ilm/runs/{id}</code></td>
+<td>Archive run status</td>
+<td><code>admin:ilm</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/personal-data/{bpId}</code></td>
+<td>Personal data catalog for BP</td>
+<td><code>admin:personal_data</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/admin/personal-data/{bpId}/block</code></td>
+<td>Block personal data</td>
+<td><code>admin:personal_data</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/admin/personal-data/{bpId}/anonymize</code></td>
+<td>Anonymize personal data</td>
+<td><code>admin:personal_data</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/audit-log</code></td>
+<td>Search audit log</td>
+<td><code>admin:audit_read</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/integrations/sync-log</code></td>
+<td>Integration sync history</td>
+<td><code>admin:integrations</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/onboarding/checklists</code></td>
+<td>List onboarding checklists</td>
+<td><code>admin:onboarding</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/admin/onboarding/checklists</code></td>
+<td>Create checklist</td>
+<td><code>admin:onboarding</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/admin/onboarding/checklists/{id}/run</code></td>
+<td>Execute validation checks</td>
+<td><code>admin:onboarding</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/v1/admin/onboarding/checklists/{id}/items/{itemId}/waive</code></td>
+<td>Waive a check item</td>
+<td><code>admin:onboarding</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-reports">8. Reports<a class="headerlink" href="#8-reports" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Report</th>
+<th>Description</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Access Report</td>
+<td>All current role assignments with effective dates; highlights temporary access</td>
+<td>On demand / quarterly</td>
+</tr>
+<tr>
+<td>Role Permission Matrix</td>
+<td>Cross-reference of roles vs. permission scopes</td>
+<td>On demand</td>
+</tr>
+<tr>
+<td>Period Close Status</td>
+<td>Current status of all open periods; blocking items for unclosed periods</td>
+<td>Daily / on demand</td>
+</tr>
+<tr>
+<td>Automation Ruleset Activity</td>
+<td>Rules fired, actions taken, and records affected per period</td>
+<td>Monthly / on demand</td>
+</tr>
+<tr>
+<td>Archive Run Summary</td>
+<td>Records archived per policy, storage location, and verification status</td>
+<td>Monthly</td>
+</tr>
+<tr>
+<td>Data Retention Calendar</td>
+<td>Upcoming archive and purge dates by entity type</td>
+<td>On demand</td>
+</tr>
+<tr>
+<td>Personal Data Subject Report</td>
+<td>All PII records for a given business partner; used for DSAR response</td>
+<td>On demand</td>
+</tr>
+<tr>
+<td>Blocked/Anonymized Data Report</td>
+<td>Data subjects with active blocks or completed anonymization</td>
+<td>On demand</td>
+</tr>
+<tr>
+<td>Audit Log Export</td>
+<td>Filtered export of audit log entries (by user, module, date range, entity)</td>
+<td>On demand / compliance</td>
+</tr>
+<tr>
+<td>Integration Health Report</td>
+<td>Sync success/failure rates by integration; retry history</td>
+<td>Daily / on demand</td>
+</tr>
+<tr>
+<td>Onboarding Validation Report</td>
+<td>Checklist results; passed, failed, and waived items by venture/company code</td>
+<td>On demand</td>
+</tr>
+<tr>
+<td>Stale Access Report</td>
+<td>Users with role assignments past their expiration date or not logged in &gt; 90 days</td>
+<td>Weekly</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
