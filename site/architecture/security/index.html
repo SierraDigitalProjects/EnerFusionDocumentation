@@ -1,0 +1,2581 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Upstream Accounting Platform for North American Energy Operators">
+      
+      
+        <meta name="author" content="EnerFusion Product Team">
+      
+      
+      
+        <link rel="prev" href="../data/">
+      
+      
+        <link rel="next" href="../../operations/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Security Architecture - EnerFusion Upstream Accounting — Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#security-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-header__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EnerFusion Upstream Accounting — Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Security Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../benefits/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benefits
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../assumptions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Assumptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../master-data/overview/" class="md-tabs__link">
+          
+  
+  
+  Master Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../requirements/functional/" class="md-tabs__link">
+          
+  
+  
+  Requirements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../open-questions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../modules/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../operations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../project-structure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Project Structure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-tabs__link">
+          
+  
+  
+  Module Specifications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../process-flows/payment-processing/" class="md-tabs__link">
+          
+  
+  
+  Process Flows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/uom-and-products/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pilot-scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pilot Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test-cases/e2e-scenario/" class="md-tabs__link">
+          
+  
+  
+  Test Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-nav__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    EnerFusion Upstream Accounting — Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benefits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benefits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Master Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/centrally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centrally Managed (SAP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/locally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locally Managed (EnerFusion)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/not-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Not Managed in SAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/non-functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Non-Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#security-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Layers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identity-access-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity &amp; Access Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identity &amp; Access Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-active-directory-entra-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Active Directory (Entra ID)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC Middleware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secrets Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes-network-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Network Policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mtls-service-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mTLS (Service Mesh)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#azure-apim-waf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure APIM WAF
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Security
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#column-level-encryption-for-pii" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Column-Level Encryption for PII
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-row-level-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL Row-Level Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-image-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container Image Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#owasp-controls-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OWASP Controls Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M1 — Production & Volume Allocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M2-Ownership-DOI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2 — Ownership & DOI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M3-Contractual-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Base)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M3-Contractual-Allocation-enhanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Enhanced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M4-Contracts-Pricing-Valuation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M4 — Contracts, Pricing & Valuation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M5-Balancing-Workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M5 — Balancing Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M6-Revenue-Distribution-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M6 — Revenue Distribution & Accounting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M7-Payment-Processing-Check-Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7 — Payment Processing & Check Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M8-Regulatory-Tax-Royalty-Reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M8 — Regulatory, Tax & Royalty Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M9-Administration-ILM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M9 — Administration & ILM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/payment-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payment Processing (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/check-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check Input (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/onrr-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONRR-2014 Processing (M8)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/ar-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AR Workplace (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/uom-and-products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units of Measure & Products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/ad-valorem-true-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ad Valorem True-Up (M4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pilot-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Test Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test-cases/e2e-scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Scenario (Build-A-Biz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="security-architecture">Security Architecture<a class="headerlink" href="#security-architecture" title="Permanent link">&para;</a></h1>
+<h2 id="security-layers">Security Layers<a class="headerlink" href="#security-layers" title="Permanent link">&para;</a></h2>
+<p>EnerFusion Upstream Accounting enforces security at five distinct layers. A request must clear all applicable layers before data is returned or mutated.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Browser / API Client
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>       │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>       ▼
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>[1] Azure AD — Identity &amp; Token Issuance
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>       │  Access token (JWT, 1hr TTL)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>       ▼
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[2] Azure API Management — Token Validation + Rate Limiting
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>       │  Validated claims forwarded to backend
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>       ▼
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>[3] Service Middleware — RBAC + Scope Enforcement
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>       │  Module × action × companyCode check
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>       ▼
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>[4] Application Layer — Business Rule Validation (Zod)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>       │  Schema-valid, sanitized input
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>       ▼
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>[5] PostgreSQL — Row-Level Security (RLS)
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>       │  company_code isolation enforced at data layer
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>       ▼
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>Data returned / mutation applied
+</code></pre></div>
+<hr />
+<h2 id="identity-access-management">Identity &amp; Access Management<a class="headerlink" href="#identity-access-management" title="Permanent link">&para;</a></h2>
+<h3 id="azure-active-directory-entra-id">Azure Active Directory (Entra ID)<a class="headerlink" href="#azure-active-directory-entra-id" title="Permanent link">&para;</a></h3>
+<p>All users authenticate via Azure AD using OAuth2 Authorization Code + PKCE. Roles are assigned as Azure AD App Roles, not managed within EnerFusion.</p>
+<p><strong>Token Claims Used:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>oid</code></td>
+<td>Immutable user identifier in audit logs</td>
+</tr>
+<tr>
+<td><code>preferred_username</code></td>
+<td>Display name in UI, log entries</td>
+</tr>
+<tr>
+<td><code>roles[]</code></td>
+<td>Mapped to EnerFusion module permissions</td>
+</tr>
+<tr>
+<td><code>extension_companyCode</code></td>
+<td>Tenant scoping; set in PostgreSQL session</td>
+</tr>
+<tr>
+<td><code>exp</code></td>
+<td>Token expiry enforced by APIM</td>
+</tr>
+</tbody>
+</table>
+<p><strong>App Role → Module Scope Mapping:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// shared/auth/rolePermissionMap.ts</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">ROLE_PERMISSION_MAP</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">ModulePermission</span><span class="p">[]</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="s1">&#39;PRA.Production.Reader&#39;</span><span class="o">:</span><span class="w">   </span><span class="p">[{</span><span class="w"> </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;production&#39;</span><span class="p">,</span><span class="w">  </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;read&#39;</span><span class="w">    </span><span class="p">}],</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="s1">&#39;PRA.Production.Editor&#39;</span><span class="o">:</span><span class="w">   </span><span class="p">[{</span><span class="w"> </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;production&#39;</span><span class="p">,</span><span class="w">  </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;write&#39;</span><span class="w">   </span><span class="p">},</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">                              </span><span class="p">{</span><span class="w"> </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;production&#39;</span><span class="p">,</span><span class="w">  </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;read&#39;</span><span class="w">    </span><span class="p">}],</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="s1">&#39;PRA.Production.Runner&#39;</span><span class="o">:</span><span class="w">   </span><span class="p">[{</span><span class="w"> </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;production&#39;</span><span class="p">,</span><span class="w">  </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;execute&#39;</span><span class="w"> </span><span class="p">}],</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="s1">&#39;PRA.Ownership.Editor&#39;</span><span class="o">:</span><span class="w">    </span><span class="p">[{</span><span class="w"> </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ownership&#39;</span><span class="p">,</span><span class="w">   </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;write&#39;</span><span class="w">   </span><span class="p">}],</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="s1">&#39;PRA.Ownership.Approver&#39;</span><span class="o">:</span><span class="w">  </span><span class="p">[{</span><span class="w"> </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ownership&#39;</span><span class="p">,</span><span class="w">   </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;approve&#39;</span><span class="w"> </span><span class="p">}],</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="s1">&#39;PRA.Valuation.Runner&#39;</span><span class="o">:</span><span class="w">    </span><span class="p">[{</span><span class="w"> </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;valuation&#39;</span><span class="p">,</span><span class="w">   </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;execute&#39;</span><span class="w"> </span><span class="p">}],</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="s1">&#39;PRA.Compliance.Officer&#39;</span><span class="o">:</span><span class="w">  </span><span class="p">[{</span><span class="w"> </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;regulatory&#39;</span><span class="p">,</span><span class="w">  </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;read&#39;</span><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">                              </span><span class="p">{</span><span class="w"> </span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;regulatory&#39;</span><span class="p">,</span><span class="w">  </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;submit&#39;</span><span class="w">  </span><span class="p">}],</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="s1">&#39;PRA.SystemAdmin&#39;</span><span class="o">:</span><span class="w">         </span><span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">],</span><span class="w"> </span><span class="c1">// All modules, all actions</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">};</span>
+</code></pre></div>
+<hr />
+<h2 id="rbac-middleware">RBAC Middleware<a class="headerlink" href="#rbac-middleware" title="Permanent link">&para;</a></h2>
+<p>Every API route declares its required permission. The <code>rbac.middleware.ts</code> validates the decoded JWT roles against the permission map cached in Redis.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// api/middleware/rbac.middleware.ts</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">requirePermission</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">module</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="o">:</span><span class="w"> </span><span class="kt">AuthenticatedRequest</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="o">:</span><span class="w"> </span><span class="kt">Response</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="o">:</span><span class="w"> </span><span class="kt">NextFunction</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">cacheKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`perms:</span><span class="si">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">oid</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">companyCode</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">permissions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">redis</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">cacheKey</span><span class="p">);</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">permissions</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nx">permissions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">buildPermissions</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">roles</span><span class="p">);</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">redis</span><span class="p">.</span><span class="nx">setex</span><span class="p">(</span><span class="nx">cacheKey</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">permissions</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5min TTL</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">allowed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">permissions</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="p">(</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">module</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">module</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">action</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">action</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="p">);</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">allowed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">next</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">ForbiddenError</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">module</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">action</span><span class="si">}</span><span class="sb"> access denied`</span><span class="p">));</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="c1">// Set PostgreSQL session variable for RLS</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">db</span><span class="p">.</span><span class="nx">raw</span><span class="p">(</span><span class="sb">`SET LOCAL app.company_code = ?`</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">companyCode</span><span class="p">]);</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="nx">next</span><span class="p">();</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">  </span><span class="p">};</span>
+</code></pre></div>
+<hr />
+<h2 id="secrets-management">Secrets Management<a class="headerlink" href="#secrets-management" title="Permanent link">&para;</a></h2>
+<p>All secrets are stored in Azure Key Vault and mounted into pods using the CSI Secret Store driver. No secrets appear in Helm values files or environment variable definitions.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># helm/svc-production/templates/deployment.yaml</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">csi</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.k8s.io</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="nt">volumeAttributes</span><span class="p">:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="nt">secretProviderClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pra-production-secrets</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># SecretProviderClass references Key Vault secrets</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># Mounted at /mnt/secrets/ in the container</span>
+</code></pre></div>
+<p><strong>Key Vault Secret Naming Convention:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Secret Name</th>
+<th>Consumed By</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pra-production-db-url</code></td>
+<td>svc-production</td>
+<td>PostgreSQL write connection string</td>
+</tr>
+<tr>
+<td><code>pra-production-db-read-url</code></td>
+<td>svc-production</td>
+<td>PostgreSQL read replica URL</td>
+</tr>
+<tr>
+<td><code>pra-servicebus-connection</code></td>
+<td>All services</td>
+<td>Azure Service Bus connection string</td>
+</tr>
+<tr>
+<td><code>pra-redis-connection</code></td>
+<td>All services</td>
+<td>Redis connection string</td>
+</tr>
+<tr>
+<td><code>pra-jwt-audience</code></td>
+<td>auth-svc</td>
+<td>Expected JWT audience claim</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="network-security">Network Security<a class="headerlink" href="#network-security" title="Permanent link">&para;</a></h2>
+<h3 id="kubernetes-network-policies">Kubernetes Network Policies<a class="headerlink" href="#kubernetes-network-policies" title="Permanent link">&para;</a></h3>
+<p>Every namespace has a default-deny policy. Services are granted explicit ingress allows.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Default deny all ingress in pra-prod namespace</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkPolicy</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default-deny-ingress</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pra-prod</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">podSelector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">policyTypes</span><span class="p">:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nn">---</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1"># Allow NGINX ingress to reach BFF only</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NetworkPolicy</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nt">metadata</span><span class="p">:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">allow-ingress-to-bff</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pra-prod</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="nt">spec</span><span class="p">:</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">  </span><span class="nt">podSelector</span><span class="p">:</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bff</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">  </span><span class="nt">ingress</span><span class="p">:</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">from</span><span class="p">:</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">namespaceSelector</span><span class="p">:</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">            </span><span class="nt">matchLabels</span><span class="p">:</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ingress-nginx</span>
+</code></pre></div>
+<hr />
+<h3 id="mtls-service-mesh">mTLS (Service Mesh)<a class="headerlink" href="#mtls-service-mesh" title="Permanent link">&para;</a></h3>
+<p>All pod-to-pod communication within the AKS cluster is encrypted via mTLS using Linkerd (or Istio). Services do not need to implement TLS certificate management themselves.</p>
+<hr />
+<h3 id="azure-apim-waf">Azure APIM WAF<a class="headerlink" href="#azure-apim-waf" title="Permanent link">&para;</a></h3>
+<p>Azure API Management is configured with an Azure Web Application Firewall (WAF) policy in Prevention mode:</p>
+<ul>
+<li>OWASP Core Rule Set 3.2</li>
+<li>Rate limiting: 1,000 requests/minute per client IP</li>
+<li>JWT validation on all routes</li>
+<li>IP allowlist for SCADA and SAP integration endpoints</li>
+</ul>
+<hr />
+<h2 id="data-security">Data Security<a class="headerlink" href="#data-security" title="Permanent link">&para;</a></h2>
+<h3 id="column-level-encryption-for-pii">Column-Level Encryption for PII<a class="headerlink" href="#column-level-encryption-for-pii" title="Permanent link">&para;</a></h3>
+<p>Sensitive personal data fields are encrypted at the application layer before storage:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// infrastructure/encryption/fieldEncryption.ts</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">KeyClient</span><span class="p">,</span><span class="w"> </span><span class="nx">CryptographyClient</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@azure/keyvault-keys&#39;</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">encryptField</span><span class="p">(</span><span class="nx">plaintext</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cryptoClient</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s1">&#39;RSA-OAEP&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">plaintext</span><span class="p">));</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;base64&#39;</span><span class="p">);</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">decryptField</span><span class="p">(</span><span class="nx">ciphertext</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cryptoClient</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="s1">&#39;RSA-OAEP&#39;</span><span class="p">,</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nx">Buffer</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">ciphertext</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;base64&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="p">);</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">result</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">);</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">}</span>
+</code></pre></div>
+<p>Fields encrypted: <code>tax_id</code>, <code>bank_account_number</code>, <code>bank_routing_number</code>.</p>
+<hr />
+<h3 id="postgresql-row-level-security">PostgreSQL Row-Level Security<a class="headerlink" href="#postgresql-row-level-security" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- Enable RLS on all tenant-scoped tables</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">production</span><span class="p">.</span><span class="n">well_completions</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="k">ROW</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">SECURITY</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1">-- Policy: users can only see rows for their company_code</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">POLICY</span><span class="w"> </span><span class="n">well_completion_company_isolation</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">ON</span><span class="w"> </span><span class="n">production</span><span class="p">.</span><span class="n">well_completions</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">USING</span><span class="w"> </span><span class="p">(</span><span class="n">company_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current_setting</span><span class="p">(</span><span class="s1">&#39;app.company_code&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">TRUE</span><span class="p">));</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1">-- Service role bypasses RLS for admin/migration operations</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">production</span><span class="p">.</span><span class="n">well_completions</span><span class="w"> </span><span class="k">FORCE</span><span class="w"> </span><span class="k">ROW</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">SECURITY</span><span class="p">;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">SELECT</span><span class="p">,</span><span class="w"> </span><span class="k">INSERT</span><span class="p">,</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">,</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">production</span><span class="p">.</span><span class="n">well_completions</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">pra_app_role</span><span class="p">;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1">-- pra_admin_role is granted BYPASSRLS for migration purposes only</span>
+</code></pre></div>
+<hr />
+<h2 id="audit-logging">Audit Logging<a class="headerlink" href="#audit-logging" title="Permanent link">&para;</a></h2>
+<p>Every data mutation is written to <code>admin_ilm.audit_log</code> before the transaction commits.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">admin_ilm</span><span class="p">.</span><span class="n">audit_log</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="n">audit_id</span><span class="w">        </span><span class="n">UUID</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">()</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="n">event_time</span><span class="w">      </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="n">user_id</span><span class="w">         </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="n">user_name</span><span class="w">       </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">),</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="n">company_code</span><span class="w">    </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="n">module</span><span class="w">          </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="k">table_name</span><span class="w">      </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="n">record_id</span><span class="w">       </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="n">action</span><span class="w">          </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">  </span><span class="c1">-- INSERT, UPDATE, DELETE</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">  </span><span class="n">before_value</span><span class="w">    </span><span class="n">JSONB</span><span class="p">,</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="n">after_value</span><span class="w">     </span><span class="n">JSONB</span><span class="p">,</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">  </span><span class="n">correlation_id</span><span class="w">  </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="n">source_ip</span><span class="w">       </span><span class="n">INET</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">);</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="c1">-- Partition by month for retention management</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="c1">-- Append-only: no UPDATE or DELETE on audit_log</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="k">REVOKE</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">,</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">admin_ilm</span><span class="p">.</span><span class="n">audit_log</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pra_app_role</span><span class="p">;</span>
+</code></pre></div>
+<hr />
+<h2 id="container-image-security">Container Image Security<a class="headerlink" href="#container-image-security" title="Permanent link">&para;</a></h2>
+<p>CI pipeline gates on Trivy scan results before any image is pushed to ACR:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># .github/workflows/ci.yml</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Scan image with Trivy</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aquasecurity/trivy-action@master</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">image-ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.IMAGE_NAME }}:${{ github.sha }}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sarif</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">exit-code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">             </span><span class="c1"># Fail CI on CRITICAL or HIGH findings</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CRITICAL,HIGH</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trivy-results.sarif</span>
+</code></pre></div>
+<p>Multistage Dockerfile minimizes attack surface:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Stage 1: Build</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">FROM</span><span class="w"> </span><span class="s">node:20-alpine</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">COPY</span><span class="w"> </span>package*.json<span class="w"> </span>./
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>ci<span class="w"> </span>--only<span class="o">=</span>production
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">RUN</span><span class="w"> </span>npx<span class="w"> </span>tsc<span class="w"> </span>--noEmit<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>build
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c"># Stage 2: Runtime — no build tools, no dev dependencies</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="k">FROM</span><span class="w"> </span><span class="s">node:20-alpine</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">runtime</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="k">RUN</span><span class="w"> </span>addgroup<span class="w"> </span>-S<span class="w"> </span>pra<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>adduser<span class="w"> </span>-S<span class="w"> </span>pra<span class="w"> </span>-G<span class="w"> </span>pra
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>--chown<span class="o">=</span>pra:pra<span class="w"> </span>/app/dist<span class="w"> </span>./dist
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>--chown<span class="o">=</span>pra:pra<span class="w"> </span>/app/node_modules<span class="w"> </span>./node_modules
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="k">USER</span><span class="w"> </span><span class="s">pra</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">3000</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dist/index.js&quot;</span><span class="p">]</span>
+</code></pre></div>
+<hr />
+<h2 id="owasp-controls-summary">OWASP Controls Summary<a class="headerlink" href="#owasp-controls-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>OWASP Risk</th>
+<th>Control Applied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01 Broken Access Control</td>
+<td>RBAC middleware + PostgreSQL RLS + APIM JWT validation</td>
+</tr>
+<tr>
+<td>A02 Cryptographic Failures</td>
+<td>AES-256 column encryption for PII; CMK at rest; TLS in transit</td>
+</tr>
+<tr>
+<td>A03 Injection</td>
+<td>Zod input validation; Knex parameterized queries; no raw SQL in controllers</td>
+</tr>
+<tr>
+<td>A05 Security Misconfiguration</td>
+<td>Default-deny NetworkPolicy; no <code>latest</code> image tags; Key Vault for secrets</td>
+</tr>
+<tr>
+<td>A06 Vulnerable Components</td>
+<td>Trivy scan in CI gates on CRITICAL/HIGH CVEs</td>
+</tr>
+<tr>
+<td>A07 Auth Failures</td>
+<td>Short-lived JWT (1hr); PKCE; MSAL.js token refresh; Redis permission cache TTL</td>
+</tr>
+<tr>
+<td>A09 Logging Failures</td>
+<td>Structured audit log (append-only); OpenTelemetry traces; Azure Monitor alerts</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

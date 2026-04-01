@@ -1,0 +1,109 @@
+site_name: EnerFusion Upstream Accounting — Documentation
+site_description: Upstream Accounting Platform for North American Energy Operators
+site_author: EnerFusion Product Team
+docs_dir: Documentation
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - toc.integrate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Benefits: benefits.md
+  - Assumptions: assumptions.md
+  - Scope: scope.md
+
+  - Master Data:
+      - Overview: master-data/overview.md
+      - Centrally Managed (SAP): master-data/centrally-managed.md
+      - Locally Managed (EnerFusion): master-data/locally-managed.md
+      - Not Managed in SAP: master-data/not-managed.md
+
+  - Requirements:
+      - Functional Requirements: requirements/functional.md
+      - Non-Functional Requirements: requirements/non-functional.md
+
+  - Open Questions: open-questions.md
+
+  - Architecture:
+      - Module Architecture: architecture/modules.md
+      - Technical Architecture: architecture/technical.md
+      - Data Architecture: architecture/data.md
+      - Security Architecture: architecture/security.md
+
+
+  - Operations: operations.md
+  - Project Structure: project-structure.md
+
+  - Module Specifications:
+      - M1 — Production & Volume Allocation: 03-Module-Specifications/M1-Production-Volume-Allocation.md
+      - M2 — Ownership & DOI: 03-Module-Specifications/M2-Ownership-DOI.md
+      - M3 — Contractual Allocation (Base): 03-Module-Specifications/M3-Contractual-Allocation.md
+      - M3 — Contractual Allocation (Enhanced): 03-Module-Specifications/M3-Contractual-Allocation-enhanced.md
+      - M4 — Contracts, Pricing & Valuation: 03-Module-Specifications/M4-Contracts-Pricing-Valuation.md
+      - M5 — Balancing Workplace: 03-Module-Specifications/M5-Balancing-Workplace.md
+      - M6 — Revenue Distribution & Accounting: 03-Module-Specifications/M6-Revenue-Distribution-Accounting.md
+      - M7 — Payment Processing & Check Input: 03-Module-Specifications/M7-Payment-Processing-Check-Input.md
+      - M8 — Regulatory, Tax & Royalty Reporting: 03-Module-Specifications/M8-Regulatory-Tax-Royalty-Reporting.md
+      - M9 — Administration & ILM: 03-Module-Specifications/M9-Administration-ILM.md
+
+  - Process Flows:
+      - Payment Processing (M7): process-flows/payment-processing.md
+      - Check Input (M7): process-flows/check-input.md
+      - ONRR-2014 Processing (M8): process-flows/onrr-processing.md
+      - AR Workplace (M7): process-flows/ar-workplace.md
+
+  - Reference:
+      - Units of Measure & Products: reference/uom-and-products.md
+      - Ad Valorem True-Up (M4): reference/ad-valorem-true-up.md
+
+  - Pilot Scope: pilot-scope.md
+
+  - Test Cases:
+      - E2E Scenario (Build-A-Biz): test-cases/e2e-scenario.md

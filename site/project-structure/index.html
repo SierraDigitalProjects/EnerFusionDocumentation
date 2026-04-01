@@ -1,0 +1,2575 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Upstream Accounting Platform for North American Energy Operators">
+      
+      
+        <meta name="author" content="EnerFusion Product Team">
+      
+      
+      
+        <link rel="prev" href="../operations/">
+      
+      
+        <link rel="next" href="../03-Module-Specifications/M1-Production-Volume-Allocation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Project Structure - EnerFusion Upstream Accounting — Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#project-structure" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="EnerFusion Upstream Accounting — Documentation" class="md-header__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EnerFusion Upstream Accounting — Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Project Structure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../benefits/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benefits
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../assumptions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Assumptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../master-data/overview/" class="md-tabs__link">
+          
+  
+  
+  Master Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../requirements/functional/" class="md-tabs__link">
+          
+  
+  
+  Requirements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../open-questions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../architecture/modules/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../operations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Project Structure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-tabs__link">
+          
+  
+  
+  Module Specifications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../process-flows/payment-processing/" class="md-tabs__link">
+          
+  
+  
+  Process Flows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/uom-and-products/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pilot-scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pilot Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../test-cases/e2e-scenario/" class="md-tabs__link">
+          
+  
+  
+  Test Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="EnerFusion Upstream Accounting — Documentation" class="md-nav__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    EnerFusion Upstream Accounting — Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benefits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benefits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Master Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-data/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-data/centrally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centrally Managed (SAP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-data/locally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locally Managed (EnerFusion)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master-data/not-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Not Managed in SAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/non-functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Non-Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/technical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#repository-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository Layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-structure-backend-per-microservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Structure (Backend — per microservice)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-structure-react-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Structure (React 18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared Packages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-actions-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Actions Workflows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-service-schema-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module ↔ Service ↔ Schema Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming-conventions-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Conventions Quick Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M1 — Production & Volume Allocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M2-Ownership-DOI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2 — Ownership & DOI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M3-Contractual-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Base)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M3-Contractual-Allocation-enhanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Enhanced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M4-Contracts-Pricing-Valuation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M4 — Contracts, Pricing & Valuation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M5-Balancing-Workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M5 — Balancing Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M6-Revenue-Distribution-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M6 — Revenue Distribution & Accounting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M7-Payment-Processing-Check-Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7 — Payment Processing & Check Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M8-Regulatory-Tax-Royalty-Reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M8 — Regulatory, Tax & Royalty Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M9-Administration-ILM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M9 — Administration & ILM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-flows/payment-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payment Processing (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-flows/check-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check Input (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-flows/onrr-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONRR-2014 Processing (M8)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-flows/ar-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AR Workplace (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/uom-and-products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units of Measure & Products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/ad-valorem-true-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ad Valorem True-Up (M4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pilot-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Test Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test-cases/e2e-scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Scenario (Build-A-Biz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h1>
+<h2 id="repository-layout">Repository Layout<a class="headerlink" href="#repository-layout" title="Permanent link">&para;</a></h2>
+<p>EnerFusion Upstream Accounting is organised as a <strong>monorepo</strong> with one directory per microservice, a shared packages directory, and infrastructure-as-code at the root.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>enerfusion-pra/                          # Monorepo root
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── services/                            # One directory per microservice
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── svc-production/                  # M1 — Production &amp; Volume Allocation
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── svc-ownership/                   # M2 — Ownership &amp; DOI
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   ├── svc-allocation/                  # M3 — Contractual Allocation
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── svc-valuation/                   # M4 — Contracts, Pricing &amp; Valuation
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── svc-balancing/                   # M5 — Balancing Workplace
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ├── svc-revenue/                     # M6 — Revenue Distribution
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   ├── svc-payments/                    # M7 — Payment Processing
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   ├── svc-regulatory/                  # M8 — Regulatory Reporting
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   └── svc-admin/                       # M9 — Administration &amp; ILM
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>├── shared/                              # Shared packages (npm workspaces)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   ├── types/                           # Shared TypeScript interfaces
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│   ├── errors/                          # RFC 7807 error classes
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│   ├── auth/                            # JWT decode helpers, RBAC types
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│   ├── events/                          # Service Bus event schemas
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│   └── validation/                      # Common Zod schemas
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>├── frontend/                            # React 18 SPA
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│   └── pra-ui/
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>├── bff/                                 # Backend for Frontend (Node.js)
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│   └── pra-bff/
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>├── shared-services/                     # Cross-cutting backend services
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│   ├── auth-svc/                        # Token exchange, session
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│   ├── audit-svc/                       # Audit log aggregation
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│   ├── notification-svc/                # Email / in-app notifications
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│   └── file-svc/                        # Report file storage (Azure Blob)
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>├── infra/                               # Infrastructure as Code
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│   ├── helm/                            # Helm charts
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   ├── terraform/                       # Azure resource provisioning
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│   └── k8s/                             # Raw Kubernetes manifests (if needed)
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>├── .github/
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│   └── workflows/                       # GitHub Actions CI/CD pipelines
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>├── Documentation/                       # MkDocs documentation
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│   └── (this file tree)
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>│
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>├── mkdocs.yml                           # MkDocs site configuration
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>├── package.json                         # Monorepo root (npm workspaces)
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>└── turbo.json                           # Turborepo build pipeline config
+</code></pre></div>
+<hr />
+<h2 id="service-structure-backend-per-microservice">Service Structure (Backend — per microservice)<a class="headerlink" href="#service-structure-backend-per-microservice" title="Permanent link">&para;</a></h2>
+<p>All backend services follow this internal structure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>services/svc-production/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── src/
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│   ├── api/
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   │   ├── routes/
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   │   │   ├── wells.routes.ts          # GET /api/v1/production/wells
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   │   │   ├── wellCompletions.routes.ts
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│   │   │   ├── volumes.routes.ts
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   │   │   ├── allocation.routes.ts
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│   │   │   └── measurementPoints.routes.ts
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│   │   │
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│   │   └── middleware/
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│   │       ├── auth.middleware.ts       # JWT decode + claim extraction
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│   │       ├── rbac.middleware.ts       # Module × action enforcement
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│   │       ├── validate.middleware.ts   # Zod request schema validation
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│   │       ├── rateLimit.middleware.ts  # Per-client rate limiting
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│   │       └── error-handler.ts        # Global error handler (RFC 7807)
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│   │
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│   ├── domain/
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│   │   ├── entities/
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│   │   │   ├── WellCompletion.ts
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│   │   │   ├── AllocationRun.ts
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>│   │   │   └── MeasurementPoint.ts
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>│   │   │
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>│   │   ├── services/
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>│   │   │   ├── allocation.service.ts    # 8-step allocation algorithm
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>│   │   │   ├── wellVolume.service.ts
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>│   │   │   ├── downtime.service.ts
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>│   │   │   └── wellTest.service.ts
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>│   │   │
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>│   │   └── events/
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>│   │       └── volumesAllocated.event.ts
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>│   │
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>│   ├── infrastructure/
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>│   │   ├── db/
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>│   │   │   ├── migrations/              # Knex migration files
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>│   │   │   │   ├── 20240101_create_wells.ts
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>│   │   │   │   └── 20240102_create_well_completions.ts
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>│   │   │   ├── seeds/                   # Dev/test seed data
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>│   │   │   └── repositories/
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>│   │   │       ├── well.repo.ts
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>│   │   │       ├── wellCompletion.repo.ts
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>│   │   │       ├── allocationRun.repo.ts
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>│   │   │       └── mpVolume.repo.ts
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>│   │   │
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>│   │   ├── cache/
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>│   │   │   └── redis.client.ts
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>│   │   │
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>│   │   └── messaging/
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>│   │       └── serviceBus.publisher.ts
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>│   │
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>│   ├── config/
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>│   │   ├── env.ts                       # Key Vault + env var resolution
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>│   │   └── logger.ts                    # Winston JSON logger config
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>│   │
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>│   └── index.ts                         # Express app + server bootstrap
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>│
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>├── tests/
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>│   ├── unit/                            # Jest unit tests (services)
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>│   ├── integration/                     # Jest + Supertest (routes)
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>│   └── contract/                        # Pact consumer tests
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>│
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>├── Dockerfile                           # Multistage Node 20 Alpine
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>├── helm/                                # Helm chart for this service
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>│   ├── Chart.yaml
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>│   ├── values.yaml
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>│   └── templates/
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>│       ├── deployment.yaml
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>│       ├── service.yaml
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>│       ├── hpa.yaml
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>│       ├── networkpolicy.yaml
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>│       ├── secretproviderclass.yaml
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>│       └── servicemonitor.yaml
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>│
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>├── jest.config.ts
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>├── tsconfig.json                        # strict: true
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>└── package.json
+</code></pre></div>
+<hr />
+<h2 id="frontend-structure-react-18">Frontend Structure (React 18)<a class="headerlink" href="#frontend-structure-react-18" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>frontend/pra-ui/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>│
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── src/
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── app/
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   │   ├── App.tsx
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   │   ├── router.tsx                   # React Router v6, lazy-loaded modules
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   │   └── store.ts                     # Redux Toolkit store
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   │
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│   ├── modules/                         # One folder per Upstream Accounting module
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>│   │   ├── production/                  # M1
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>│   │   │   ├── pages/
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>│   │   │   │   ├── WellListPage.tsx
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>│   │   │   │   ├── WellCompletionPage.tsx
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>│   │   │   │   └── AllocationRunPage.tsx
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>│   │   │   ├── components/
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>│   │   │   │   ├── WellCompletionForm/
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>│   │   │   │   │   ├── WellCompletionForm.tsx
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>│   │   │   │   │   ├── WellCompletionForm.module.css
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>│   │   │   │   │   └── WellCompletionForm.test.tsx
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>│   │   │   │   └── AllocationRunStatus/
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>│   │   │   ├── store/
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>│   │   │   │   ├── productionSlice.ts
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>│   │   │   │   └── productionThunks.ts
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>│   │   │   ├── api/
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>│   │   │   │   └── productionApi.ts     # RTK Query endpoints
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>│   │   │   └── types/
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>│   │   │       └── production.types.ts  # IWellCompletion, IAllocationRun
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>│   │   │
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>│   │   ├── ownership/                   # M2
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>│   │   ├── contractual-allocation/      # M3
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>│   │   ├── valuation/                   # M4
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>│   │   ├── balancing/                   # M5
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>│   │   ├── revenue/                     # M6
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>│   │   ├── payments/                    # M7
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>│   │   ├── regulatory/                  # M8
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>│   │   └── admin/                       # M9
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>│   │
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>│   ├── shared/
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>│   │   ├── components/
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>│   │   │   ├── DataGrid/               # AG Grid wrapper
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>│   │   │   ├── StatusBadge/
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>│   │   │   ├── PageHeader/
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>│   │   │   ├── PermissionGuard/        # RBAC-aware wrapper
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>│   │   │   └── ConfirmDialog/
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>│   │   ├── hooks/
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>│   │   │   ├── usePermissions.ts
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>│   │   │   ├── usePagination.ts
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>│   │   │   └── useNotification.ts
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>│   │   ├── api/
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>│   │   │   └── baseApi.ts              # RTK Query base with auth header
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>│   │   └── auth/
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>│   │       ├── msalConfig.ts
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>│   │       └── authProvider.tsx
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>│   │
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>│   └── styles/
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>│       ├── tokens.css                  # Design tokens (colors, spacing)
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>│       ├── global.css                  # Resets only
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>│       └── breakpoints.css             # Media query breakpoints
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>│
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>├── public/
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>├── vite.config.ts
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>├── tsconfig.json
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>└── package.json
+</code></pre></div>
+<hr />
+<h2 id="shared-packages">Shared Packages<a class="headerlink" href="#shared-packages" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>shared/
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── types/                               # Shared TypeScript interfaces
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│   ├── production.types.ts             # IWell, IWellCompletion, IAllocationRun
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│   ├── ownership.types.ts              # IVenture, IDoiOwnerInterest, ITransfer
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   ├── valuation.types.ts              # IContract, ISettlementStatement
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   ├── payments.types.ts               # ICheck, IOwnerPayment
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   └── common.types.ts                 # IPaginatedResponse, IProblemDetail
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>├── errors/
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│   ├── ApplicationError.ts             # Base error class
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│   ├── ValidationError.ts              # HTTP 422
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│   ├── NotFoundError.ts                # HTTP 404
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>│   ├── ForbiddenError.ts               # HTTP 403
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>│   └── ConflictError.ts                # HTTP 409 (DOI checkout conflict)
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>│
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>├── events/
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>│   ├── PraEvent.ts                     # Common event envelope interface
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>│   ├── volumesAllocated.event.ts
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>│   ├── doiChanged.event.ts
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>│   ├── settlementCompleted.event.ts
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>│   └── distributionCompleted.event.ts
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>│
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>└── validation/
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>    ├── pagination.schema.ts            # Common query param schemas
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>    ├── period.schema.ts                # YYYY-MM validation
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    └── uuid.schema.ts
+</code></pre></div>
+<hr />
+<h2 id="infrastructure-structure">Infrastructure Structure<a class="headerlink" href="#infrastructure-structure" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>infra/
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>│
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├── terraform/
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>│   ├── modules/
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>│   │   ├── aks/                        # AKS cluster + node pools
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>│   │   ├── postgres/                   # Azure Database for PostgreSQL
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>│   │   ├── redis/                      # Azure Cache for Redis
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>│   │   ├── servicebus/                 # Azure Service Bus namespace + topics
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>│   │   ├── keyvault/                   # Azure Key Vault + access policies
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>│   │   ├── acr/                        # Azure Container Registry
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>│   │   └── apim/                       # Azure API Management
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>│   │
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>│   ├── environments/
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>│   │   ├── dev/
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>│   │   │   └── main.tf
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>│   │   ├── staging/
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>│   │   │   └── main.tf
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>│   │   └── prod/
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>│   │       └── main.tf
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>│   │
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>│   └── backend.tf                      # Azure Storage remote state
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>│
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>└── helm/
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    ├── charts/                         # Per-service Helm charts
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>    │   └── (see Service Structure above)
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    └── environments/
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>        ├── values-dev.yaml
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>        ├── values-staging.yaml
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>        └── values-prod.yaml
+</code></pre></div>
+<hr />
+<h2 id="github-actions-workflows">GitHub Actions Workflows<a class="headerlink" href="#github-actions-workflows" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>.github/workflows/
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>│
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>├── ci.yml                              # PR gate: lint, typecheck, test, build, scan
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>├── deploy-staging.yml                  # Auto-deploy on merge to main
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>├── deploy-production.yml               # Manual approval gate → production deploy
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>├── migrate.yml                         # Database migration job (pre-deploy)
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>├── load-test.yml                       # Monthly k6 / Azure Load Testing
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>└── dependency-update.yml               # Weekly Dependabot + npm audit
+</code></pre></div>
+<hr />
+<h2 id="module-service-schema-reference">Module ↔ Service ↔ Schema Reference<a class="headerlink" href="#module-service-schema-reference" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>UI Module</th>
+<th>Backend Service</th>
+<th>PostgreSQL Schema</th>
+<th>Azure Service Bus Topics (published)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M1 Production</td>
+<td>svc-production</td>
+<td><code>production</code></td>
+<td><code>ua.production.volumes.allocated</code></td>
+</tr>
+<tr>
+<td>M2 Ownership</td>
+<td>svc-ownership</td>
+<td><code>ownership</code></td>
+<td><code>ua.ownership.doi.changed</code></td>
+</tr>
+<tr>
+<td>M3 Allocation</td>
+<td>svc-allocation</td>
+<td><code>allocation</code></td>
+<td><code>ua.allocation.completed</code></td>
+</tr>
+<tr>
+<td>M4 Valuation</td>
+<td>svc-valuation</td>
+<td><code>valuation</code></td>
+<td><code>ua.valuation.settlement.completed</code></td>
+</tr>
+<tr>
+<td>M5 Balancing</td>
+<td>svc-balancing</td>
+<td><code>balancing</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>M6 Revenue</td>
+<td>svc-revenue</td>
+<td><code>revenue</code></td>
+<td><code>ua.revenue.distribution.completed</code></td>
+</tr>
+<tr>
+<td>M7 Payments</td>
+<td>svc-payments</td>
+<td><code>payments</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>M8 Regulatory</td>
+<td>svc-regulatory</td>
+<td><code>regulatory</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>M9 Admin</td>
+<td>svc-admin</td>
+<td><code>admin_ilm</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>BFF</td>
+<td>pra-bff</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Shared</td>
+<td>auth-svc, audit-svc</td>
+<td><code>shared</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="naming-conventions-quick-reference">Naming Conventions Quick Reference<a class="headerlink" href="#naming-conventions-quick-reference" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Context</th>
+<th>Convention</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File names</td>
+<td>kebab-case</td>
+<td><code>allocation-run.service.ts</code></td>
+</tr>
+<tr>
+<td>Classes</td>
+<td>PascalCase</td>
+<td><code>AllocationRunService</code></td>
+</tr>
+<tr>
+<td>Interfaces</td>
+<td>PascalCase + <code>I</code> prefix</td>
+<td><code>IAllocationRun</code></td>
+</tr>
+<tr>
+<td>REST routes</td>
+<td>kebab-case, versioned</td>
+<td><code>/api/v1/well-completions</code></td>
+</tr>
+<tr>
+<td>gRPC methods</td>
+<td>PascalCase</td>
+<td><code>GetWellCompletion</code></td>
+</tr>
+<tr>
+<td>Proto messages</td>
+<td>PascalCase</td>
+<td><code>WellCompletionResponse</code></td>
+</tr>
+<tr>
+<td>Kubernetes resources</td>
+<td>kebab-case</td>
+<td><code>svc-production-deployment</code></td>
+</tr>
+<tr>
+<td>Helm values</td>
+<td>camelCase</td>
+<td><code>replicaCount</code>, <code>imageTag</code></td>
+</tr>
+<tr>
+<td>PostgreSQL tables</td>
+<td>snake_case</td>
+<td><code>well_completions</code>, <code>doi_owner_interests</code></td>
+</tr>
+<tr>
+<td>CSS classes</td>
+<td>kebab-case + BEM</td>
+<td><code>.well-card</code>, <code>.well-card__title--active</code></td>
+</tr>
+<tr>
+<td>Azure resources</td>
+<td>kebab-case</td>
+<td><code>pra-prod-kv</code>, <code>pra-db-prod</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

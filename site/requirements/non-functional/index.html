@@ -1,0 +1,2612 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Upstream Accounting Platform for North American Energy Operators">
+      
+      
+        <meta name="author" content="EnerFusion Product Team">
+      
+      
+      
+        <link rel="prev" href="../functional/">
+      
+      
+        <link rel="next" href="../../open-questions/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Non-Functional Requirements - EnerFusion Upstream Accounting — Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#non-functional-requirements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-header__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EnerFusion Upstream Accounting — Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Non-Functional Requirements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../benefits/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benefits
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../assumptions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Assumptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../master-data/overview/" class="md-tabs__link">
+          
+  
+  
+  Master Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../functional/" class="md-tabs__link">
+          
+  
+  
+  Requirements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../open-questions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Questions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/modules/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../operations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Operations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../project-structure/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Project Structure
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-tabs__link">
+          
+  
+  
+  Module Specifications
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../process-flows/payment-processing/" class="md-tabs__link">
+          
+  
+  
+  Process Flows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/uom-and-products/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pilot-scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pilot Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test-cases/e2e-scenario/" class="md-tabs__link">
+          
+  
+  
+  Test Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-nav__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    EnerFusion Upstream Accounting — Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benefits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benefits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Master Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/centrally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centrally Managed (SAP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/locally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locally Managed (EnerFusion)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/not-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Not Managed in SAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Non-Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Non-Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scalability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Availability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reliability-data-integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reliability &amp; Data Integrity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintainability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintainability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/technical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Module Specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M1-Production-Volume-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M1 — Production & Volume Allocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M2-Ownership-DOI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M2 — Ownership & DOI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M3-Contractual-Allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Base)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M3-Contractual-Allocation-enhanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M3 — Contractual Allocation (Enhanced)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M4-Contracts-Pricing-Valuation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M4 — Contracts, Pricing & Valuation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M5-Balancing-Workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M5 — Balancing Workplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M6-Revenue-Distribution-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M6 — Revenue Distribution & Accounting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M7-Payment-Processing-Check-Input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M7 — Payment Processing & Check Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M8-Regulatory-Tax-Royalty-Reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M8 — Regulatory, Tax & Royalty Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M9-Administration-ILM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M9 — Administration & ILM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/payment-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payment Processing (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/check-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check Input (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/onrr-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONRR-2014 Processing (M8)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/ar-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AR Workplace (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/uom-and-products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units of Measure & Products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/ad-valorem-true-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ad Valorem True-Up (M4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pilot-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Test Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test-cases/e2e-scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Scenario (Build-A-Biz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="non-functional-requirements">Non-Functional Requirements<a class="headerlink" href="#non-functional-requirements" title="Permanent link">&para;</a></h1>
+<p>Requirements use the format: <code>NFR-[Category]-[###]</code></p>
+<hr />
+<h2 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Target</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-PERF-001</td>
+<td>API p99 response time for read operations on master data lists</td>
+<td>&lt; 500 ms</td>
+<td>Accountants browse large DOI and contract lists frequently</td>
+</tr>
+<tr>
+<td>NFR-PERF-002</td>
+<td>API p99 response time for single-record retrieval</td>
+<td>&lt; 200 ms</td>
+<td></td>
+</tr>
+<tr>
+<td>NFR-PERF-003</td>
+<td>Allocation run execution for a delivery network with 500 wells</td>
+<td>&lt; 60 seconds</td>
+<td>Month-end networks must complete within batch window</td>
+</tr>
+<tr>
+<td>NFR-PERF-004</td>
+<td>Valuation run execution for 10,000 settlement statements</td>
+<td>&lt; 4 hours</td>
+<td>Must complete within the nightly batch window</td>
+</tr>
+<tr>
+<td>NFR-PERF-005</td>
+<td>Revenue distribution run for 50,000 owner interest records</td>
+<td>&lt; 2 hours</td>
+<td></td>
+</tr>
+<tr>
+<td>NFR-PERF-006</td>
+<td>Regulatory report generation (e.g., Form H-10 — 5,000 wells)</td>
+<td>&lt; 30 minutes</td>
+<td>Generated asynchronously; user notified on completion</td>
+</tr>
+<tr>
+<td>NFR-PERF-007</td>
+<td>Mass check input — 10,000 purchaser check records</td>
+<td>&lt; 15 minutes</td>
+<td>Batch job with progress tracking</td>
+</tr>
+<tr>
+<td>NFR-PERF-008</td>
+<td>UI list views for datasets &gt; 10,000 records</td>
+<td>Virtual scroll; server-side pagination (page size 100)</td>
+<td>AG Grid virtual rendering</td>
+</tr>
+<tr>
+<td>NFR-PERF-009</td>
+<td>Azure Monitor alert threshold — API error rate</td>
+<td>&gt; 1% → PagerDuty alert</td>
+<td>Per CLAUDE.md observability standard</td>
+</tr>
+<tr>
+<td>NFR-PERF-010</td>
+<td>Azure Monitor alert threshold — p99 latency</td>
+<td>&gt; 2 seconds → PagerDuty alert</td>
+<td>Per CLAUDE.md observability standard</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="scalability">Scalability<a class="headerlink" href="#scalability" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-SCALE-001</td>
+<td>Well Completion master records</td>
+<td>Up to 500,000 per tenant</td>
+<td>Large operator in multiple basins</td>
+</tr>
+<tr>
+<td>NFR-SCALE-002</td>
+<td>DOI Owner Interest records</td>
+<td>Up to 2,000,000 per tenant</td>
+<td>Complex royalty structures in Permian/Midcontinent</td>
+</tr>
+<tr>
+<td>NFR-SCALE-003</td>
+<td>Daily volume transactions per month</td>
+<td>Up to 15,000,000 rows</td>
+<td>500,000 WCs × 30 days</td>
+</tr>
+<tr>
+<td>NFR-SCALE-004</td>
+<td>Concurrent API users during month-end</td>
+<td>Up to 500 simultaneous sessions</td>
+<td></td>
+</tr>
+<tr>
+<td>NFR-SCALE-005</td>
+<td>Horizontal pod autoscaling trigger</td>
+<td>CPU utilization &gt; 70% → scale out</td>
+<td>HPA on <code>services</code> node pool</td>
+</tr>
+<tr>
+<td>NFR-SCALE-006</td>
+<td>Batch node pool scale-to-zero</td>
+<td>Pool scales to 0 nodes when no batch jobs are queued</td>
+<td>Cost optimisation</td>
+</tr>
+<tr>
+<td>NFR-SCALE-007</td>
+<td>Database connection pooling</td>
+<td>PgBouncer sidecar per service; max 20 connections per pod</td>
+<td>Prevents connection exhaustion on PostgreSQL Flexible Server</td>
+</tr>
+<tr>
+<td>NFR-SCALE-008</td>
+<td>Redis caching — permission maps</td>
+<td>TTL 5 minutes; hit rate &gt; 90% under normal load</td>
+<td>RBAC permission cache</td>
+</tr>
+<tr>
+<td>NFR-SCALE-009</td>
+<td>Read replica offload</td>
+<td>Reporting queries (M8) and batch reads (M4 valuation) routed to read replica</td>
+<td>Primary handles writes only during batch</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="availability">Availability<a class="headerlink" href="#availability" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Target</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-AVAIL-001</td>
+<td>API services availability (SLA)</td>
+<td>99.9% monthly uptime</td>
+<td>~44 minutes allowable downtime per month</td>
+</tr>
+<tr>
+<td>NFR-AVAIL-002</td>
+<td>Batch job availability (off-peak window)</td>
+<td>99.5% within scheduled window</td>
+<td>Non-critical compared to API SLA</td>
+</tr>
+<tr>
+<td>NFR-AVAIL-003</td>
+<td>Database availability</td>
+<td>Azure PostgreSQL Flexible Server HA (zone-redundant)</td>
+<td>Automatic failover &lt; 30 seconds</td>
+</tr>
+<tr>
+<td>NFR-AVAIL-004</td>
+<td>Health endpoints</td>
+<td>Every service must expose <code>/health</code> (liveness) and <code>/ready</code> (readiness)</td>
+<td>AKS probe required</td>
+</tr>
+<tr>
+<td>NFR-AVAIL-005</td>
+<td>Graceful shutdown</td>
+<td>Pods must drain in-flight requests within 30 seconds on SIGTERM</td>
+<td><code>terminationGracePeriodSeconds: 30</code></td>
+</tr>
+<tr>
+<td>NFR-AVAIL-006</td>
+<td>Circuit breaker</td>
+<td>All outgoing calls to external services (SAP GL posting, state filing APIs, price feeds) wrapped in <code>opossum</code> circuit breaker</td>
+<td>Per CLAUDE.md dependency</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Target / Rule</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-SEC-001</td>
+<td>JWT validation</td>
+<td>Every request to every service must validate the Azure AD JWT using JWKS endpoint before processing</td>
+<td></td>
+</tr>
+<tr>
+<td>NFR-SEC-002</td>
+<td>Token expiry</td>
+<td>Access tokens must not exceed 1-hour lifetime; refresh token rotation enabled</td>
+<td>Azure AD app configuration</td>
+</tr>
+<tr>
+<td>NFR-SEC-003</td>
+<td>Secrets management</td>
+<td>All secrets (DB passwords, Service Bus keys, API keys) stored in Azure Key Vault; mounted via CSI secret store driver</td>
+<td>No plaintext secrets in Helm values or env vars</td>
+</tr>
+<tr>
+<td>NFR-SEC-004</td>
+<td>Row-Level Security</td>
+<td>PostgreSQL RLS enabled on all tenant-scoped tables; <code>app.company_code</code> session variable set per request</td>
+<td></td>
+</tr>
+<tr>
+<td>NFR-SEC-005</td>
+<td>Network policies</td>
+<td>Every microservice namespace must have a Kubernetes NetworkPolicy restricting ingress to known services</td>
+<td>Default-deny; explicit allow-list</td>
+</tr>
+<tr>
+<td>NFR-SEC-006</td>
+<td>Container image scanning</td>
+<td>All images scanned with Trivy before push to ACR; critical/high CVE blocks deployment</td>
+<td>CI gate</td>
+</tr>
+<tr>
+<td>NFR-SEC-007</td>
+<td>TLS</td>
+<td>All inter-service communication within the mesh encrypted via mTLS (Linkerd / Istio)</td>
+<td></td>
+</tr>
+<tr>
+<td>NFR-SEC-008</td>
+<td>Data encryption at rest</td>
+<td>Azure PostgreSQL and Blob Storage encrypted with customer-managed keys (Azure Key Vault)</td>
+<td></td>
+</tr>
+<tr>
+<td>NFR-SEC-009</td>
+<td>Personal data protection</td>
+<td>Business partner tax IDs encrypted at the application layer (AES-256) before storage</td>
+<td>Column-level encryption</td>
+</tr>
+<tr>
+<td>NFR-SEC-010</td>
+<td>Audit logging</td>
+<td>All data mutations logged to <code>admin_ilm.audit_log</code> with user ID, timestamp, table, record ID, before/after JSON</td>
+<td>Tamper-evident; append-only</td>
+</tr>
+<tr>
+<td>NFR-SEC-011</td>
+<td>OWASP Top 10</td>
+<td>All API endpoints must pass OWASP ZAP scan in CI before production deployment</td>
+<td></td>
+</tr>
+<tr>
+<td>NFR-SEC-012</td>
+<td>Input validation</td>
+<td>All external inputs validated with Zod schemas at the API boundary before processing</td>
+<td>Per CLAUDE.md coding standard</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="reliability-data-integrity">Reliability &amp; Data Integrity<a class="headerlink" href="#reliability-data-integrity" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-REL-001</td>
+<td>Database migrations</td>
+<td>Prisma Migrate for all schema changes; migrations must be backwards-compatible (additive-only) for zero-downtime rolling deploys</td>
+</tr>
+<tr>
+<td>NFR-REL-002</td>
+<td>Idempotent batch operations</td>
+<td>Allocation runs, valuation runs, and distribution runs must be idempotent — re-running a completed run for the same period must not create duplicate records</td>
+</tr>
+<tr>
+<td>NFR-REL-003</td>
+<td>Event at-least-once delivery</td>
+<td>Azure Service Bus inter-module events delivered at-least-once; consumers must be idempotent</td>
+</tr>
+<tr>
+<td>NFR-REL-004</td>
+<td>Transactional consistency</td>
+<td>Multi-table writes within a single module use PostgreSQL transactions; cross-module writes use the outbox pattern via Service Bus</td>
+</tr>
+<tr>
+<td>NFR-REL-005</td>
+<td>Data retention</td>
+<td>Transaction records retained for 7 years (minimum US tax record retention); ILM archiving triggers after 7 years</td>
+</tr>
+<tr>
+<td>NFR-REL-006</td>
+<td>Backup and recovery</td>
+<td>Azure PostgreSQL point-in-time recovery; RPO &lt; 1 hour; RTO &lt; 4 hours</td>
+</tr>
+<tr>
+<td>NFR-REL-007</td>
+<td>DOI decimal integrity</td>
+<td>Decimal interest validation enforced at API and database constraint level; failing validation returns HTTP 422</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-OBS-001</td>
+<td>Structured logging</td>
+<td>Winston JSON logger; every log entry includes <code>service</code>, <code>timestamp</code>, <code>traceId</code>, <code>correlationId</code>, <code>userId</code></td>
+</tr>
+<tr>
+<td>NFR-OBS-002</td>
+<td>Distributed tracing</td>
+<td>OpenTelemetry SDK; <code>traceparent</code> header propagated across all HTTP and gRPC calls</td>
+</tr>
+<tr>
+<td>NFR-OBS-003</td>
+<td>Metrics</td>
+<td>Prometheus metrics exposed at <code>/metrics</code> via <code>prom-client</code>; scraped by Azure Monitor</td>
+</tr>
+<tr>
+<td>NFR-OBS-004</td>
+<td>Dashboards</td>
+<td>Grafana dashboard per module: request rate, error rate, p99 latency, active pods</td>
+</tr>
+<tr>
+<td>NFR-OBS-005</td>
+<td>Alerting</td>
+<td>Azure Monitor alerts for: error rate &gt; 1%, p99 &gt; 2s, pod restarts &gt; 3 in 5 min, batch job failure</td>
+</tr>
+<tr>
+<td>NFR-OBS-006</td>
+<td>Correlation IDs</td>
+<td>Every HTTP request assigned a <code>correlationId</code>; propagated in all downstream service calls and log entries</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="maintainability">Maintainability<a class="headerlink" href="#maintainability" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-MAINT-001</td>
+<td>TypeScript strict mode</td>
+<td><code>strict: true</code> in all <code>tsconfig.json</code> files; no <code>any</code> types</td>
+</tr>
+<tr>
+<td>NFR-MAINT-002</td>
+<td>Test coverage</td>
+<td>Unit tests for all service-layer business logic; minimum 80% line coverage</td>
+</tr>
+<tr>
+<td>NFR-MAINT-003</td>
+<td>Contract tests</td>
+<td>Pact consumer-driven contract tests for all inter-module API integrations</td>
+</tr>
+<tr>
+<td>NFR-MAINT-004</td>
+<td>CI gates</td>
+<td>Every PR must pass: ESLint, <code>tsc --noEmit</code>, unit tests, contract tests, Docker build, Trivy scan</td>
+</tr>
+<tr>
+<td>NFR-MAINT-005</td>
+<td>Image tags</td>
+<td>Git commit SHA used as image tag in all Kubernetes manifests; <code>latest</code> tag forbidden in production</td>
+</tr>
+<tr>
+<td>NFR-MAINT-006</td>
+<td>Module independence</td>
+<td>No direct database cross-joins between module schemas; cross-module data access via API or event</td>
+</tr>
+<tr>
+<td>NFR-MAINT-007</td>
+<td>API versioning</td>
+<td>All routes versioned at <code>/api/v1/</code>; breaking changes require <code>/api/v2/</code> — no in-place breaking changes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="compliance">Compliance<a class="headerlink" href="#compliance" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFR-COMP-001</td>
+<td>Data residency</td>
+<td>All data stored in US Azure regions (e.g., East US 2 primary, West US 3 DR)</td>
+</tr>
+<tr>
+<td>NFR-COMP-002</td>
+<td>SOC 2 Type II alignment</td>
+<td>Audit logging, access controls, and change management controls designed to support SOC 2 audit evidence</td>
+</tr>
+<tr>
+<td>NFR-COMP-003</td>
+<td>1099 / tax reporting</td>
+<td>Business partner tax IDs retained and accessible for IRS 1099-MISC / 1099-NEC generation</td>
+</tr>
+<tr>
+<td>NFR-COMP-004</td>
+<td>Regulatory report accuracy</td>
+<td>Statutory report values must reconcile to source production and revenue data to within rounding tolerance defined per state</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
