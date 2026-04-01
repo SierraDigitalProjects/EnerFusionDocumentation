@@ -1,7 +1,5 @@
 # EnerFusion Upstream Accounting
 
-![EnerFusion Premium](assets/enerfusion-premium.svg)
-
 ## Upstream Accounting Platform
 
 > **Platform:** React 18 + Node.js 20 | **Infrastructure:** Azure AKS + PostgreSQL | **Pattern:** Modular Microservices + RBAC

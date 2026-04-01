@@ -5,6 +5,7 @@ docs_dir: Documentation
 
 theme:
   name: material
+  logo: assets/enerfusion-premium.svg
   palette:
     - scheme: slate
       primary: blue
