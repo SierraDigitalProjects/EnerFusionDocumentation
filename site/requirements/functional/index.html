@@ -1089,6 +1089,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#m10-partner-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M10 — Partner Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m11-joint-venture-accounting-jva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M11 — Joint Venture Accounting (JVA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#m9-administration-ilm" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1718,6 +1740,62 @@
     
   
     M9 — Administration & ILM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M10-Partner-Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M10 — Partner Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-Module-Specifications/M11-Joint-Venture-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M11 — Joint Venture Accounting (JVA)
   
 
     
@@ -3117,6 +3195,190 @@
 <tr>
 <td>FR-M3-013</td>
 <td>The system shall generate Production Volume Reconciliation (PVR) and Production Transfer Reports (PTR)</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m10-partner-onboarding">M10 — Partner Onboarding<a class="headerlink" href="#m10-partner-onboarding" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M10-001</td>
+<td>The system shall manage a 7-step partner onboarding workflow: Company Registration → JOA &amp; Working Interest → Financial Setup → COPAS Compliance → Document Collection → System Access Provisioning → Review &amp; Submit</td>
+<td>P1</td>
+<td>Steps must be completed sequentially; each step is independently saveable</td>
+</tr>
+<tr>
+<td>FR-M10-002</td>
+<td>The system shall capture partner legal entity details including entity type (LLC/Corporation/LP/LLP/Trust/Individual), EIN/TIN (encrypted), DUNS number, state of formation, and primary contacts per functional role</td>
+<td>P1</td>
+<td>Tax IDs encrypted at rest with AES-256</td>
+</tr>
+<tr>
+<td>FR-M10-003</td>
+<td>The system shall create a Joint Operating Agreement (JOA) record linking the partner to producing assets (basin, product type) with Working Interest % and Net Revenue Interest %</td>
+<td>P1</td>
+<td>WI/NRI values seed M2 DOI owner interest records on completion</td>
+</tr>
+<tr>
+<td>FR-M10-004</td>
+<td>The system shall capture and store banking information (routing, masked account, account type), payment method preference, tax classification (1099 category), W9 receipt status, and ACH prenote status</td>
+<td>P1</td>
+<td>Account numbers masked in UI; stored encrypted</td>
+</tr>
+<tr>
+<td>FR-M10-005</td>
+<td>The system shall record COPAS accounting standard configuration including version, overhead method, escalation index, material pricing method, audit period, and capture a timestamped partner acknowledgment</td>
+<td>P1</td>
+<td>COPAS config feeds M11 JVA billing rules</td>
+</tr>
+<tr>
+<td>FR-M10-006</td>
+<td>The system shall track required compliance documents (W9, bank verification, JOA executed copy, Tax ID, COPAS acknowledgment) through a pending → received → verified → complete status workflow with overdue detection</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M10-007</td>
+<td>The system shall provision partner system access including portal account (read-only or elections-enabled), EDI gateway configuration (JIB 810, Cash Call 820), and notification preferences</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M10-008</td>
+<td>The system shall calculate and display onboarding progress as: <code>(completed_steps × 100 + active_steps × 45) / 7</code></td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M10-009</td>
+<td>The system shall publish a <code>ua.onboarding.partner.completed</code> event upon Step 7 sign-off, consumed by M2 (DOI provisioning), M7 (payment configuration), and M11 (JVA partner interest activation)</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M10-010</td>
+<td>The system shall provide a Pipeline view of all active onboarding sessions with status categorization (active / in review / final review / overdue), target date tracking, and monthly completion trend chart</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M10-011</td>
+<td>The system shall enforce RBAC with <code>onboarding:read</code>, <code>onboarding:write</code>, <code>onboarding:approve</code>, <code>onboarding:admin</code> scopes</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M10-012</td>
+<td>The system shall generate: Onboarding Pipeline Summary, Overdue Partners Report, Document Status Report, Monthly Completion Trend</td>
+<td>P1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="m11-joint-venture-accounting-jva">M11 — Joint Venture Accounting (JVA)<a class="headerlink" href="#m11-joint-venture-accounting-jva" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR-M11-001</td>
+<td>The system shall manage Authorization for Expenditure (AFE) records with type (Drilling/Workover/Facility/Plug &amp; Abandon), authorized amount, COPAS cost breakdown (codes 100–700), election deadline, and status lifecycle (draft → issued → approved → closed)</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-002</td>
+<td>The system shall support Non-Operating Partner (NOP) AFE elections (participate / non-consent) with deadline tracking; defaulted elections (no response by deadline) shall be treated as non-consent with configurable penalty multiplier</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-003</td>
+<td>The system shall track budget vs. actual for each AFE by COPAS cost code (100-Labor, 200-Materials, 300-Transport, 400-Services, 600-Overhead, 700-Taxes) and alert when actuals exceed a configurable variance threshold</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-004</td>
+<td>The system shall prepare monthly Joint Interest Bills (JIBs) for each non-operating partner calculating: direct costs × partner WI%, COPAS overhead (Fixed Rate per Well), and total JIB amount per COPAS schedule</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-005</td>
+<td>The system shall deliver JIBs via EDI 810, email (PDF), or partner portal per partner delivery preference configured in M10</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-006</td>
+<td>The system shall track JIB payment status (issued → partial → paid → overdue) and publish <code>ua.jva.jib.issued</code> for M7 AR receivable tracking</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-007</td>
+<td>The system shall manage cash call advance funding requests with due date enforcement, overdue detection, daily interest accrual on overdue balances, and receipt application against open calls</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-008</td>
+<td>The system shall apply incoming partner payments to the oldest outstanding cash call first (configurable); overpayments credited to partner suspense account</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-009</td>
+<td>The system shall provide a cash call forecast view showing upcoming funding requirements from open AFE-linked expenditures by partner</td>
+<td>P2</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-010</td>
+<td>The system shall document COPAS audit findings with category (COPAS cost code), dollar amount, period, status (open / under review / resolved / rejected), and resolution notes; findings not resolved within the configurable window shall be flagged as overdue</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-011</td>
+<td>The system shall activate JVA partner interest records (WI%, NRI%, COPAS config) upon receipt of <code>ua.onboarding.partner.completed</code> event from M10</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-012</td>
+<td>The system shall apply JIB netting in M7 — deducting outstanding JIB receivable balances from partner revenue distributions before issuing outgoing payments</td>
+<td>P1</td>
+<td>FR-M7-017 cross-reference</td>
+</tr>
+<tr>
+<td>FR-M11-013</td>
+<td>The system shall enforce RBAC with <code>jva:read</code>, <code>jva:write</code>, <code>jva:approve</code>, <code>jva:execute</code>, <code>jva:admin</code> scopes</td>
+<td>P1</td>
+<td></td>
+</tr>
+<tr>
+<td>FR-M11-014</td>
+<td>The system shall generate: AFE Election Status Report, JIB Billing Summary, JIB Aging Report, Cash Call Forecast, Overdue Cash Call Report, COPAS Audit Finding Summary, Budget vs. Actual by AFE</td>
 <td>P1</td>
 <td></td>
 </tr>

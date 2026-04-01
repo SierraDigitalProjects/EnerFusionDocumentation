@@ -44,6 +44,13 @@ EnerFusion Upstream Accounting is structured as nine independent microservices, 
 │   ┌──────────────────────────────────────────────────────────────────────┐   │
 │   │  M9: Administration & ILM  (cross-cutting — all modules)             │   │
 │   └──────────────────────────────────────────────────────────────────────┘   │
+│                                                                              │
+│   ┌──────────────┐     ┌──────────────────────────────────────────────────┐  │
+│   │  M10         │────▶│  M11: Joint Venture Accounting (JVA)             │  │
+│   │  Partner     │     │  AFE elections | JIB billing | Cash calls        │  │
+│   │  Onboarding  │     │  COPAS audit management                          │  │
+│   └──────────────┘     └──────────────────────────────────────────────────┘  │
+│   onboarding.partner.completed → M2 (DOI), M7 (payment config), M11 (JVA)   │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -268,6 +275,61 @@ EnerFusion Upstream Accounting is structured as nine independent microservices, 
 
 ---
 
+### M10 — Partner Onboarding
+
+**Service:** `svc-onboarding`  
+**Schema:** `onboarding`  
+**Primary Users:** Partner Onboarding Analysts, Land Administrators, Finance Controllers
+
+**Responsibilities:**
+- 7-step partner onboarding workflow management (Company Registration → JOA & WI → Financial Setup → COPAS Compliance → Document Collection → System Access → Review & Submit)
+- Document collection and verification tracking
+- JOA and working interest setup (feeds M2 DOI records on completion)
+- Financial and banking configuration (feeds M7 Owner Attribute Groups)
+- COPAS accounting standard configuration (feeds M11 JVA)
+- System access provisioning (partner portal, EDI gateway)
+- Onboarding pipeline view with status categorization and completion trends
+
+**Inbound Events:** None — M10 is driven by human workflows.
+
+**Outbound Events:**
+- `ua.onboarding.partner.completed` → consumed by M2 (DOI provisioning), M7 (payment config), M11 (JVA partner interest)
+- `ua.onboarding.document.overdue` → consumed by M9 (audit log, notifications)
+
+**Key API Scopes:** `onboarding:read`, `onboarding:write`, `onboarding:approve`, `onboarding:admin`
+
+---
+
+### M11 — Joint Venture Accounting (JVA)
+
+**Service:** `svc-jva`  
+**Schema:** `jva`  
+**Primary Users:** JV Accountants, Revenue Analysts, Finance Controllers
+
+**Responsibilities:**
+- Authorization for Expenditure (AFE) creation and lifecycle management (Drilling, Workover, Facility, Plug & Abandon)
+- Non-operating partner (NOP) election tracking (participate / non-consent) with deadline enforcement
+- Budget vs. actual tracking by COPAS cost code (100-Labor, 200-Materials, 300-Transport, 400-Services, 600-Overhead, 700-Taxes)
+- Monthly Joint Interest Billing (JIB) preparation and delivery (EDI 810 / email / portal)
+- COPAS overhead calculation (Fixed Rate per Well)
+- Cash call advance funding management with overdue interest accrual
+- Receipt application against open cash calls
+- COPAS audit finding documentation and resolution tracking
+
+**Inbound Events:**
+- `ua.onboarding.partner.completed` (M10) — activates JVA partner interest record
+- `ua.valuation.settlement.completed` (M4) — triggers JIB cost reconciliation for the period
+
+**Outbound Events:**
+- `ua.jva.afe.approved` → consumed by M9 (audit log)
+- `ua.jva.jib.issued` → consumed by M7 (AR receivable tracking)
+- `ua.jva.cashcall.overdue` → consumed by M9 (notifications, audit log)
+- `ua.jva.jib.paid` → consumed by M7 (payment reconciliation)
+
+**Key API Scopes:** `jva:read`, `jva:write`, `jva:approve`, `jva:execute`, `jva:admin`
+
+---
+
 ## Inter-Module Event Schema
 
 All Service Bus events share a common envelope:
@@ -300,3 +362,5 @@ interface PraEvent<T> {
 | M7 Payments | View checks, AR | Manual checks, write-offs | Approve write-offs | — | Escheat config |
 | M8 Regulatory | View reports | — | — | Generate reports | Template admin |
 | M9 Admin | View audit, sync logs | — | — | Run archive jobs | Manage roles, policies |
+| M10 Onboarding | View partner records, session status | Create/update onboarding sessions | Sign off steps, complete sessions | — | Configure document types, workflow |
+| M11 JVA | View AFEs, JIBs, cash calls, findings | Create AFEs, prepare JIBs, issue cash calls | Authorize AFEs, approve JIB runs | Run JIB billing, apply receipts | Configure COPAS rates, overhead, audit windows |

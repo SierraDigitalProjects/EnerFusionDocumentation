@@ -71,11 +71,28 @@ Provides system-wide automation configuration (bots, rulesets), data archiving f
 
 **Key outcomes:** Archived records, anonymized personal data, automated run schedules.
 
+#### M10 — Partner Onboarding
+Manages the complete lifecycle of bringing a new joint venture partner into EnerFusion through a structured 7-step workflow: Company Registration → JOA & Working Interest → Financial Setup → COPAS Compliance → Document Collection → System Access Provisioning → Review & Submit. Serves as the entry gate before partners receive DOI records in M2 and distributions from M6.
+
+**Key outcomes:** Activated partner records, verified compliance documents, provisioned system access, DOI interest records in M2.
+
+#### M11 — Joint Venture Accounting (JVA)
+Handles all financial interactions between the operating company and non-operating working interest partners. Manages Authorization for Expenditure (AFE) capital approval elections, monthly Joint Interest Billing (JIB) under COPAS standards, cash call advance funding collection, and COPAS audit finding management.
+
+**Key outcomes:** Approved AFE elections, issued JIB billings, collected cash calls, resolved audit findings.
+
 ---
 
 ## 3. End-to-End Business Process Flow
 
 ```
+┌─────────────────────────────────────────────────────────────────┐
+│  M10: PARTNER ONBOARDING                                        │
+│  • Company registration, JOA & working interest setup          │
+│  • Financial setup, COPAS compliance, document collection      │
+│  • System access provisioning → activates DOI in M2           │
+└──────────────────────────┬──────────────────────────────────────┘
+                           ↓ ua.onboarding.partner.completed
 ┌─────────────────────────────────────────────────────────────────┐
 │  FIELD OPERATIONS                                               │
 │  Daily: Well volumes, downtime, well tests, pressures          │
@@ -113,10 +130,13 @@ Provides system-wide automation configuration (bots, rulesets), data archiving f
 └──────────────────────────┬──────────────────────────────────────┘
                            ↓
 ┌─────────────────────────────────────────────────────────────────┐
-│  M5: BALANCING WORKPLACE                                        │
-│  • Compare actual takes vs entitlements                         │
-│  • Update cumulative owner imbalance positions                  │
-│  • Generate balancing statements                                │
+│  M5: BALANCING WORKPLACE      M11: JOINT VENTURE ACCOUNTING     │
+│  • Compare actual takes       • AFE elections (participate /    │
+│    vs entitlements              non-consent)                    │
+│  • Update cumulative          • JIB billing (COPAS monthly)    │
+│    owner imbalance positions  • Cash call management            │
+│  • Generate balancing         • COPAS audit findings           │
+│    statements                                                   │
 └──────────────────────────┬──────────────────────────────────────┘
                            ↓
 ┌─────────────────────────────────────────────────────────────────┐
@@ -139,6 +159,14 @@ Provides system-wide automation configuration (bots, rulesets), data archiving f
 │  • Texas: H-10, P1B, PR, GLO/UT Royalty                        │
 │  • Federal: MMS-PASR, MMS-OGOR, ONRR-2014                     │
 │  • Multi-state: AR, CA, CO, LA, NM, ND, OK, WY                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  M9: ADMINISTRATION & ILM  (cross-cutting — all modules)        │
+│  • RBAC role and user access management                         │
+│  • Tamper-evident audit log of all data mutations               │
+│  • Automation rulesets (bots) for scheduling and anomaly alerts │
+│  • Data archiving and personal data protection (GDPR-aligned)   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 

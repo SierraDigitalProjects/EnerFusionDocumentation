@@ -53,6 +53,15 @@ EnerFusion Upstream Accounting coexists with enterprise systems (primarily SAP E
 | DOI Owner Interest | Locally Managed | DOI (IS-Oil) | |
 | Unit / Tract Record | Locally Managed | None | Regulatory pooling unit |
 
+### Contractual Allocation (M3)
+
+| Entity | Ownership | SAP Equivalent | Notes |
+|--------|-----------|----------------|-------|
+| Contract ↔ MP Cross-Reference | Locally Managed | None | Maps measurement points to sales contracts |
+| Nomination Records | Locally Managed | None | Daily/monthly volume nominations per owner/contract |
+| Gas Plant Processing Config | Not in SAP | None | NGL splits, shrinkage fractions, PRTL per plant |
+| Marketing Group Imbalance | Not in SAP | None | Cumulative network imbalance tracking per marketing group |
+
 ### Contracts & Pricing (M4)
 
 | Entity | Ownership | SAP Equivalent | Notes |
@@ -65,6 +74,35 @@ EnerFusion Upstream Accounting coexists with enterprise systems (primarily SAP E
 | Tax Classification | Not in SAP | None | Well-level tax category |
 | Valuation Cross-Reference (VCR) | Not in SAP | None | platform-specific mapping record |
 
+### Balancing Workplace (M5)
+
+| Entity | Ownership | SAP Equivalent | Notes |
+|--------|-----------|----------------|-------|
+| Product Balancing Agreement (PBA) | Not in SAP | None | Terms for in-kind make-up or cash settlement of imbalances |
+| Owner Imbalance Position | Not in SAP | None | Cumulative over/under-take tracked per owner per product |
+
+### Revenue Distribution (M6)
+
+| Entity | Ownership | SAP Equivalent | Notes |
+|--------|-----------|----------------|-------|
+| Chart of Accounts (Upstream Accounting GL) | Centrally in SAP | GL Account (FS00) | EnerFusion maps distributions to SAP GL via account code |
+| Revenue Accounting Document (RAD) | Not in SAP | None | EnerFusion-generated GL posting document; posted to SAP FI via API |
+
+### Payments (M7)
+
+| Entity | Ownership | SAP Equivalent | Notes |
+|--------|-----------|----------------|-------|
+| Purchaser-Remitter Cross-Reference | Locally Managed | Customer (KNA1) | Maps purchaser BP IDs to CDEX/EDI check remitter identifiers |
+| Check Layout Template | Not in SAP | SAPscript/Smartform | EnerFusion check and stub formatting configuration |
+| Escheat/Escrow Configuration | Not in SAP | None | Per-state dormancy thresholds and unclaimed property filing rules |
+
+### Regulatory Reporting (M8)
+
+| Entity | Ownership | SAP Equivalent | Notes |
+|--------|-----------|----------------|-------|
+| Statutory Report Template | Not in SAP | None | Field mappings and format rules per state/federal report form |
+| ONRR Payor/Company Code Cross-Reference | Not in SAP | None | Maps operator company codes to ONRR-issued payor identifiers |
+
 ### Valuation & Revenue (M4, M6)
 
 | Entity | Ownership | SAP Equivalent | Notes |
@@ -73,6 +111,26 @@ EnerFusion Upstream Accounting coexists with enterprise systems (primarily SAP E
 | Purchaser-Remitter Xref | Locally Managed | Customer (KNA1) | Purchaser side of check input |
 | Check Layout | Not in SAP | SAPscript/Smartform | EnerFusion check template config |
 | Product Balancing Agreement | Not in SAP | None | EnerFusion-only |
+
+### Partner Onboarding (M10)
+
+| Entity | Ownership | SAP Equivalent | Notes |
+|--------|-----------|----------------|-------|
+| Partner (Business Entity) | Locally Managed | Business Partner (BP) | Legal entity profile; EIN encrypted; feeds M2 BP on completion |
+| Onboarding Session | Not in SAP | None | 7-step workflow state per partner |
+| JOA Record | Locally Managed | None | Joint Operating Agreement with WI%/NRI% per asset |
+| Onboarding Document | Not in SAP | None | Compliance document tracking (W9, bank verification, COPAS ack) |
+
+### Joint Venture Accounting (M11)
+
+| Entity | Ownership | SAP Equivalent | Notes |
+|--------|-----------|----------------|-------|
+| JVA Partner Interest | Locally Managed | None | WI%, NRI%, COPAS config per partner per venture |
+| AFE (Authorization For Expenditure) | Locally Managed | Investment Order (IM) | Capital project approval with COPAS cost breakdown |
+| NOP Election | Not in SAP | None | Partner participate/non-consent response per AFE |
+| JIB (Joint Interest Bill) | Not in SAP | Billing Document (SD) | Monthly COPAS billing to non-operating partners |
+| Cash Call | Not in SAP | None | Advance funding request with overdue interest tracking |
+| Audit Finding | Not in SAP | None | COPAS audit dispute documentation and resolution |
 
 ### Administration (M9)
 
@@ -141,6 +199,8 @@ SAP FI — Journal Entry (FB01 / BAPI_ACC_DOCUMENT_POST)
 | M7 Payments | 3 entities | Purchasers: dozens to hundreds |
 | M8 Regulatory | 2 entities | Report configs: per-state |
 | M9 Admin | 3 entities | Rulesets: tens to hundreds |
+| M10 Onboarding | 4 entities | Partners: tens to hundreds; documents per partner: 5–10 |
+| M11 JVA | 6 entities | AFEs: hundreds; JIBs: monthly per partner; cash calls: ongoing |
 
 ---
 

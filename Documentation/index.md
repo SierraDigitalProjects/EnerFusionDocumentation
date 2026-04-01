@@ -1,5 +1,7 @@
 # EnerFusion Upstream Accounting
 
+![EnerFusion Premium](assets/enerfusion-premium.svg)
+
 ## Upstream Accounting Platform
 
 > **Platform:** React 18 + Node.js 20 | **Infrastructure:** Azure AKS + PostgreSQL | **Pattern:** Modular Microservices + RBAC
@@ -11,6 +13,9 @@ EnerFusion Upstream Accounting is a cloud-native upstream accounting platform fo
 ## End-to-End Process Flow
 
 ```
+[M10: Partner Onboarding]     ← Onboard new JV partners (7-step workflow)
+       │ ua.onboarding.partner.completed
+       ▼
 [Wellhead Production]
        │
        ▼
@@ -24,18 +29,19 @@ EnerFusion Upstream Accounting is a cloud-native upstream accounting platform fo
        │
        ▼
 [M4: Valuation & Pricing]     ← Apply price, tax, deductions
-       │
-       ▼
-[M5: Balancing]               ← Resolve over/under-takes
+       │                ┌─────────────────────────────────┐
+       ▼                ▼                                 │
+[M5: Balancing]   [M11: JVA]  ← AFE elections, JIB billing, cash calls
        │
        ▼
 [M6: Revenue Distribution]    ← Distribute net value to owners
        │
        ▼
-[M7: Payment Processing]      ← Cut checks, manage AR
+[M7: Payment Processing]      ← Cut checks, manage AR, JIB netting
        │
        ▼
 [M8: Regulatory Reporting]    ← State & federal compliance filings
+[M9: Administration & ILM]    ← Cross-cutting: RBAC, audit, automation
 ```
 
 ---
@@ -53,6 +59,8 @@ EnerFusion Upstream Accounting is a cloud-native upstream accounting platform fo
 | M7 | Payment Processing & Check Input | Finance | Check register, AR aging, escheat filings |
 | M8 | Regulatory, Tax & Royalty Reporting | Compliance | State/federal statutory filings |
 | M9 | Administration & ILM | IT/Ops | Archived data, anonymised records, automation config |
+| M10 | Partner Onboarding | Partner Operations | 7-step JV partner onboarding workflow, document collection, system access |
+| M11 | Joint Venture Accounting (JVA) | Joint Venture Finance | AFE elections, JIB billing, cash call management, COPAS audit |
 
 ---
 
@@ -66,6 +74,8 @@ EnerFusion Upstream Accounting is a cloud-native upstream accounting platform fo
 | Revenue Accountant | M4, M5, M6, M7 | Valuation, distribution, check processing |
 | Compliance Officer | M8 | State and federal regulatory filings |
 | System Administrator | M9, All | RBAC, ILM, automation, audit |
+| Partner Onboarding Analyst | M10 | Partner registration, document verification, system access provisioning |
+| JV Accountant | M11 | AFE elections, JIB billing, cash call tracking, COPAS audit management |
 
 ---
 

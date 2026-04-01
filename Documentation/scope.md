@@ -21,6 +21,8 @@ This document defines what EnerFusion Upstream Accounting covers, what it explic
 | **M7 — Payment Processing & Check Input** | Incoming purchaser check processing (CDEX/EDI 820), outgoing owner payment disbursement, AR aging and write-offs, escheat/escrow processing |
 | **M8 — Regulatory, Tax & Royalty Reporting** | Statutory report generation for 10 US states + ONRR federal; amended report handling; out-of-statute write-offs |
 | **M9 — Administration & ILM** | Automation rulesets (bots), data archiving, personal data protection (blocking/anonymization), user access management, onboarding validation tools |
+| **M10 — Partner Onboarding** | 7-step JV partner lifecycle: company registration, JOA & working interest setup, financial/banking setup, COPAS compliance, document collection, system access provisioning, review & sign-off |
+| **M11 — Joint Venture Accounting (JVA)** | AFE capital project approval and NOP elections, monthly JIB billing under COPAS standards, cash call advance funding, receipt application, COPAS audit finding management |
 
 ---
 
@@ -110,7 +112,7 @@ EnerFusion Upstream Accounting integrates with adjacent systems at well-defined 
           ▼               ▼                    │
 ┌─────────────────────────────────────────────────────────────┐
 │                   ENERFUSION PRA                             │
-│   M1 → M2 → M3 → M4 → M5 → M6 → M7 → M8 → M9             │
+│  M10 → M1 → M2 → M3 → M4 → M5/M11 → M6 → M7 → M8 → M9    │
 └─────────────────────────────────────────────────────────────┘
           │
           │ CDEX/EDI 820 (purchaser checks in)
@@ -126,7 +128,7 @@ EnerFusion Upstream Accounting integrates with adjacent systems at well-defined 
 
 | Phase | Modules | Milestone |
 |-------|---------|-----------|
-| Phase 1 — Foundation | M1, M2, M9 (RBAC + Admin) | Production volumes and ownership records live |
-| Phase 2 — Commercial | M3, M4, M5 | Contract allocation, valuation, balancing |
+| Phase 1 — Foundation | M1, M2, M9 (RBAC + Admin), M10 (Partner Onboarding) | Production volumes, ownership records, and partner onboarding live |
+| Phase 2 — Commercial | M3, M4, M5, M11 (JVA) | Contract allocation, valuation, balancing, JIB billing |
 | Phase 3 — Revenue | M6, M7 | Owner distributions and payment processing |
 | Phase 4 — Compliance | M8 | State and federal regulatory reporting |

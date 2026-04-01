@@ -219,6 +219,46 @@ Priority: **P1** = Must have (launch blocker) | **P2** = Should have | **P3** = 
 
 ---
 
+## M10 — Partner Onboarding
+
+| ID | Requirement | Priority | Notes |
+|----|-------------|----------|-------|
+| FR-M10-001 | The system shall manage a 7-step partner onboarding workflow: Company Registration → JOA & Working Interest → Financial Setup → COPAS Compliance → Document Collection → System Access Provisioning → Review & Submit | P1 | Steps must be completed sequentially; each step is independently saveable |
+| FR-M10-002 | The system shall capture partner legal entity details including entity type (LLC/Corporation/LP/LLP/Trust/Individual), EIN/TIN (encrypted), DUNS number, state of formation, and primary contacts per functional role | P1 | Tax IDs encrypted at rest with AES-256 |
+| FR-M10-003 | The system shall create a Joint Operating Agreement (JOA) record linking the partner to producing assets (basin, product type) with Working Interest % and Net Revenue Interest % | P1 | WI/NRI values seed M2 DOI owner interest records on completion |
+| FR-M10-004 | The system shall capture and store banking information (routing, masked account, account type), payment method preference, tax classification (1099 category), W9 receipt status, and ACH prenote status | P1 | Account numbers masked in UI; stored encrypted |
+| FR-M10-005 | The system shall record COPAS accounting standard configuration including version, overhead method, escalation index, material pricing method, audit period, and capture a timestamped partner acknowledgment | P1 | COPAS config feeds M11 JVA billing rules |
+| FR-M10-006 | The system shall track required compliance documents (W9, bank verification, JOA executed copy, Tax ID, COPAS acknowledgment) through a pending → received → verified → complete status workflow with overdue detection | P1 | |
+| FR-M10-007 | The system shall provision partner system access including portal account (read-only or elections-enabled), EDI gateway configuration (JIB 810, Cash Call 820), and notification preferences | P1 | |
+| FR-M10-008 | The system shall calculate and display onboarding progress as: `(completed_steps × 100 + active_steps × 45) / 7` | P1 | |
+| FR-M10-009 | The system shall publish a `ua.onboarding.partner.completed` event upon Step 7 sign-off, consumed by M2 (DOI provisioning), M7 (payment configuration), and M11 (JVA partner interest activation) | P1 | |
+| FR-M10-010 | The system shall provide a Pipeline view of all active onboarding sessions with status categorization (active / in review / final review / overdue), target date tracking, and monthly completion trend chart | P1 | |
+| FR-M10-011 | The system shall enforce RBAC with `onboarding:read`, `onboarding:write`, `onboarding:approve`, `onboarding:admin` scopes | P1 | |
+| FR-M10-012 | The system shall generate: Onboarding Pipeline Summary, Overdue Partners Report, Document Status Report, Monthly Completion Trend | P1 | |
+
+---
+
+## M11 — Joint Venture Accounting (JVA)
+
+| ID | Requirement | Priority | Notes |
+|----|-------------|----------|-------|
+| FR-M11-001 | The system shall manage Authorization for Expenditure (AFE) records with type (Drilling/Workover/Facility/Plug & Abandon), authorized amount, COPAS cost breakdown (codes 100–700), election deadline, and status lifecycle (draft → issued → approved → closed) | P1 | |
+| FR-M11-002 | The system shall support Non-Operating Partner (NOP) AFE elections (participate / non-consent) with deadline tracking; defaulted elections (no response by deadline) shall be treated as non-consent with configurable penalty multiplier | P1 | |
+| FR-M11-003 | The system shall track budget vs. actual for each AFE by COPAS cost code (100-Labor, 200-Materials, 300-Transport, 400-Services, 600-Overhead, 700-Taxes) and alert when actuals exceed a configurable variance threshold | P1 | |
+| FR-M11-004 | The system shall prepare monthly Joint Interest Bills (JIBs) for each non-operating partner calculating: direct costs × partner WI%, COPAS overhead (Fixed Rate per Well), and total JIB amount per COPAS schedule | P1 | |
+| FR-M11-005 | The system shall deliver JIBs via EDI 810, email (PDF), or partner portal per partner delivery preference configured in M10 | P1 | |
+| FR-M11-006 | The system shall track JIB payment status (issued → partial → paid → overdue) and publish `ua.jva.jib.issued` for M7 AR receivable tracking | P1 | |
+| FR-M11-007 | The system shall manage cash call advance funding requests with due date enforcement, overdue detection, daily interest accrual on overdue balances, and receipt application against open calls | P1 | |
+| FR-M11-008 | The system shall apply incoming partner payments to the oldest outstanding cash call first (configurable); overpayments credited to partner suspense account | P1 | |
+| FR-M11-009 | The system shall provide a cash call forecast view showing upcoming funding requirements from open AFE-linked expenditures by partner | P2 | |
+| FR-M11-010 | The system shall document COPAS audit findings with category (COPAS cost code), dollar amount, period, status (open / under review / resolved / rejected), and resolution notes; findings not resolved within the configurable window shall be flagged as overdue | P1 | |
+| FR-M11-011 | The system shall activate JVA partner interest records (WI%, NRI%, COPAS config) upon receipt of `ua.onboarding.partner.completed` event from M10 | P1 | |
+| FR-M11-012 | The system shall apply JIB netting in M7 — deducting outstanding JIB receivable balances from partner revenue distributions before issuing outgoing payments | P1 | FR-M7-017 cross-reference |
+| FR-M11-013 | The system shall enforce RBAC with `jva:read`, `jva:write`, `jva:approve`, `jva:execute`, `jva:admin` scopes | P1 | |
+| FR-M11-014 | The system shall generate: AFE Election Status Report, JIB Billing Summary, JIB Aging Report, Cash Call Forecast, Overdue Cash Call Report, COPAS Audit Finding Summary, Budget vs. Actual by AFE | P1 | |
+
+---
+
 ## M9 — Administration & ILM
 
 | ID | Requirement | Priority | Notes |

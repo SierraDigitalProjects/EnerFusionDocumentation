@@ -58,6 +58,10 @@
 │  │ svc-rev  │ │ svc-pay  │ │ svc-reg  │ │ svc-adm  │                  │
 │  │  M6      │ │  M7      │ │  M8      │ │  M9      │                  │
 │  └──────────┘ └──────────┘ └──────────┘ └──────────┘                  │
+│  ┌──────────┐ ┌──────────┐                                             │
+│  │ svc-onb  │ │ svc-jva  │                                             │
+│  │  M10     │ │  M11     │                                             │
+│  └──────────┘ └──────────┘                                             │
 │                                                                         │
 │  ┌──────────────────────────────────────────────────────────────────┐  │
 │  │                   SHARED SERVICES LAYER                          │  │
@@ -104,6 +108,8 @@ src/
 │   ├── payments/               # M7
 │   ├── regulatory/             # M8
 │   └── admin/                  # M9
+│   └── onboarding/             # M10
+│   └── jva/                    # M11
 │
 ├── shared/
 │   ├── components/             # Reusable UI components
@@ -232,6 +238,8 @@ CREATE SCHEMA revenue;       -- M6
 CREATE SCHEMA payments;      -- M7
 CREATE SCHEMA regulatory;    -- M8
 CREATE SCHEMA admin_ilm;     -- M9
+CREATE SCHEMA onboarding;    -- M10
+CREATE SCHEMA jva;           -- M11
 CREATE SCHEMA shared;        -- Cross-module reference data
 ```
 
@@ -272,6 +280,11 @@ Topic: ua.ownership.doi.changed
   └── Subscriber: svc-allocation (M3)
   └── Subscriber: svc-valuation (M4)
 
+Topic: ua.allocation.completed
+  └── Subscriber: svc-valuation (M4)
+  └── Subscriber: svc-balancing (M5)
+  └── Subscriber: svc-regulatory (M8)
+
 Topic: ua.valuation.settlement.completed
   └── Subscriber: svc-revenue (M6)
   └── Subscriber: svc-payments (M7)
@@ -279,6 +292,17 @@ Topic: ua.valuation.settlement.completed
 Topic: ua.revenue.distribution.completed
   └── Subscriber: svc-payments (M7)
   └── Subscriber: svc-regulatory (M8)
+
+Topic: ua.onboarding.partner.completed
+  └── Subscriber: svc-ownership (M2)
+  └── Subscriber: svc-payments (M7)
+  └── Subscriber: svc-jva (M11)
+
+Topic: ua.jva.jib.issued
+  └── Subscriber: svc-payments (M7)
+
+Topic: ua.jva.afe.approved
+  └── Subscriber: svc-admin (M9)
 ```
 
 All events include: `eventId`, `moduleSource`, `companyCode`, `period`, `timestamp`, `correlationId`.

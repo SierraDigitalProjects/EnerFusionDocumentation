@@ -33,12 +33,16 @@
 | M7 | Payment Processing & Check Input | Check input/output, AR, escheat/escrow |
 | M8 | Regulatory, Tax & Royalty Reporting | State + federal statutory report generation |
 | M9 | Administration & ILM | Data archiving, personal data protection, automation |
+| M10 | Partner Onboarding | 7-step JV partner onboarding workflow, document collection, system provisioning |
+| M11 | Joint Venture Accounting (JVA) | AFE elections, JIB billing, cash call management, COPAS audit |
 
 ---
 
 ## End-to-End Data Flow
 
 ```
+[M10: Partner Onboarding] — onboard new JV partners (7-step workflow)
+       ↓ ua.onboarding.partner.completed
 [Wellhead Production]
        ↓
 [M1: Production Allocation] — volumes per well/MP
@@ -48,12 +52,13 @@
 [M3: Contractual Allocation] — allocate to sales contracts
        ↓
 [M4: Valuation & Pricing] — apply price, tax, deductions
-       ↓
-[M5: Balancing] — resolve imbalances
+       ↓                          ↓
+[M5: Balancing]         [M11: JVA] — AFE elections, JIB billing, cash calls
        ↓
 [M6: Revenue Distribution] — distribute to owners
        ↓
-[M7: Payment Processing] — cut checks, manage AR
+[M7: Payment Processing] — cut checks, manage AR, JIB netting
        ↓
 [M8: Regulatory Reporting] — state & federal compliance
+[M9: Administration & ILM] — cross-cutting
 ```

@@ -92,6 +92,8 @@ nav:
       - M7 — Payment Processing & Check Input: 03-Module-Specifications/M7-Payment-Processing-Check-Input.md
       - M8 — Regulatory, Tax & Royalty Reporting: 03-Module-Specifications/M8-Regulatory-Tax-Royalty-Reporting.md
       - M9 — Administration & ILM: 03-Module-Specifications/M9-Administration-ILM.md
+      - M10 — Partner Onboarding: 03-Module-Specifications/M10-Partner-Onboarding.md
+      - M11 — Joint Venture Accounting (JVA): 03-Module-Specifications/M11-Joint-Venture-Accounting.md
 
   - Process Flows:
       - Payment Processing (M7): process-flows/payment-processing.md

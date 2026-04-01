@@ -1521,6 +1521,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M10-Partner-Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M10 — Partner Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M11-Joint-Venture-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M11 — Joint Venture Accounting (JVA)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2030,27 +2086,31 @@
 <a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│  │ svc-rev  │ │ svc-pay  │ │ svc-reg  │ │ svc-adm  │                  │
 <a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│  │  M6      │ │  M7      │ │  M8      │ │  M9      │                  │
 <a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│  └──────────┘ └──────────┘ └──────────┘ └──────────┘                  │
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│                                                                         │
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│  ┌──────────────────────────────────────────────────────────────────┐  │
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│  │                   SHARED SERVICES LAYER                          │  │
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>│  │  auth-svc  │  notification-svc  │  audit-svc  │  file-svc       │  │
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>│  └──────────────────────────────────────────────────────────────────┘  │
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>└─────────────────────────────────────────────────────────────────────────┘
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>                                │
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>┌───────────────────────────────▼─────────────────────────────────────────┐
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>│                        DATA TIER (AZURE)                                 │
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>│                                                                          │
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>│  ┌─────────────────────┐  ┌──────────────────┐  ┌──────────────────┐   │
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>│  │  Azure Database for  │  │  Azure Cache for  │  │  Azure Blob      │   │
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>│  │  PostgreSQL Flex    │  │  Redis            │  │  Storage         │   │
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>│  │  (Primary + Replica)│  │  (Session/Cache)  │  │  (Reports/Docs)  │   │
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>│  └─────────────────────┘  └──────────────────┘  └──────────────────┘   │
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>│                                                                          │
-<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>│  ┌─────────────────────┐  ┌──────────────────┐                         │
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>│  │  Azure Service Bus  │  │  Azure Monitor /  │                         │
-<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>│  │  (Module Events)    │  │  App Insights     │                         │
-<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>│  └─────────────────────┘  └──────────────────┘                         │
-<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>└──────────────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│  ┌──────────┐ ┌──────────┐                                             │
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│  │ svc-onb  │ │ svc-jva  │                                             │
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│  │  M10     │ │  M11     │                                             │
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>│  └──────────┘ └──────────┘                                             │
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>│                                                                         │
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>│  ┌──────────────────────────────────────────────────────────────────┐  │
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>│  │                   SHARED SERVICES LAYER                          │  │
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>│  │  auth-svc  │  notification-svc  │  audit-svc  │  file-svc       │  │
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>│  └──────────────────────────────────────────────────────────────────┘  │
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>└─────────────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>                                │
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>┌───────────────────────────────▼─────────────────────────────────────────┐
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>│                        DATA TIER (AZURE)                                 │
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>│                                                                          │
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>│  ┌─────────────────────┐  ┌──────────────────┐  ┌──────────────────┐   │
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>│  │  Azure Database for  │  │  Azure Cache for  │  │  Azure Blob      │   │
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>│  │  PostgreSQL Flex    │  │  Redis            │  │  Storage         │   │
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>│  │  (Primary + Replica)│  │  (Session/Cache)  │  │  (Reports/Docs)  │   │
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>│  └─────────────────────┘  └──────────────────┘  └──────────────────┘   │
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>│                                                                          │
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>│  ┌─────────────────────┐  ┌──────────────────┐                         │
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>│  │  Azure Service Bus  │  │  Azure Monitor /  │                         │
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>│  │  (Module Events)    │  │  App Insights     │                         │
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>│  └─────────────────────┘  └──────────────────┘                         │
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>└──────────────────────────────────────────────────────────────────────────┘
 </code></pre></div>
 <hr />
 <h2 id="3-frontend-architecture-react-18">3. Frontend Architecture (React 18)<a class="headerlink" href="#3-frontend-architecture-react-18" title="Permanent link">&para;</a></h2>
@@ -2071,15 +2131,17 @@
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│   ├── payments/               # M7
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│   ├── regulatory/             # M8
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│   └── admin/                  # M9
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>├── shared/
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│   ├── components/             # Reusable UI components
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│   ├── hooks/                  # Custom React hooks
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│   ├── api/                    # Axios clients per module
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│   ├── auth/                   # MSAL (Azure AD) integration
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>│   └── rbac/                   # Permission-aware component wrappers
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>│
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>└── assets/
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│   └── onboarding/             # M10
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│   └── jva/                    # M11
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>├── shared/
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│   ├── components/             # Reusable UI components
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│   ├── hooks/                  # Custom React hooks
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>│   ├── api/                    # Axios clients per module
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>│   ├── auth/                   # MSAL (Azure AD) integration
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>│   └── rbac/                   # Permission-aware component wrappers
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>│
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>└── assets/
 </code></pre></div>
 <h3 id="module-structure-per-module">Module Structure (per module)<a class="headerlink" href="#module-structure-per-module" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>modules/production/
@@ -2256,7 +2318,9 @@
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="n">payments</span><span class="p">;</span><span class="w">      </span><span class="c1">-- M7</span>
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="n">regulatory</span><span class="p">;</span><span class="w">    </span><span class="c1">-- M8</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="n">admin_ilm</span><span class="p">;</span><span class="w">     </span><span class="c1">-- M9</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="n">shared</span><span class="p">;</span><span class="w">        </span><span class="c1">-- Cross-module reference data</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="n">onboarding</span><span class="p">;</span><span class="w">    </span><span class="c1">-- M10</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="n">jva</span><span class="p">;</span><span class="w">           </span><span class="c1">-- M11</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="n">shared</span><span class="p">;</span><span class="w">        </span><span class="c1">-- Cross-module reference data</span>
 </code></pre></div>
 <h3 id="row-level-security-for-rbac">Row-Level Security for RBAC<a class="headerlink" href="#row-level-security-for-rbac" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- Example: operators can only see their own company&#39;s wells</span>
@@ -2285,13 +2349,29 @@
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  └── Subscriber: svc-allocation (M3)
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  └── Subscriber: svc-valuation (M4)
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>Topic: ua.valuation.settlement.completed
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  └── Subscriber: svc-revenue (M6)
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>  └── Subscriber: svc-payments (M7)
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>Topic: ua.revenue.distribution.completed
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>  └── Subscriber: svc-payments (M7)
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>  └── Subscriber: svc-regulatory (M8)
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>Topic: ua.allocation.completed
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>  └── Subscriber: svc-valuation (M4)
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>  └── Subscriber: svc-balancing (M5)
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>  └── Subscriber: svc-regulatory (M8)
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>Topic: ua.valuation.settlement.completed
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>  └── Subscriber: svc-revenue (M6)
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>  └── Subscriber: svc-payments (M7)
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>Topic: ua.revenue.distribution.completed
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>  └── Subscriber: svc-payments (M7)
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>  └── Subscriber: svc-regulatory (M8)
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>Topic: ua.onboarding.partner.completed
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>  └── Subscriber: svc-ownership (M2)
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>  └── Subscriber: svc-payments (M7)
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>  └── Subscriber: svc-jva (M11)
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>Topic: ua.jva.jib.issued
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>  └── Subscriber: svc-payments (M7)
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>Topic: ua.jva.afe.approved
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>  └── Subscriber: svc-admin (M9)
 </code></pre></div>
 <p>All events include: <code>eventId</code>, <code>moduleSource</code>, <code>companyCode</code>, <code>period</code>, <code>timestamp</code>, <code>correlationId</code>.</p>
 <hr />

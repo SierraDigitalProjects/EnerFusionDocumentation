@@ -1521,6 +1521,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M10-Partner-Onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M10 — Partner Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Module-Specifications/M11-Joint-Venture-Accounting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M11 — Joint Venture Accounting (JVA)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2022,72 +2078,96 @@
 <h4 id="m9-administration-information-lifecycle-management-ilm">M9 — Administration &amp; Information Lifecycle Management (ILM)<a class="headerlink" href="#m9-administration-information-lifecycle-management-ilm" title="Permanent link">&para;</a></h4>
 <p>Provides system-wide automation configuration (bots, rulesets), data archiving for completed transactions, personal data protection (GDPR-aligned blocking/deletion), and onboarding/regression validation tools.</p>
 <p><strong>Key outcomes:</strong> Archived records, anonymized personal data, automated run schedules.</p>
+<h4 id="m10-partner-onboarding">M10 — Partner Onboarding<a class="headerlink" href="#m10-partner-onboarding" title="Permanent link">&para;</a></h4>
+<p>Manages the complete lifecycle of bringing a new joint venture partner into EnerFusion through a structured 7-step workflow: Company Registration → JOA &amp; Working Interest → Financial Setup → COPAS Compliance → Document Collection → System Access Provisioning → Review &amp; Submit. Serves as the entry gate before partners receive DOI records in M2 and distributions from M6.</p>
+<p><strong>Key outcomes:</strong> Activated partner records, verified compliance documents, provisioned system access, DOI interest records in M2.</p>
+<h4 id="m11-joint-venture-accounting-jva">M11 — Joint Venture Accounting (JVA)<a class="headerlink" href="#m11-joint-venture-accounting-jva" title="Permanent link">&para;</a></h4>
+<p>Handles all financial interactions between the operating company and non-operating working interest partners. Manages Authorization for Expenditure (AFE) capital approval elections, monthly Joint Interest Billing (JIB) under COPAS standards, cash call advance funding collection, and COPAS audit finding management.</p>
+<p><strong>Key outcomes:</strong> Approved AFE elections, issued JIB billings, collected cash calls, resolved audit findings.</p>
 <hr />
 <h2 id="3-end-to-end-business-process-flow">3. End-to-End Business Process Flow<a class="headerlink" href="#3-end-to-end-business-process-flow" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────────────────────────────────────┐
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│  FIELD OPERATIONS                                               │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  Daily: Well volumes, downtime, well tests, pressures          │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└──────────────────────────┬──────────────────────────────────────┘
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                           ↓
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>┌─────────────────────────────────────────────────────────────────┐
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│  M1: PRODUCTION &amp; VOLUME ALLOCATION                             │
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│  • Calculate theoreticals per well completion                   │
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│  • Aggregate delivery network inputs                            │
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│  • Compare against actual sales outputs                         │
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│  • Adjust within tolerance → allocate back to wells             │
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>└──────────────────────────┬──────────────────────────────────────┘
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                           ↓
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>┌─────────────────────────────────────────────────────────────────┐
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│  M2: OWNERSHIP / DOI                                            │
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│  • DOI→MP/WC cross-reference: who owns each well&#39;s volume       │
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│  • Apply sliding scales, tax exemptions                         │
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│  • Process any in-period ownership transfers                    │
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│  M10: PARTNER ONBOARDING                                        │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  • Company registration, JOA &amp; working interest setup          │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│  • Financial setup, COPAS compliance, document collection      │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│  • System access provisioning → activates DOI in M2           │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└──────────────────────────┬──────────────────────────────────────┘
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                           ↓ ua.onboarding.partner.completed
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│  FIELD OPERATIONS                                               │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│  Daily: Well volumes, downtime, well tests, pressures          │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>└──────────────────────────┬──────────────────────────────────────┘
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                           ↓
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│  M1: PRODUCTION &amp; VOLUME ALLOCATION                             │
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│  • Calculate theoreticals per well completion                   │
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│  • Aggregate delivery network inputs                            │
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│  • Compare against actual sales outputs                         │
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│  • Adjust within tolerance → allocate back to wells             │
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>└──────────────────────────┬──────────────────────────────────────┘
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                           ↓
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>┌─────────────────────────────────────────────────────────────────┐
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│  M3: CONTRACTUAL ALLOCATION &amp; PRODUCT CONTROL                   │
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│  • MP/WC → Transporter Contract cross-reference                 │
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│  • Allocate volumes to sales contracts                          │
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│  • Calculate entitlements, track network imbalances             │
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│  • Gas plant: calc percent return-to-lease, NGL splits          │
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>└──────────────────────────┬──────────────────────────────────────┘
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>                           ↓
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>┌─────────────────────────────────────────────────────────────────┐
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│  M4: VALUATION &amp; PRICING                                        │
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│  • Apply contract price (fixed / formula / API gravity)         │
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│  • Deduct marketing costs, transportation                       │
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│  • Calculate severance tax, ad valorem, royalty deductions      │
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│  • Generate settlement statements &amp; run statements              │
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>└──────────────────────────┬──────────────────────────────────────┘
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>                           ↓
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>┌─────────────────────────────────────────────────────────────────┐
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│  M5: BALANCING WORKPLACE                                        │
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│  • Compare actual takes vs entitlements                         │
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│  • Update cumulative owner imbalance positions                  │
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│  • Generate balancing statements                                │
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│  M2: OWNERSHIP / DOI                                            │
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│  • DOI→MP/WC cross-reference: who owns each well&#39;s volume       │
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│  • Apply sliding scales, tax exemptions                         │
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│  • Process any in-period ownership transfers                    │
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>└──────────────────────────┬──────────────────────────────────────┘
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>                           ↓
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│  M3: CONTRACTUAL ALLOCATION &amp; PRODUCT CONTROL                   │
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│  • MP/WC → Transporter Contract cross-reference                 │
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│  • Allocate volumes to sales contracts                          │
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│  • Calculate entitlements, track network imbalances             │
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│  • Gas plant: calc percent return-to-lease, NGL splits          │
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>└──────────────────────────┬──────────────────────────────────────┘
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>                           ↓
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│  M4: VALUATION &amp; PRICING                                        │
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│  • Apply contract price (fixed / formula / API gravity)         │
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│  • Deduct marketing costs, transportation                       │
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│  • Calculate severance tax, ad valorem, royalty deductions      │
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│  • Generate settlement statements &amp; run statements              │
 <a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>└──────────────────────────┬──────────────────────────────────────┘
 <a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>                           ↓
 <a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>┌─────────────────────────────────────────────────────────────────┐
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>│  M6: REVENUE DISTRIBUTION &amp; ACCOUNTING                          │
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>│  • Distribute net revenue to each owner interest                │
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>│  • Calculate late-payment interest                              │
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>│  • Post Revenue Accounting Documents to GL                      │
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>└──────────────────────────┬──────────────────────────────────────┘
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>                           ↓
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>┌─────────────────────────────────────────────────────────────────┐
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>│  M7: PAYMENT PROCESSING &amp; CHECK INPUT                           │
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>│  • Process incoming purchaser checks (CDEX/EDI)                 │
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>│  • Issue outgoing owner payment checks                          │
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>│  • Handle escheat / escrow for unclaimed funds                  │
-<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>│  • Manage AR aging and write-offs                               │
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>└──────────────────────────┬──────────────────────────────────────┘
-<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>                           ↓
-<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>┌─────────────────────────────────────────────────────────────────┐
-<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>│  M8: REGULATORY REPORTING                                       │
-<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>│  • Texas: H-10, P1B, PR, GLO/UT Royalty                        │
-<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>│  • Federal: MMS-PASR, MMS-OGOR, ONRR-2014                     │
-<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>│  • Multi-state: AR, CA, CO, LA, NM, ND, OK, WY                 │
-<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>└─────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>│  M5: BALANCING WORKPLACE      M11: JOINT VENTURE ACCOUNTING     │
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>│  • Compare actual takes       • AFE elections (participate /    │
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>│    vs entitlements              non-consent)                    │
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>│  • Update cumulative          • JIB billing (COPAS monthly)    │
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>│    owner imbalance positions  • Cash call management            │
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>│  • Generate balancing         • COPAS audit findings           │
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>│    statements                                                   │
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>└──────────────────────────┬──────────────────────────────────────┘
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>                           ↓
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>│  M6: REVENUE DISTRIBUTION &amp; ACCOUNTING                          │
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>│  • Distribute net revenue to each owner interest                │
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>│  • Calculate late-payment interest                              │
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>│  • Post Revenue Accounting Documents to GL                      │
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>└──────────────────────────┬──────────────────────────────────────┘
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>                           ↓
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>│  M7: PAYMENT PROCESSING &amp; CHECK INPUT                           │
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>│  • Process incoming purchaser checks (CDEX/EDI)                 │
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>│  • Issue outgoing owner payment checks                          │
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>│  • Handle escheat / escrow for unclaimed funds                  │
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>│  • Manage AR aging and write-offs                               │
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>└──────────────────────────┬──────────────────────────────────────┘
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>                           ↓
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>│  M8: REGULATORY REPORTING                                       │
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>│  • Texas: H-10, P1B, PR, GLO/UT Royalty                        │
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>│  • Federal: MMS-PASR, MMS-OGOR, ONRR-2014                     │
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>│  • Multi-state: AR, CA, CO, LA, NM, ND, OK, WY                 │
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>└─────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>│  M9: ADMINISTRATION &amp; ILM  (cross-cutting — all modules)        │
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>│  • RBAC role and user access management                         │
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>│  • Tamper-evident audit log of all data mutations               │
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>│  • Automation rulesets (bots) for scheduling and anomaly alerts │
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>│  • Data archiving and personal data protection (GDPR-aligned)   │
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>└─────────────────────────────────────────────────────────────────┘
 </code></pre></div>
 <hr />
 <h2 id="4-volume-allocation-mathematics-m1-core-algorithm">4. Volume Allocation Mathematics (M1 Core Algorithm)<a class="headerlink" href="#4-volume-allocation-mathematics-m1-core-algorithm" title="Permanent link">&para;</a></h2>
