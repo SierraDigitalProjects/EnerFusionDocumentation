@@ -84,6 +84,34 @@ EnerFusion Upstream Accounting is a cloud-native upstream accounting platform fo
 
 ---
 
+## AI-Driven Process Improvement
+
+AI capabilities can be embedded across every module to reduce manual effort, catch errors earlier, and surface insights that are impractical to derive manually at scale.
+
+| Module | AI Opportunity | Expected Improvement |
+|--------|---------------|----------------------|
+| **M1 — Production & Volume Allocation** | Anomaly detection on well completion volumes; ML-based downtime classification; automated variance flagging against historical baselines | Faster identification of measurement errors, reduced manual review of allocation exceptions |
+| **M2 — Ownership & DOI** | NLP extraction of ownership data from JOA / lease documents; automated conflict detection across overlapping DOI records; change-of-ownership suggestion from title runsheets | Reduced data entry errors, faster DOI setup, earlier detection of ownership disputes |
+| **M3 — Contractual Allocation** | Predictive contract nomination based on historical takes and market signals; automated imbalance root-cause categorisation; NGL component split validation against plant statements | More accurate nominations, fewer balancing exceptions, faster month-end close |
+| **M4 — Contracts, Pricing & Valuation** | Automated price index reconciliation against third-party feeds (Platts, OPIS); ML detection of unusual deduction patterns; prior-period adjustment prediction | Reduced pricing disputes, faster settlement approval, proactive PPA identification |
+| **M5 — Balancing Workplace** | Imbalance position forecasting; automated make-up volume scheduling recommendations; cash settlement vs. make-up trade-off analysis | Faster imbalance resolution, optimised make-up scheduling, reduced cash exposure |
+| **M6 — Revenue Distribution & Accounting** | Automated RAD exception triage; duplicate distribution detection; late-payment interest calculation audit; GL posting anomaly detection | Fewer distribution errors reaching M7, faster accountant review cycle |
+| **M7 — Payment Processing & Check Input** | Intelligent remittance matching (CDEX/820 to open AR); duplicate payment detection; escheat risk scoring for aged unclaimed items; ACH return pattern analysis | Higher straight-through processing rates, lower escheat exposure, faster AR reconciliation |
+| **M8 — Regulatory, Tax & Royalty Reporting** | Automated ONRR-2014 pre-validation against filing rules; severance tax rate change monitoring; ad valorem true-up variance analysis | Reduced regulatory filing errors, proactive compliance alerts, faster audit responses |
+| **M9 — Administration & ILM** | AI-assisted RBAC role recommendation based on job function; anomalous access pattern detection; intelligent ILM retention classification for unstructured data | Tighter access governance, earlier security anomaly detection, reduced ILM manual classification |
+| **M10 — Partner Onboarding** | Automated document completeness checks (W-9, insurance certs); entity name / TIN validation against IRS/SAP master data; risk scoring for new JV partners | Faster onboarding cycle, reduced compliance gaps, earlier flagging of high-risk partners |
+| **M11 — Joint Venture Accounting** | AFE cost-to-complete forecasting; JIB dispute prediction based on historical partner patterns; automated COPAS audit exception flagging; cash call timing optimisation | Better AFE budget control, fewer JIB disputes, proactive COPAS compliance |
+
+### Cross-Cutting AI Capabilities
+
+- **Natural Language Query** — users can query production volumes, owner statements, and compliance status in plain English without navigating module-specific screens.
+- **Predictive Close** — ML models trained on historical month-end patterns flag which modules are likely to miss close deadlines, enabling proactive intervention.
+- **Audit Trail Summarisation** — LLM-generated summaries of change history for any entity (well, owner, contract) reduce auditor preparation time.
+- **Regulatory Change Monitoring** — automated ingestion of ONRR, state agency, and COPAS bulletins with AI-generated impact assessments mapped to affected modules.
+- **Operator Copilot** — in-app AI assistant contextual to the user's current module, role, and open work items — surfaces next-best actions and explains calculation logic on demand.
+
+---
+
 ## Document Map
 
 | Document | Description |
