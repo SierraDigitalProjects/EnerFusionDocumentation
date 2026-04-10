@@ -1,0 +1,2115 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Upstream Accounting Platform for North American Energy Operators">
+      
+      
+        <meta name="author" content="EnerFusion Product Team">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>M6 — Revenue Distribution & Accounting - EnerFusion Upstream Accounting — Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#m6-revenue-distribution-accounting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-header__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  <img src="../../assets/enerfusion-premium.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EnerFusion Upstream Accounting — Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              M6 — Revenue Distribution &amp; Accounting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../benefits/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benefits
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../assumptions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Assumptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../master-data/overview/" class="md-tabs__link">
+          
+  
+  
+  Master Data
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../requirements/functional/" class="md-tabs__link">
+          
+  
+  
+  Requirements
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../process-flows/payment-processing/" class="md-tabs__link">
+          
+  
+  
+  Process Flows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/uom-and-products/" class="md-tabs__link">
+          
+  
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pilot-scope/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Pilot Scope
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../test-cases/e2e-scenario/" class="md-tabs__link">
+          
+  
+  
+  Test Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EnerFusion Upstream Accounting — Documentation" class="md-nav__button md-logo" aria-label="EnerFusion Upstream Accounting — Documentation" data-md-component="logo">
+      
+  <img src="../../assets/enerfusion-premium.svg" alt="logo">
+
+    </a>
+    EnerFusion Upstream Accounting — Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benefits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benefits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assumptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Data
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Master Data
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/centrally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Centrally Managed (SAP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/locally-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locally Managed (EnerFusion)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../master-data/not-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Not Managed in SAP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/non-functional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Non-Functional Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/payment-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payment Processing (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/check-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check Input (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/onrr-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONRR-2014 Processing (M8)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process-flows/ar-workplace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AR Workplace (M7)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/uom-and-products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Units of Measure & Products
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/ad-valorem-true-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ad Valorem True-Up (M4)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pilot-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Cases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Test Cases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test-cases/e2e-scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2E Scenario (Build-A-Biz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="m6-revenue-distribution-accounting">M6 — Revenue Distribution &amp; Accounting<a class="headerlink" href="#m6-revenue-distribution-accounting" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="1-module-purpose">1. Module Purpose<a class="headerlink" href="#1-module-purpose" title="Permanent link">&para;</a></h2>
+<p>Distributes the financially valued production (from M4 settlement statements) to each owner according to their Division of Interest (DOI) decimal interest. Calculates late-payment interest on overdue distributions, and generates Revenue Accounting Documents (RADs) for posting to the external General Ledger system.</p>
+<p>This module is the <strong>financial disbursement engine</strong> — it converts settlement values into owner-level entitlements that drive check issuance in M7.</p>
+<hr />
+<h2 id="2-core-concepts">2. Core Concepts<a class="headerlink" href="#2-core-concepts" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Revenue Accounting Document (RAD)</strong></td>
+<td>The accounting document generated per owner distribution that maps to GL account, cost center, and amount for ERP posting</td>
+</tr>
+<tr>
+<td><strong>Distribution Run</strong></td>
+<td>A batch process that calculates and records owner-level revenue shares for a given period and venture scope</td>
+</tr>
+<tr>
+<td><strong>Interest on Late Payment</strong></td>
+<td>Statutory or contractual interest charged when the operator fails to distribute revenue by the applicable state-mandated payment deadline</td>
+</tr>
+<tr>
+<td><strong>Revenue Distribution</strong></td>
+<td>The allocation of net settlement value to individual DOI owner interests per their decimal percentage</td>
+</tr>
+<tr>
+<td><strong>Chain of Title Allocation</strong></td>
+<td>Distribution of revenue through transferred ownership interests, ensuring value follows the correct chain of ownership for the period</td>
+</tr>
+<tr>
+<td><strong>Owner Suspense</strong></td>
+<td>Funds held on behalf of an owner when the owner's payment details are incomplete or disputed, pending resolution</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-master-data">3. Master Data<a class="headerlink" href="#3-master-data" title="Permanent link">&para;</a></h2>
+<h3 id="31-revenue-distribution-configuration">3.1 Revenue Distribution Configuration<a class="headerlink" href="#31-revenue-distribution-configuration" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>distributionConfigId</td>
+<td>UUID</td>
+<td>Yes</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>companyCode</td>
+<td>String(10)</td>
+<td>Yes</td>
+<td>Operator company</td>
+</tr>
+<tr>
+<td>productType</td>
+<td>Enum(oil, gas, ngl)</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>distributionMethod</td>
+<td>Enum(decimal_interest, entitlement)</td>
+<td>Yes</td>
+<td>How to split net value</td>
+</tr>
+<tr>
+<td>interestRateSource</td>
+<td>Enum(state_statutory, contractual, federal)</td>
+<td>Yes</td>
+<td>Source for late-payment interest rate</td>
+</tr>
+<tr>
+<td>paymentDeadlineDays</td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Days after period close; triggers interest if missed</td>
+</tr>
+<tr>
+<td>glPostingMethod</td>
+<td>Enum(rad, journal_entry)</td>
+<td>Yes</td>
+<td>How documents are posted to GL</td>
+</tr>
+<tr>
+<td>affiliateNettingFlag</td>
+<td>Boolean</td>
+<td>No</td>
+<td>Net intercompany distributions before issuing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-gl-account-mapping-pra-chart-of-accounts">3.2 GL Account Mapping (PRA Chart of Accounts)<a class="headerlink" href="#32-gl-account-mapping-pra-chart-of-accounts" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>glMappingId</td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>productType</td>
+<td>Enum</td>
+<td>Oil / Gas / NGL</td>
+</tr>
+<tr>
+<td>transactionType</td>
+<td>Enum(revenue, royalty, severance_tax, ad_valorem, transport, marketing, interest)</td>
+<td></td>
+</tr>
+<tr>
+<td>interestType</td>
+<td>Enum(WI, RI, ORRI)</td>
+<td></td>
+</tr>
+<tr>
+<td>glAccountNumber</td>
+<td>String(20)</td>
+<td>FK → shared.gl_accounts (SAP-replicated)</td>
+</tr>
+<tr>
+<td>costCenterDefault</td>
+<td>String(20)</td>
+<td>Default cost center if not overridden</td>
+</tr>
+<tr>
+<td>effectiveDate</td>
+<td>Date</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-interest-rate-table">3.3 Interest Rate Table<a class="headerlink" href="#33-interest-rate-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>interestRateId</td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>state</td>
+<td>String(2)</td>
+<td>State abbreviation (or 'FED' for federal)</td>
+</tr>
+<tr>
+<td>productType</td>
+<td>Enum</td>
+<td></td>
+</tr>
+<tr>
+<td>annualRate</td>
+<td>Decimal(6,4)</td>
+<td>Annual interest rate (e.g., 0.1200 = 12%)</td>
+</tr>
+<tr>
+<td>compoundingMethod</td>
+<td>Enum(simple, compound_monthly)</td>
+<td></td>
+</tr>
+<tr>
+<td>effectiveDate</td>
+<td>Date</td>
+<td></td>
+</tr>
+<tr>
+<td>expirationDate</td>
+<td>Date</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>State-mandated payment deadlines and interest rates vary:</strong></p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Payment Deadline</th>
+<th>Interest Rate (typical)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Texas</td>
+<td>60 days after end of production month</td>
+<td>Variable; set by state</td>
+</tr>
+<tr>
+<td>Oklahoma</td>
+<td>6 months after production month</td>
+<td>12% per annum</td>
+</tr>
+<tr>
+<td>Louisiana</td>
+<td>60 days after production month</td>
+<td>Prime + 1%</td>
+</tr>
+<tr>
+<td>New Mexico</td>
+<td>6 months after production month</td>
+<td>15% per annum</td>
+</tr>
+<tr>
+<td>Wyoming</td>
+<td>6 months after production month</td>
+<td>18% per annum</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-transactional-entities">4. Transactional Entities<a class="headerlink" href="#4-transactional-entities" title="Permanent link">&para;</a></h2>
+<h3 id="41-distribution-run">4.1 Distribution Run<a class="headerlink" href="#41-distribution-run" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>distributionRunId</td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>period</td>
+<td>YearMonth</td>
+<td>Accounting period</td>
+</tr>
+<tr>
+<td>companyCode</td>
+<td>String(10)</td>
+<td></td>
+</tr>
+<tr>
+<td>runScope</td>
+<td>Enum(all_ventures, single_venture, settlement_id)</td>
+<td></td>
+</tr>
+<tr>
+<td>runStatus</td>
+<td>Enum(pending, running, completed, failed, reversed)</td>
+<td></td>
+</tr>
+<tr>
+<td>startedAt</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>completedAt</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>triggeredBy</td>
+<td>UUID</td>
+<td>FK → User</td>
+</tr>
+<tr>
+<td>totalDistributed</td>
+<td>Decimal(16,2)</td>
+<td>Sum of all owner net distributions</td>
+</tr>
+<tr>
+<td>ownerCount</td>
+<td>Integer</td>
+<td>Number of distinct owners with distributions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-owner-distribution-record">4.2 Owner Distribution Record<a class="headerlink" href="#42-owner-distribution-record" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>distributionId</td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>distributionRunId</td>
+<td>UUID</td>
+<td>FK → DistributionRun</td>
+</tr>
+<tr>
+<td>ventureId</td>
+<td>UUID</td>
+<td>FK → Venture</td>
+</tr>
+<tr>
+<td>settlementId</td>
+<td>UUID</td>
+<td>FK → SettlementStatement (M4)</td>
+</tr>
+<tr>
+<td>businessPartnerId</td>
+<td>UUID</td>
+<td>FK → BusinessPartner</td>
+</tr>
+<tr>
+<td>interestType</td>
+<td>Enum(WI, RI, ORRI, NPRI, PRRI)</td>
+<td></td>
+</tr>
+<tr>
+<td>decimalInterest</td>
+<td>Decimal(10,8)</td>
+<td>Owner's share</td>
+</tr>
+<tr>
+<td>period</td>
+<td>YearMonth</td>
+<td></td>
+</tr>
+<tr>
+<td>productType</td>
+<td>Enum</td>
+<td></td>
+</tr>
+<tr>
+<td>grossVolume</td>
+<td>Decimal(12,3)</td>
+<td>Owner's share of gross production</td>
+</tr>
+<tr>
+<td>grossValue</td>
+<td>Decimal(14,2)</td>
+<td>Owner's share before deductions</td>
+</tr>
+<tr>
+<td>severanceTaxShare</td>
+<td>Decimal(12,2)</td>
+<td>Owner's portion of severance tax</td>
+</tr>
+<tr>
+<td>adValoremShare</td>
+<td>Decimal(12,2)</td>
+<td></td>
+</tr>
+<tr>
+<td>transportDeductShare</td>
+<td>Decimal(12,2)</td>
+<td></td>
+</tr>
+<tr>
+<td>marketingDeductShare</td>
+<td>Decimal(12,2)</td>
+<td></td>
+</tr>
+<tr>
+<td>processingDeductShare</td>
+<td>Decimal(12,2)</td>
+<td></td>
+</tr>
+<tr>
+<td>netValue</td>
+<td>Decimal(14,2)</td>
+<td>Owner's net payment amount</td>
+</tr>
+<tr>
+<td>suspenseFlag</td>
+<td>Boolean</td>
+<td>Held pending owner details</td>
+</tr>
+<tr>
+<td>suspenseReason</td>
+<td>String(100)</td>
+<td>Reason if suspended</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-revenue-accounting-document-rad">4.3 Revenue Accounting Document (RAD)<a class="headerlink" href="#43-revenue-accounting-document-rad" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radId</td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>distributionRunId</td>
+<td>UUID</td>
+<td>FK</td>
+</tr>
+<tr>
+<td>documentDate</td>
+<td>Date</td>
+<td>Posting date</td>
+</tr>
+<tr>
+<td>postingPeriod</td>
+<td>YearMonth</td>
+<td>GL posting period</td>
+</tr>
+<tr>
+<td>companyCode</td>
+<td>String(10)</td>
+<td></td>
+</tr>
+<tr>
+<td>glLines</td>
+<td>JSONB</td>
+<td>Array of GL line items</td>
+</tr>
+<tr>
+<td>postingStatus</td>
+<td>Enum(draft, posted, failed, reversed)</td>
+<td></td>
+</tr>
+<tr>
+<td>externalDocumentNumber</td>
+<td>String(20)</td>
+<td>SAP FI document number (returned after posting)</td>
+</tr>
+<tr>
+<td>postedAt</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>GL Line Item Structure (within <code>glLines</code> JSONB):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;lineNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;glAccount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;130000&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;costCenter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1001-OIL&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;debitCredit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">145230.50</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;productType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;oil&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&quot;transactionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;revenue&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&quot;ventureId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">&quot;period&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-01&quot;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="44-interest-calculation-record">4.4 Interest Calculation Record<a class="headerlink" href="#44-interest-calculation-record" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>interestId</td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td>businessPartnerId</td>
+<td>UUID</td>
+<td>FK → BusinessPartner</td>
+</tr>
+<tr>
+<td>ventureId</td>
+<td>UUID</td>
+<td>FK</td>
+</tr>
+<tr>
+<td>period</td>
+<td>YearMonth</td>
+<td>Period the original distribution relates to</td>
+</tr>
+<tr>
+<td>originalDueDate</td>
+<td>Date</td>
+<td>State-mandated payment deadline</td>
+</tr>
+<tr>
+<td>actualPaymentDate</td>
+<td>Date</td>
+<td>Date payment was actually issued</td>
+</tr>
+<tr>
+<td>overdueDays</td>
+<td>Integer</td>
+<td>actualPaymentDate - originalDueDate</td>
+</tr>
+<tr>
+<td>principalAmount</td>
+<td>Decimal(14,2)</td>
+<td>Original undistributed amount</td>
+</tr>
+<tr>
+<td>interestRate</td>
+<td>Decimal(6,4)</td>
+<td>Annual rate applied</td>
+</tr>
+<tr>
+<td>interestAmount</td>
+<td>Decimal(12,2)</td>
+<td>Calculated interest owed to owner</td>
+</tr>
+<tr>
+<td>interestStatus</td>
+<td>Enum(calculated, approved, paid, waived)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-business-processing-rules">5. Business Processing Rules<a class="headerlink" href="#5-business-processing-rules" title="Permanent link">&para;</a></h2>
+<h3 id="51-distribution-run-algorithm">5.1 Distribution Run Algorithm<a class="headerlink" href="#51-distribution-run-algorithm" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>FUNCTION runDistribution(period, companyCode, scope):
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  1. Fetch all SettlementStatements (M4) for period + scope
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>     WHERE statementStatus = &#39;posted&#39;
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  2. FOR each settlement:
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>     a. Fetch DOI owner interests via SS/DOI cross-reference (M4)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>     b. FOR each owner interest:
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>          grossVolume = settlement.allocatedVolume × owner.decimalInterest
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>          grossValue  = settlement.grossValue      × owner.decimalInterest
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>          // Apply per-owner adjustments
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>          severanceTax = settlement.severanceTax × owner.decimalInterest
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>          IF owner.interestType = &#39;RI&#39; OR owner.taxExemptionCode IS NOT NULL:
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>            severanceTax = calculateOwnerSpecificTax(owner, grossValue, state)
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>          IF owner.marketingFreeStatus = TRUE:
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>            marketingDeduct = 0
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>          ELSE:
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>            marketingDeduct = settlement.marketingDeduct × owner.decimalInterest
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>          netValue = grossValue
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>                   - severanceTax - adValorem
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>                   - transportDeduct - marketingDeduct - processingDeduct
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>          IF owner.paymentMethod = &#39;TAKE_IN_KIND&#39;:
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>            netValue = 0  // Volume take; no cash distribution
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>          PERSIST OwnerDistributionRecord
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>  3. Generate Revenue Accounting Documents (RADs)
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>  4. Submit RADs to GL posting queue
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>  5. PUBLISH event: ua.revenue.distribution.completed
+</code></pre></div>
+<h3 id="52-chain-of-title-distribution">5.2 Chain of Title Distribution<a class="headerlink" href="#52-chain-of-title-distribution" title="Permanent link">&para;</a></h3>
+<p>When ownership changed mid-period (via an approved transfer in M2):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>FUNCTION distributeWithChainOfTitle(ventureId, period):
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  transfers = fetch transfers effective within period for venture
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  FOR each day in period:
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    activeOwners = DOI interests active on that day
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    dailyValue = settlement.netValue / daysInPeriod
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    FOR each activeOwner:
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>      ownerShare = dailyValue × owner.decimalInterest
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>      accumulateToOwner(owner, ownerShare)
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  // Final distribution is proportional to days-held within period
+</code></pre></div>
+<h3 id="53-late-payment-interest-calculation">5.3 Late-Payment Interest Calculation<a class="headerlink" href="#53-late-payment-interest-calculation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>FUNCTION calculateLatePaymentInterest(distributionId):
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  dist = fetch OwnerDistributionRecord
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  state = fetch venture state from lease
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  deadline = period.lastDay + interestConfig.paymentDeadlineDays
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  IF actualPaymentDate &gt; deadline:
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    overdueDays = (actualPaymentDate - deadline).days
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    rate = fetch InterestRate for state + productType (active on deadline)
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    IF rate.compoundingMethod = &#39;simple&#39;:
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>      interest = dist.netValue × rate.annualRate × (overdueDays / 365)
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    ELSE:
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>      months = CEIL(overdueDays / 30)
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>      interest = dist.netValue × ((1 + rate.annualRate/12)^months - 1)
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    PERSIST InterestCalculationRecord
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    ADD interest to owner&#39;s next payment run
+</code></pre></div>
+<h3 id="54-owner-suspense">5.4 Owner Suspense<a class="headerlink" href="#54-owner-suspense" title="Permanent link">&para;</a></h3>
+<p>Distributions are suspended (not paid) when:</p>
+<ul>
+<li>Owner has no valid payment method configured</li>
+<li>Owner has no mailing address</li>
+<li>Owner is flagged "Do Not Pay" (legal hold)</li>
+<li>Owner payment is below minimum threshold (threshold check happens in M7)</li>
+</ul>
+<p>Suspended distributions accumulate in the owner's balance and are released when the blocking condition is resolved.</p>
+<hr />
+<h2 id="6-rad-posting-to-sap-fi">6. RAD Posting to SAP FI<a class="headerlink" href="#6-rad-posting-to-sap-fi" title="Permanent link">&para;</a></h2>
+<p>Revenue Accounting Documents are submitted to SAP FI via the BAPI integration:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>EnerFusion RAD → POST /api/v1/revenue/documents/{id}/gl-posting
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    │
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    ▼
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Integration Layer → BAPI_ACC_DOCUMENT_POST
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    │
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    ▼
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>SAP FI Journal Entry (document type: RD)
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    │
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    ▼
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>SAP returns: companyCode + fiscalYear + documentNumber
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    │
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    ▼
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>EnerFusion: UPDATE rad SET externalDocumentNumber = SAP_docNum,
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>                           postingStatus = &#39;posted&#39;
+</code></pre></div>
+<p>If posting fails, the RAD is marked <code>postingStatus = 'failed'</code> and routed to the Revenue Accountant's error queue for review and resubmission.</p>
+<hr />
+<h2 id="7-api-endpoints">7. API Endpoints<a class="headerlink" href="#7-api-endpoints" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Description</th>
+<th>Auth Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/revenue/distribution/run</code></td>
+<td>Trigger distribution run</td>
+<td><code>revenue:execute</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/revenue/distribution/runs/{id}</code></td>
+<td>Run status and summary</td>
+<td><code>revenue:read</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/revenue/distribution/runs/{id}/owners</code></td>
+<td>Owner distribution details</td>
+<td><code>revenue:read</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/revenue/distributions</code></td>
+<td>Query distributions by venture/period/owner</td>
+<td><code>revenue:read</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/revenue/distributions/{id}</code></td>
+<td>Single distribution record</td>
+<td><code>revenue:read</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/revenue/documents</code></td>
+<td>List RADs</td>
+<td><code>revenue:read</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/revenue/documents/{id}</code></td>
+<td>RAD detail with GL lines</td>
+<td><code>revenue:read</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/revenue/documents/{id}/gl-posting</code></td>
+<td>Submit RAD to GL</td>
+<td><code>revenue:execute</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/revenue/interest</code></td>
+<td>Query interest calculations</td>
+<td><code>revenue:read</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/revenue/interest/calculate</code></td>
+<td>Trigger interest calculation run</td>
+<td><code>revenue:execute</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/revenue/interest/rates</code></td>
+<td>List state interest rates</td>
+<td><code>revenue:read</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/revenue/interest/rates</code></td>
+<td>Create interest rate</td>
+<td><code>revenue:admin</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/revenue/suspense</code></td>
+<td>List suspended distributions</td>
+<td><code>revenue:read</code></td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/v1/revenue/suspense/{id}/release</code></td>
+<td>Release suspended distribution</td>
+<td><code>revenue:write</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-reports">8. Reports<a class="headerlink" href="#8-reports" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Report</th>
+<th>Description</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Owner Interest Summary</td>
+<td>Net distribution by owner × product × period</td>
+<td>Monthly close</td>
+</tr>
+<tr>
+<td>Interest Calculation Detail</td>
+<td>Overdue days, principal, rate, interest amount per owner</td>
+<td>Monthly / on demand</td>
+</tr>
+<tr>
+<td>Summary Interest Paid</td>
+<td>Aggregate interest paid by state / company / period</td>
+<td>Period end</td>
+</tr>
+<tr>
+<td>Revenue Distribution Register</td>
+<td>Full detail of all owner distributions for a run</td>
+<td>Distribution run completion</td>
+</tr>
+<tr>
+<td>RAD Posting Status Report</td>
+<td>RADs posted vs. failed vs. pending, with SAP document references</td>
+<td>Daily / on demand</td>
+</tr>
+<tr>
+<td>Suspense Balance Report</td>
+<td>Owners with suspended distributions, reason, and aging</td>
+<td>Monthly / on demand</td>
+</tr>
+<tr>
+<td>GL Reconciliation Report</td>
+<td>Compares EnerFusion distribution totals to SAP FI posted amounts</td>
+<td>Monthly close</td>
+</tr>
+<tr>
+<td>Validations and Exceptions Report</td>
+<td>Distributions that failed validation rules before posting</td>
+<td>Distribution run completion</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

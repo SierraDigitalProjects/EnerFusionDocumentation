@@ -122,10 +122,5 @@ AI capabilities can be embedded across every module to reduce manual effort, cat
 | [Master Data Overview](master-data/overview.md) | Entity ownership model |
 | [Functional Requirements](requirements/functional.md) | Module-level functional requirements |
 | [Non-Functional Requirements](requirements/non-functional.md) | Performance, scalability, security |
-| [Open Questions](open-questions.md) | Outstanding decisions and risks |
-| [Module Architecture](architecture/modules.md) | Per-module design and interactions |
-| [Technical Architecture](architecture/technical.md) | Frontend, backend, infra, AKS topology |
-| [Operations](operations.md) | CI/CD, observability, runbooks |
-| [Project Structure](project-structure.md) | Repository layout and service map |
 | [Pilot Scope](pilot-scope.md) | Minimum viable solution scope, deferred features, integration stubs, and acceptance criteria |
 | [E2E Test Cases — Build-A-Biz](test-cases/e2e-scenario.md) | End-to-end scenario test cases across all modules (Phase 1 & 2) |

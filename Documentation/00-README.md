@@ -11,7 +11,7 @@
 |---|----------|-------------|
 | 01 | [System Overview](./01-System-Overview.md) | Business context, module map, end-to-end process flow |
 | 02 | [Solution Architecture](./02-Solution-Architecture.md) | Frontend, backend, infra, containerization, AKS topology |
-| 03 | [Module Specifications](./03-Module-Specifications/) | Detailed functional requirements per module |
+| 03 | [Module Specifications](./modules/) | Detailed functional requirements per module |
 | 04 | [Data Models](./04-Data-Models.md) | All entities, attributes, relationships, PostgreSQL schema guidance |
 | 05 | [API Design](./05-API-Design.md) | RESTful API contracts per module for external integrations |
 | 06 | [RBAC & Security](./06-RBAC-Security.md) | Role taxonomy, permission matrix, implementation patterns |
